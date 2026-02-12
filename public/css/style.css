@@ -112,6 +112,19 @@ legend {
   display: block;
 }
 
+summary {
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+@font-face {
+  font-family: Manrope;
+  src: url("../fonts/Manrope-VariableFont_wght.ttf");
+}
+
 :root {
   --coefficient: 0.3333;
   --device-width: 1920;
@@ -155,6 +168,82 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   border-radius: 5px;
   /* закругления плашки */
+}
+
+.accordeon {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  gap: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient));
+  flex-direction: column;
+  font-family: Manrope, sans-serif;
+}
+
+.accordeon__element {
+  padding: clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient)) clamp(43px * var(--coefficient), 43 * 100vw / var(--design-width) * var(--mobile-coefficient), 43px * var(--mobile-coefficient)) clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient)) clamp(43px * var(--coefficient), 43 * 100vw / var(--design-width) * var(--mobile-coefficient), 43px * var(--mobile-coefficient));
+  border-radius: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient));
+  box-shadow: clamp(5px * var(--coefficient), 5 * 100vw / var(--design-width) * var(--mobile-coefficient), 5px * var(--mobile-coefficient)) clamp(4px * var(--coefficient), 4 * 100vw / var(--design-width) * var(--mobile-coefficient), 4px * var(--mobile-coefficient)) clamp(15px * var(--coefficient), 15 * 100vw / var(--design-width) * var(--mobile-coefficient), 15px * var(--mobile-coefficient)) 0px rgba(0, 0, 0, 0.1019607843);
+  transition: 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.accordeon__element__title {
+  font-size: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient));
+  font-weight: 600;
+}
+
+.accordeon__element__content {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  padding-top: clamp(42px * var(--coefficient), 42 * 100vw / var(--design-width) * var(--mobile-coefficient), 42px * var(--mobile-coefficient));
+  padding-bottom: clamp(10px * var(--coefficient), 10 * 100vw / var(--design-width) * var(--mobile-coefficient), 10px * var(--mobile-coefficient));
+  font-size: clamp(22px * var(--coefficient), 22 * 100vw / var(--design-width) * var(--mobile-coefficient), 22px * var(--mobile-coefficient));
+  line-height: clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient));
+  font-weight: 500;
+  color: rgba(13, 14, 14, 0.6);
+}
+
+.content {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  gap: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient));
+  flex-direction: column;
+  padding-left: clamp(80px * var(--coefficient), 80 * 100vw / var(--design-width) * var(--mobile-coefficient), 80px * var(--mobile-coefficient));
+  padding-right: clamp(80px * var(--coefficient), 80 * 100vw / var(--design-width) * var(--mobile-coefficient), 80px * var(--mobile-coefficient));
+}
+
+.title {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  gap: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+}
+
+.title__tag {
+  padding: clamp(10px * var(--coefficient), 10 * 100vw / var(--design-width) * var(--mobile-coefficient), 10px * var(--mobile-coefficient)) clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient)) clamp(10px * var(--coefficient), 10 * 100vw / var(--design-width) * var(--mobile-coefficient), 10px * var(--mobile-coefficient)) clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient));
+  border-radius: clamp(38px * var(--coefficient), 38 * 100vw / var(--design-width) * var(--mobile-coefficient), 38px * var(--mobile-coefficient));
+  border: clamp(1px * var(--coefficient), 1 * 100vw / var(--design-width) * var(--mobile-coefficient), 1px * var(--mobile-coefficient)) solid rgba(18, 18, 18, 0.2);
+  font-size: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient));
+  text-transform: uppercase;
+}
+
+.title h2 {
+  font-size: clamp(60px * var(--coefficient), 60 * 100vw / var(--design-width) * var(--mobile-coefficient), 60px * var(--mobile-coefficient));
+  font-family: Manrope, sans-serif;
+  font-weight: 600;
 }
 
 @media only screen and (max-width: 640px) {

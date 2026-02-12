@@ -1,0 +1,38 @@
+// =========== Часть Эмира ============
+
+// Аккордеон
+.accordeon{
+    @include flexbox();
+    @include gap(30);
+    flex-direction: column;
+
+    font-family: Manrope, sans-serif;
+
+    &__element{
+        @include padding(32, 43, 32, 43);
+
+        @include borderRadius(30);
+        box-shadow: adaptive(5) adaptive(4) adaptive(15) 0px #0000001A;
+
+        transition: 0.25s $bezier;
+
+        &__title{
+            @include fontSize(30);
+            font-weight: 600;
+        }
+
+        &__content{
+            @include flexbox();
+            flex-direction: column;
+
+            @include paddingTop(42);
+            @include paddingBottom(10);
+
+            @include fontSize(22);
+            @include lineHeight(32);
+            font-weight: 500;
+
+            color: #0D0E0E99;
+        }
+    }
+}
