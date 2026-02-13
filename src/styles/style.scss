@@ -4,9 +4,10 @@
 @import '_mixins';
 @import '_common';
 @import '_uikit';
-@import '../components//header/header.scss';
 @import '_main';
 
+@import '../components//header/header.scss';
+@import '../components/section.servicesLarge/section.servicesL.scss';
 
 @import '_media';
 

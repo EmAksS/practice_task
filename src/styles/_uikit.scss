@@ -1,0 +1,95 @@
+// =========== Часть Эмира ============
+
+// Аккордеон
+.accordeon{
+    @include flexbox();
+    @include gap(30);
+    flex-direction: column;
+
+    font-family: Manrope, sans-serif;
+
+    &__element{
+        @include padding(32, 43, 32, 43);
+
+        @include borderRadius(30);
+        box-shadow: adaptive(5) adaptive(4) adaptive(15) 0px #0000001A;
+
+        transition: 0.25s $bezier;
+
+        &__title{
+            @include fontSize(30);
+            font-weight: 600;
+        }
+
+        &__content{
+            @include flexbox();
+            flex-direction: column;
+
+            @include paddingTop(42);
+            @include paddingBottom(10);
+
+            @include fontSize(22);
+            @include lineHeight(32);
+            font-weight: 500;
+
+            color: $trans-black;
+        }
+    }
+}
+
+.card-large{
+    @include flexbox();
+    @include gap(40);
+    flex-direction: column;
+    justify-content: flex-end;
+    
+    @include borderRadius(30);
+    border: 1px solid black;
+
+    @include width(865);
+    @include height(740);
+    @include padding(30, 30, 30, 30);
+
+    &__text{
+        @include flexbox();
+        @include gap(30);
+        flex-direction: column;
+
+        font-family: Manrope, sans-serif;
+    }
+
+    &__title{
+        @include fontSize(70);
+        @include lineHeight(80);
+        font-weight: 600;
+    }
+
+    &__description{
+        @include fontSize(22);
+        @include lineHeight(36);
+        font-weight: 500;
+
+        color: $trans-black;
+    }
+
+    &__tags{
+        @include flexbox();
+        @include gap(10);
+        flex-wrap: wrap;
+    }
+}
+
+.card-tag{
+    @include flexbox();
+    @include padding(10, 25, 10, 25);
+
+    @include borderRadius(35);
+
+    border: adaptive(1) solid black;
+
+    @include fontSize(20);
+}
+
+.tag-break{
+    flex-basis: 100%;
+}
