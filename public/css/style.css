@@ -208,6 +208,72 @@ body::-webkit-scrollbar-thumb {
   color: rgba(13, 14, 14, 0.6);
 }
 
+.card-large {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  gap: clamp(40px * var(--coefficient), 40 * 100vw / var(--design-width) * var(--mobile-coefficient), 40px * var(--mobile-coefficient));
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient));
+  border: 1px solid black;
+  width: clamp(865px * var(--coefficient), 865 * 100vw / var(--design-width) * var(--mobile-coefficient), 865px * var(--mobile-coefficient));
+  height: clamp(740px * var(--coefficient), 740 * 100vw / var(--design-width) * var(--mobile-coefficient), 740px * var(--mobile-coefficient));
+  padding: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient)) clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient)) clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient)) clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient));
+}
+
+.card-large__text {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  gap: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient));
+  flex-direction: column;
+  font-family: Manrope, sans-serif;
+}
+
+.card-large__title {
+  font-size: clamp(70px * var(--coefficient), 70 * 100vw / var(--design-width) * var(--mobile-coefficient), 70px * var(--mobile-coefficient));
+  line-height: clamp(80px * var(--coefficient), 80 * 100vw / var(--design-width) * var(--mobile-coefficient), 80px * var(--mobile-coefficient));
+  font-weight: 600;
+}
+
+.card-large__description {
+  font-size: clamp(22px * var(--coefficient), 22 * 100vw / var(--design-width) * var(--mobile-coefficient), 22px * var(--mobile-coefficient));
+  line-height: clamp(36px * var(--coefficient), 36 * 100vw / var(--design-width) * var(--mobile-coefficient), 36px * var(--mobile-coefficient));
+  font-weight: 500;
+  color: rgba(13, 14, 14, 0.6);
+}
+
+.card-large__tags {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  gap: clamp(10px * var(--coefficient), 10 * 100vw / var(--design-width) * var(--mobile-coefficient), 10px * var(--mobile-coefficient));
+  flex-wrap: wrap;
+}
+
+.card-tag {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  padding: clamp(10px * var(--coefficient), 10 * 100vw / var(--design-width) * var(--mobile-coefficient), 10px * var(--mobile-coefficient)) clamp(25px * var(--coefficient), 25 * 100vw / var(--design-width) * var(--mobile-coefficient), 25px * var(--mobile-coefficient)) clamp(10px * var(--coefficient), 10 * 100vw / var(--design-width) * var(--mobile-coefficient), 10px * var(--mobile-coefficient)) clamp(25px * var(--coefficient), 25 * 100vw / var(--design-width) * var(--mobile-coefficient), 25px * var(--mobile-coefficient));
+  border-radius: clamp(35px * var(--coefficient), 35 * 100vw / var(--design-width) * var(--mobile-coefficient), 35px * var(--mobile-coefficient));
+  border: clamp(1px * var(--coefficient), 1 * 100vw / var(--design-width) * var(--mobile-coefficient), 1px * var(--mobile-coefficient)) solid black;
+  font-size: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient));
+}
+
+.tag-break {
+  flex-basis: 100%;
+}
+
 .content {
   display: -webkit-box;
   display: -moz-box;
@@ -244,6 +310,17 @@ body::-webkit-scrollbar-thumb {
   font-size: clamp(60px * var(--coefficient), 60 * 100vw / var(--design-width) * var(--mobile-coefficient), 60px * var(--mobile-coefficient));
   font-family: Manrope, sans-serif;
   font-weight: 600;
+}
+
+.servicesL__layer {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient));
 }
 
 @media only screen and (max-width: 640px) {

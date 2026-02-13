@@ -1,0 +1,9 @@
+.servicesL{
+    &__layer{
+        @include flexbox();
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        row-gap: adaptive(30);
+    }
+}

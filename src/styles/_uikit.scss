@@ -32,7 +32,64 @@
             @include lineHeight(32);
             font-weight: 500;
 
-            color: #0D0E0E99;
+            color: $trans-black;
         }
     }
+}
+
+.card-large{
+    @include flexbox();
+    @include gap(40);
+    flex-direction: column;
+    justify-content: flex-end;
+    
+    @include borderRadius(30);
+    border: 1px solid black;
+
+    @include width(865);
+    @include height(740);
+    @include padding(30, 30, 30, 30);
+
+    &__text{
+        @include flexbox();
+        @include gap(30);
+        flex-direction: column;
+
+        font-family: Manrope, sans-serif;
+    }
+
+    &__title{
+        @include fontSize(70);
+        @include lineHeight(80);
+        font-weight: 600;
+    }
+
+    &__description{
+        @include fontSize(22);
+        @include lineHeight(36);
+        font-weight: 500;
+
+        color: $trans-black;
+    }
+
+    &__tags{
+        @include flexbox();
+        @include gap(10);
+        flex-wrap: wrap;
+    }
+}
+
+.card-tag{
+    @include flexbox();
+    @include padding(10, 25, 10, 25);
+
+    @include borderRadius(35);
+
+    border: adaptive(1) solid black;
+
+    @include fontSize(20);
+}
+
+.tag-break{
+    flex-basis: 100%;
 }
