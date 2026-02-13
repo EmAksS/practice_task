@@ -14,11 +14,36 @@
         @include borderRadius(30);
         box-shadow: adaptive(5) adaptive(4) adaptive(15) 0px #0000001A;
 
-        transition: 0.25s $bezier;
+        transition: 0.5s;
+
+        &:hover{
+            .accordeon__element__arrow{
+                transform: scale(1.2);
+                &.up{
+                    transform: scale(1.2) rotateX(180deg);
+                }
+            }
+        }
 
         &__title{
             @include fontSize(30);
             font-weight: 600;
+        }
+
+        &__arrow{
+            @include width(40);
+            @include height(18);
+
+            transition: transform 0.5s ease-out;
+
+            > img{
+                width: 100%;
+                height: 100%;
+            }
+
+            &.up{
+                transform: rotateX(180deg);
+            }
         }
 
         &__content{
@@ -35,20 +60,65 @@
             color: $trans-black;
         }
     }
+
 }
 
+// Большие карточки
 .card-large{
     @include flexbox();
-    @include gap(40);
     flex-direction: column;
     justify-content: flex-end;
     
     @include borderRadius(30);
-    border: 1px solid black;
 
     @include width(865);
     @include height(740);
-    @include padding(30, 30, 30, 30);
+
+    &::after,
+    &::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        transition: opacity 0.6s ease-out;
+    }
+
+    &::before {
+        background: linear-gradient(
+            179.97deg, 
+            rgba(0, 0, 0, 0) -34.75%, 
+            rgba(0, 0, 0, 0.2) 99.97%
+        );
+        opacity: 1;
+        z-index: 1;
+    }
+
+    &::after {
+        background: linear-gradient(
+            179.97deg, 
+            rgba(0, 0, 0, 0) -34.75%, 
+            rgba(0, 0, 0, 0.6) 99.97%
+        );
+        opacity: 0;
+        z-index: 2;
+    }
+
+    &:hover{
+        &::after{
+            opacity: 1;
+        }
+        &::before{
+            opacity: 0;
+        }
+    }
+    
+
+    &__content{
+        @include padding(30, 30, 30, 30);
+        @include flexbox();
+        @include gap(40);
+        flex-direction: column;
+        z-index: 3;
+    }
 
     &__text{
         @include flexbox();
@@ -69,16 +139,21 @@
         @include lineHeight(36);
         font-weight: 500;
 
-        color: $trans-black;
+        opacity: 0.6;
     }
 
     &__tags{
         @include flexbox();
         @include gap(10);
         flex-wrap: wrap;
+
+        > .card-tag{
+            border-color: #FFFFFF66;
+        }
     }
 }
 
+// Тэги для карточек
 .card-tag{
     @include flexbox();
     @include padding(10, 25, 10, 25);
@@ -88,8 +163,18 @@
     border: adaptive(1) solid black;
 
     @include fontSize(20);
+    font-family: Inter, sans-serif;
+
+    transition: color 400ms ease-out,
+                border-color 400ms ease-out;
+
+    &:hover{
+        color: $blue;
+        border-color: #4A6FFE66;
+    }
 }
 
+// Разделитель для тэгов
 .tag-break{
     flex-basis: 100%;
 }
