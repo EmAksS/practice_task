@@ -20,6 +20,7 @@ a,
 a:link,
 a:visited {
   text-decoration: none;
+  color: inherit;
 }
 
 a:hover {
@@ -423,6 +424,63 @@ body::-webkit-scrollbar-thumb {
   border-color: inherit;
 }
 
+header .content {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.header__logo {
+  height: clamp(42px * var(--coefficient), 42 * 100vw / var(--design-width) * var(--mobile-coefficient), 42px * var(--mobile-coefficient));
+  width: clamp(202px * var(--coefficient), 202 * 100vw / var(--design-width) * var(--mobile-coefficient), 202px * var(--mobile-coefficient));
+}
+
+.header__nav {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  gap: clamp(34px * var(--coefficient), 34 * 100vw / var(--design-width) * var(--mobile-coefficient), 34px * var(--mobile-coefficient));
+  padding-bottom: clamp(12px * var(--coefficient), 12 * 100vw / var(--design-width) * var(--mobile-coefficient), 12px * var(--mobile-coefficient));
+  font-size: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient));
+  font-family: Manrope, sans-serif;
+}
+
+.header__nav__element {
+  position: relative;
+  padding-left: clamp(18px * var(--coefficient), 18 * 100vw / var(--design-width) * var(--mobile-coefficient), 18px * var(--mobile-coefficient));
+  padding-right: clamp(18px * var(--coefficient), 18 * 100vw / var(--design-width) * var(--mobile-coefficient), 18px * var(--mobile-coefficient));
+}
+
+.header__nav__element::after {
+  content: "";
+  height: clamp(2px * var(--coefficient), 2 * 100vw / var(--design-width) * var(--mobile-coefficient), 2px * var(--mobile-coefficient));
+  width: 100%;
+  border-radius: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient));
+  position: absolute;
+  left: 0;
+  bottom: clamp(-16px * var(--coefficient), -16 * 100vw / var(--design-width) * var(--mobile-coefficient), -16px * var(--mobile-coefficient));
+  background: black;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.header__nav__element:hover::after {
+  transform: scaleX(1);
+}
+
+.header__button {
+  height: clamp(60px * var(--coefficient), 60 * 100vw / var(--design-width) * var(--mobile-coefficient), 60px * var(--mobile-coefficient));
+  font-size: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient));
+}
+
 .servicesL__layer {
   display: -webkit-box;
   display: -moz-box;
@@ -432,16 +490,6 @@ body::-webkit-scrollbar-thumb {
   justify-content: space-between;
   flex-wrap: wrap;
   row-gap: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient));
-}
-
-.arrow {
-  width: clamp(40px * var(--coefficient), 40 * 100vw / var(--design-width) * var(--mobile-coefficient), 40px * var(--mobile-coefficient));
-  height: clamp(18px * var(--coefficient), 18 * 100vw / var(--design-width) * var(--mobile-coefficient), 18px * var(--mobile-coefficient));
-}
-
-.arrow > img {
-  width: 100%;
-  height: 100%;
 }
 
 @media only screen and (max-width: 640px) {

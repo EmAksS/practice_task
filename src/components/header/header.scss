@@ -1,0 +1,63 @@
+header{
+    .content{
+        @include flexbox();
+        justify-content: space-between;
+        align-items: center;
+
+        flex-direction: row;
+    }
+}
+
+.header{
+
+    &__logo{
+        @include height(42);
+        @include width(202);
+    }
+
+    &__nav{
+        @include flexbox();
+        @include gap(34);
+        @include paddingBottom(12);
+
+        @include fontSize(20);
+        font-family: Manrope, sans-serif;
+
+        &__element{
+            position: relative;
+
+            @include paddingLeft(18);
+            @include paddingRight(18);
+
+            &::after{
+                content: "";
+                @include height(2);
+                width: 100%;
+
+                @include borderRadius(20);
+
+                position: absolute;
+                left: 0;
+                @include bottom(-16);
+                
+                background: black;
+                
+                transform: scaleX(0);
+                transform-origin: center;
+                transition: transform 0.3s ease;
+
+                
+            }
+            &:hover{
+                &::after{
+                    transform: scaleX(1);
+                }  
+            }
+        }
+    }
+
+    &__button{
+        @include height(60);
+        @include fontSize(20);
+    }
+}
