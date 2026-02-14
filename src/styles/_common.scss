@@ -32,6 +32,13 @@ img {
     margin: 0 auto;
 }
 
+summary{
+    @include flexbox();
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
 
 // ==================== Стилизация scrollbar =====================
 

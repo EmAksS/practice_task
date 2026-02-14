@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
     // Анимация "аккордеона"
     $('.accordeon__element').attr('open', true).each(function() {
         const $summary = $(this).find('summary'); 
@@ -9,8 +8,12 @@ $(document).ready(function(){
         $summary.on('click', function(e) {
             e.preventDefault(); 
             $(this).next('.con').slideToggle(); 
+            $(this).find('.arrow').toggleClass('up');
 
-            $(this).parent().parent().siblings().children().find('.con').slideUp(); 
+            $(this).parent().parent().siblings().children().each(function() {
+                $(this).find('.con').slideUp(); 
+                $(this).find('.arrow').removeClass('up');
+            })
 
         });
     });

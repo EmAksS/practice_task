@@ -30,6 +30,7 @@
         border: adaptive(1) solid #12121233;
 
         @include fontSize(20);
+        font-family: Inter, sans-serif;
         text-transform: uppercase;
     }
 
@@ -37,5 +38,32 @@
         @include fontSize(60);
         font-family: Manrope, sans-serif;
         font-weight: 600;
+    }
+}
+
+// Контейнер для изображения (для того, 
+// что внутреннее изображение можно было обрезать) (например: для фона)
+.img-box{
+    position: relative;
+    overflow: hidden;
+}
+
+// Задний фон (если он картинкой) (можно использовать для картинки)
+.background{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+// Белый стиль (изменение цвета шрифтов при темном фоне например)
+// (Указывать на всю секцию где есть этот фон, или на отдельный блок (карточку))
+.white-style{
+    color: $white;
+    border-color: $white;
+    * {
+        border-color: inherit;
     }
 }
