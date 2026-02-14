@@ -1,0 +1,16 @@
+.buttons-div {
+    @include padding(30, 30, 30, 30);
+
+    @include flexbox;
+    flex-direction: column;
+    @include gap(30);
+}
+
+.links-flex{
+    @include flexbox();
+    @include gap(10);
+
+    li:last-child{
+        transform: rotate(180deg);
+    }
+}
