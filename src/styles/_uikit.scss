@@ -1,3 +1,333 @@
+// =========== Часть Артёма ============
+
+// ===== Кнопки =====
+
+// На макете присутствует много кнопок разных размеров, с разными декорациями, цветовой палитрой и др. особенностями.
+// Поэтому, если каждой кнопке присвоить отдельный класс, и даже наследовать в одном классе свойства из другого -
+// в результате будет слишком много классов, и не всегда переиспользование свойств одного стиля в другом выглядит
+// элегантно. К тому же, возможны различные изменения в макете, как было указано, потому целесообразно адаптироваться
+// к будущим изменениям. Поэтому классы для стилизации кнопок были разделены на следующим образом:
+
+// Основной класс-блок кнопки button с общими, повторяющимися для всех кнопок свойствами (flexbox - для эстетичного
+// отображения и выравнивания псведоэлементов-иконок при их наличии с текстовым содержимым [миксин centerContent]). 
+
+.button{
+    @include height(60);
+    @include borderRadius(50);
+
+    @include centerContent();
+    gap: 1em;
+
+    background-color: transparent;
+
+    border: solid 1px;
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    @include fontSize(18);
+    line-height: 100%;
+    letter-spacing: 0%;
+
+    transition: $button-anim-time;
+
+// Классы-модификаторы для реализации цветовых палитр кнопки -  белой (white), чёрной (black), синей (blue) и светящейся 
+// (shining, это белые кнопки с синим свечением изнутри при наведении), в этих же классах настроен цвет иконки при её наличии:
+
+    &--white{
+        color: $white;
+        border-color: $white;
+
+        &:hover {
+            background-color: $white;
+            color: $black;
+        }
+
+        &::after{
+            filter: brightness(1);
+        }
+
+        &:hover::after{
+            filter: brightness(0);
+        }
+    }
+
+    &--black{
+        &:hover{
+            background-color: $black;
+            color: $white;
+        }
+
+        &::after{
+            filter: brightness(0);
+        }
+
+        &:hover::after{
+            filter: brightness(1);
+        }
+    }
+
+    &--blue{
+        @include borderRadius(30);
+        position: relative;
+
+        color: $white;
+        border: none;
+        
+        background: linear-gradient(90deg, #4A6FFE 0%, #2C4298 200.36%);
+        background-size: 200% 100%;
+        background-position: 100% 0;
+        box-shadow: 4px 4px 7px 0px #0000001A;
+
+        &::before {
+            content: '';
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            @include width(200);
+            @include height(50);
+
+            @include borderRadius(30);
+
+            background: $blue;
+
+            @include blur(10);
+
+            opacity: 0;
+            transition: opacity $button-anim-time;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        &:hover {
+            background-position: 0% 0;
+            
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+
+    &--shining{
+        position: relative;
+        color: $white;
+        border-color: $white;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            @include borderRadius(50);
+            width: 100%;
+            height: 100%;
+
+            background: $blue;
+            @include blur(10);
+            opacity: 0;
+
+            transition: opacity $button-anim-time;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        &:hover{
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+
+// Rласс-модификатор button--icon, создающий псевдоэлемент-иконку внутри кнопки (именно поэтому и нужен flexbox в
+// классе button для адаптивного и эстетичного выравнивания контента). Технически псевдоэлемент представляет собой
+// background-image размером с символ (размер может быть переопределён, если нужно для соответствия результата макету)
+// в формате SVG с анимациями согласно макету. Также реализованы дочерние классы-модификаторы button--icon--arrow,
+// button--icon--cloud для создания иконок стрелки и скачивания соответственно, класс-модификатор button--icon--black для
+// чёрной иконки (по умолчанию иконка белая).
+
+    &--icon{
+        &::after{
+            width: 1em;
+            height: 1em;
+
+            @include makeIconBackground();
+
+            transition: $button-anim-time;
+        }
+
+        &--arrow{
+            &::after{
+                background-image: url('../images/icons/button-arrow.svg');
+            }
+
+            &:hover::after{
+                transform: rotate(45deg);
+            }
+        }
+
+        &--cloud{
+            &::after{
+                @include width(24);
+                @include height(20);
+
+                background-image: url('../images/icons/button-cloud.svg');
+            }
+        }
+    }
+}
+
+// Rлассы-модификаторы для регуляции размеров кнопок. Т.к. нет чёткой корреляции между цветом/иконкой/назначением 
+// кнопки и её размером на макете, были реализованы эти классы для гибкого управления размером кнопок.
+
+.width-240{
+    @include width(240);
+}
+
+.width-280{
+    @include width(280);
+}
+
+.width-300{
+    @include width(300);
+}
+
+.width-375{
+    @include width(375);
+}
+
+.width-380{
+    @include width(375);
+}
+
+// Для кнопок размером 498px в модальном окне и 746px под формой, т.к. они занимают всю ширину родительского контейнера, если присмотреться
+
+.width-full{
+    width: 100%;
+}
+
+// ===== Ссылки на соц. сети =====
+
+.social-net-link {
+    @include width(70);
+    @include height(70);
+
+    @include flexbox();
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #6363633D;
+    @include borderRadius(15);
+
+    background: #63636326;
+
+    cursor: pointer;
+
+    transition: $button-anim-time;
+
+    &:hover{
+        background: #FFFFFF26;
+        border: 1px solid #FFFFFF3D
+    }
+
+    // Классы для сохранения размеров и пропорций SVG при изменении масштаба
+
+    &--behance{
+        img, svg{
+            @include width(40);
+            @include height(27);
+        }
+    }
+
+    &--dribble{
+        img, svg{
+            @include width(35);
+            @include height(35);
+        }
+    }
+
+    &--telegram{
+        img, svg{
+            @include width(32);
+            @include height(30);
+        }
+    }
+
+    &--vk{
+        img, svg{
+            @include width(40);
+            @include height(23);
+        }
+    }
+}
+
+// ===== Кнопка слайдера =====
+
+.slider-button{
+    @include width(70);
+    @include height(70);
+
+    border-radius: 50%;
+
+    border: 2px solid #0D0E0E1A;
+
+    @include flexbox();
+    align-items: center;
+    justify-content: center;
+
+    transition: $button-anim-time;
+
+    &::before{
+        @include width(17);
+        @include height(17);
+
+        @include makeIconBackground();
+        background-image: url('../images/icons/button-arrow.svg');
+
+        filter: brightness(0);
+
+        transform: rotate(-135deg);
+    }
+
+    &:hover{
+        background-color: $black;
+        &::before{
+            filter: none;
+        }
+    }
+}
+
+// ===== Элементы формы =====
+
+.text-box{
+    position: relative;
+
+    &__input{
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include width(498);
+        @include height(68);
+
+        @include borderRadius(15);
+        border: 1px solid #FFFFFF66;
+        outline: none;
+
+        background: transparent;
+
+        font-family: 'Manrope', sans-serif;
+        font-weight: 400;
+        @include fontSize(26);
+        line-height: 100%;
+        letter-spacing: 0%;
+
+        color: #FFFFFF80;
+        @include padding(10, 10, 10, 10);
+    }
+}
+
 // =========== Часть Эмира ============
 
 // Аккордеон
