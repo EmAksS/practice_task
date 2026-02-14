@@ -168,7 +168,6 @@
   );
 }
 
-
 // ===== Размеры =====
 @mixin width($val) {
   width: adaptive($val);
@@ -276,4 +275,23 @@
 
 @mixin rowGap($val) {
   row-gap: adaptive($val);
+}
+
+@mixin blur($val) {
+  filter: blur(adaptive($val));
+}
+
+@mixin centerContent() {
+  @include flexbox();
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin makeIconBackground() {
+  content: '';
+  display: inline-block;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
