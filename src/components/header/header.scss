@@ -1,14 +1,69 @@
-header{
+// Подложка под header
+.spacer{
+    @include height(50);
+}
+
+.header{
+    position: sticky;
+    top: 0;
+    width: 100%;
+
+    z-index: 10;
+
+    // Специально для плавного перехода 
     .content{
+        @include paddingLeft(57);
+        @include paddingRight(57);
+    }
+
+
+    &--glass{
         @include flexbox();
         justify-content: space-between;
         align-items: center;
 
-        flex-direction: row;
-    }
-}
+        width: 100%;
+        @include paddingLeft(23);
+        @include paddingRight(23);
+        @include borderRadius(175);
 
-.header{
+        @include paddingTop(13);
+        @include paddingBottom(13);
+
+        transition: background-color 0.4s ease-out, backdrop-filter 0.4s ease-out;
+    }
+
+    // Если header был перелистан активируется эффект liquid glass 
+    // (если браузер поддерживает liquid glass) -> liquid-glass-apply
+    // или классического blur
+    // (если браузер не поддерживает liquid glass) -> liquid-glass-fallback
+    &.scrolled{
+        .header--glass{
+
+            border: adaptive(1) solid;
+            border-image-slice: 1;
+            border-image-source: linear-gradient(180deg, rgba(198, 198, 198, 0.2) 0%, rgba(255, 255, 255, 0.16) 100%);
+        }
+
+        .liquid-glass{
+            // Поддержка 
+            &-apply{
+                background-color: rgba(226, 226, 226, 0.2);
+                backdrop-filter: blur(adaptive(4)) url('#liquid-glass-filter');
+                -webkit-backdrop-filter: blur(adaptive(4)) url('#liquid-glass-filter');
+                
+            }
+            // Не поддержка
+            &-fallback{
+                background-color: rgba(226, 226, 226, 0.2);
+                backdrop-filter: blur(adaptive(4));
+                -webkit-backdrop-filter: blur(adaptive(4));
+            }
+        }
+    }
+
+    // 
+    
 
     &__logo{
         @include height(42);
@@ -29,6 +84,18 @@ header{
             @include paddingLeft(18);
             @include paddingRight(18);
 
+            transition: color 0.6s ease-out,
+                        opacity 0.6s ease-out;
+
+            opacity: 0.6;
+
+            &--active{
+                opacity: 1;
+                &::after{
+                    transform: scaleX(1) !important;
+                }
+            }
+
             &::after{
                 content: "";
                 @include height(2);
@@ -44,13 +111,17 @@ header{
                 
                 transform: scaleX(0);
                 transform-origin: center;
-                transition: transform 0.3s ease;
+                transition: transform 0.6s ease-out,
+                            background-color 0.6s ease-out;
 
                 
             }
             &:hover{
+                color: $blue;
+                opacity: 1;
                 &::after{
                     transform: scaleX(1);
+                    background: $blue;
                 }  
             }
         }
@@ -61,3 +132,5 @@ header{
         @include fontSize(20);
     }
 }
+
+

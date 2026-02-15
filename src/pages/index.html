@@ -9,11 +9,11 @@
 </head>
 <body>
 
+    
+
     <!--=include header.html -->
 
     <main class="main">
-
-        <!--=include uikit.buttons.html -->
 
         <!--=include section.questions.html -->
 
@@ -27,5 +27,27 @@
     <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        (function() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isChromium = userAgent.includes('chrome') || userAgent.includes('edg') || userAgent.includes('opr') || userAgent.includes('opera');
+            
+            if (!isChromium) {
+                document.documentElement.classList.add('no-liquid-glass-support');
+                const elements = document.querySelectorAll('.header--glass');
+                elements.forEach(el => {
+                    el.classList.add('liquid-glass-fallback');
+                });
+            }
+            else{
+                const elements = document.querySelectorAll('.header--glass');
+                elements.forEach(el => {
+                    el.classList.add('liquid-glass-apply');
+                });
+            }
+        })();
+    </script>
 </body>
 </html>
+
+
