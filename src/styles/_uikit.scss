@@ -20,7 +20,7 @@
 
     background-color: transparent;
 
-    border: solid 1px;
+    border: solid adaptive(1);
 
     font-family: 'Inter', sans-serif;
     font-weight: 600;
@@ -76,7 +76,7 @@
         background: linear-gradient(90deg, #4A6FFE 0%, #2C4298 200.36%);
         background-size: 200% 100%;
         background-position: 100% 0;
-        box-shadow: 4px 4px 7px 0px #0000001A;
+        box-shadow: adaptive(4) adaptive(4) adaptive(7) 0 #0000001A;
 
         &::before {
             content: '';
@@ -92,7 +92,7 @@
 
             background: $blue;
 
-            @include blur(10);
+            filter: blur(adaptive(10));
 
             opacity: 0;
             transition: opacity $button-anim-time;
@@ -125,7 +125,7 @@
             height: 100%;
 
             background: $blue;
-            @include blur(10);
+            filter: blur(adaptive(10));
             opacity: 0;
 
             transition: opacity $button-anim-time;
@@ -163,7 +163,7 @@
             }
 
             &:hover::after{
-                transform: rotate(45deg);
+                @include rotate(45deg);
             }
         }
 
@@ -217,7 +217,7 @@
     align-items: center;
     justify-content: center;
 
-    border: 1px solid #6363633D;
+    border: adaptive(1) solid #6363633D;
     @include borderRadius(15);
 
     background: #63636326;
@@ -228,7 +228,7 @@
 
     &:hover{
         background: #FFFFFF26;
-        border: 1px solid #FFFFFF3D
+        border: adaptive(1) solid #FFFFFF3D
     }
 
     // Классы для сохранения размеров и пропорций SVG при изменении масштаба
@@ -270,13 +270,11 @@
 
     border-radius: 50%;
 
-    border: 2px solid #0D0E0E1A;
+    border: adaptive(2) solid #0D0E0E1A;
 
-    @include flexbox();
-    align-items: center;
-    justify-content: center;
+    @include centerContent();
 
-    transition: $button-anim-time;
+    transition: background-color $button-anim-time;
 
     &::before{
         @include width(17);
@@ -285,9 +283,11 @@
         @include makeIconBackground();
         background-image: url('../images/icons/button-arrow.svg');
 
+        transition: filter $button-anim-time;
+
         filter: brightness(0);
 
-        transform: rotate(-135deg);
+        @include rotate(-135deg);
     }
 
     &:hover{
@@ -298,33 +298,197 @@
     }
 }
 
-// ===== Элементы формы =====
+// ===== Текстовое поле =====
 
-.text-box{
+.text-field {
     position: relative;
+    @include inline_flexbox();
+    flex-direction: column;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: top;
+    width: 100%;
+    font-family: 'Manrope', sans-serif;
 
-    &__input{
-        position: absolute;
-        top: 0;
-        left: 0;
+    transition: background-color 0.5s;
 
-        @include width(498);
-        @include height(68);
+    &__textarea {
+        resize: none;
+        overflow-y: hidden;      // Временно, т.к. не отображено на дизайне
+        @include marginTop(10);
+        height: adaptive(240);
+        max-height: adaptive(240);
+        @include marginTop(7);
+        box-sizing: border-box;
+        padding: 0;
+        scroll-snap-type: y mandatory;
+    }
 
+    &__container {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
         @include borderRadius(15);
-        border: 1px solid #FFFFFF66;
-        outline: none;
+        cursor: text;
+        box-sizing: border-box;
+    }
 
-        background: transparent;
-
-        font-family: 'Manrope', sans-serif;
-        font-weight: 400;
+    &__input {
+        letter-spacing: inherit;
+        border: 0;
+        box-sizing: border-box;
+        background: none;
+        margin: 0;
+        display: block;
+        min-width: 0;
+        width: 100%;
+        @include padding(20, 30, 16, 30);
         @include fontSize(26);
-        line-height: 100%;
-        letter-spacing: 0%;
+        @include marginTop(5);
+        line-height: 1;
+        outline: none;
+        position: relative;
 
-        color: #FFFFFF80;
-        @include padding(10, 10, 10, 10);
+        transition: color $input-anim-time;
+    }
+
+    &__fieldset {
+        @include height(72);
+        position: absolute;
+        top: adaptive(-5);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+        padding: 0 adaptive(8);
+        pointer-events: none;
+        border-radius: inherit;
+        border: adaptive(1) solid;
+        text-align: left;
+        box-sizing: border-box;
+        z-index: 1;
+
+        .text-field__textarea ~ &{
+            height: adaptive(244);
+            max-height: adaptive(244);
+        }
+
+        transition: filter $input-anim-time, border-color $input-anim-time;
+    }
+
+    &__legend {
+        @include flexbox();
+        align-items: center;
+        width: auto;
+        @include height(22);
+        padding: 0;
+        @include marginLeft(20);
+        @include fontSize(26);
+        @include lineHeight(22);
+        white-space: nowrap;
+        visibility: hidden;
+        max-width: 0;
+        transition: margin-left $input-anim-time;
+
+        span {
+            @include marginTop(60);
+            display: inline-block;
+            visibility: visible;
+            font-size: inherit;
+            transition: all $input-anim-time;
+        }
+        
+        .text-field__input:not(:placeholder-shown) ~ .text-field__fieldset &,
+        .text-field__input:focus ~ .text-field__fieldset & {
+            max-width: 100%;
+            transition: max-width $input-anim-time;
+            @include marginLeft(30);
+            
+            span {
+                @include fontSize(16);
+                @include padding(0, 10, 0, 10);
+                margin-top: 0;
+            }
+        }
+    }
+
+    &.text-field--white{
+        .text-field__input{
+            color: $input-border-color;
+            &:focus{
+                color: $white;
+            }
+        }
+
+        .text-field__fieldset{
+            border-color: $input-border-color;
+
+        }
+
+        .text-field__input:hover ~ .text-field__fieldset,
+        .text-field__input:focus ~ .text-field__fieldset {
+            filter: drop-shadow(0 0 adaptive(1) $blue);
+        }
+
+        .text-field__legend{
+            span{
+                color: $input-text-color;
+            }
+        }
+    }
+
+    &.text-field--black{
+        .text-field__input{
+            color: $input-black-text-color;
+            &:focus{
+                color: $input-black-text-color;
+            }
+        }
+
+        .text-field__fieldset{
+            border-color: $input-black-border-color;
+        }
+
+        .text-field__input:hover ~ .text-field__fieldset {
+            border-color: $input-black-border-hover-color;
+            color: $input-black-text-hover-color;
+        }
+
+        .text-field__input:placeholder-shown:hover ~ .text-field__fieldset span {
+            color: $input-black-text-hover-color;
+        }
+
+        .text-field__input:focus ~ .text-field__fieldset{
+            border-color: $input-black-border-focus-color;
+        }
+
+        .text-field__legend{
+            span{
+                color: $input-black-text-color;
+            }
+        }
+    }
+
+    &.invalid {
+        .text-field__fieldset {
+            border-color: $input-invalid-color;
+            filter: drop-shadow(0 0 adaptive(1) $input-invalid-color);
+        }
+        
+        .text-field__legend span {
+            color: $input-invalid-color;
+        }
+        
+        .text-field__input:hover ~ .text-field__fieldset {
+            border-color: $input-invalid-color;
+            color: $input-invalid-color;
+        }
+
+        .text-field__input {
+            color: $input-invalid-color;
+        }
     }
 }
 
