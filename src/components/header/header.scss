@@ -1,7 +1,12 @@
 // Подложка под header
 .spacer{
     @include height(50);
+
+    &--under{
+        @include height(40);
+    }
 }
+
 
 .header{
     position: sticky;
@@ -49,8 +54,8 @@
             // Поддержка 
             &-apply{
                 background-color: rgba(226, 226, 226, 0.2);
-                backdrop-filter: blur(adaptive(4)) url('#liquid-glass-filter');
-                -webkit-backdrop-filter: blur(adaptive(4)) url('#liquid-glass-filter');
+                backdrop-filter: blur(adaptive(6)) url('#liquid-glass-filter');
+                -webkit-backdrop-filter: blur(adaptive(6)) url('#liquid-glass-filter');
                 
             }
             // Не поддержка

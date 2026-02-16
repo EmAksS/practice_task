@@ -20,7 +20,7 @@ $(document).ready(function(){
 
 
     const $header = $("#header");
-    const $spacer = $(".spacer")[0]; // чистый DOM для IntersectionObserver
+    const $spacer = $(".spacer--under")[0]; // чистый DOM для IntersectionObserver
 
     // 1️⃣ IntersectionObserver для полного пролистывания spacer
     const observer = new IntersectionObserver(function(entries) {

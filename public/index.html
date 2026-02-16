@@ -9,245 +9,103 @@
 </head>
 <body>
 
-    
+    <div class="bg-layer" id="hero-bg">
+        <img src="your-image.jpg" alt="background">
+    </div>
 
     <div class="spacer">
     
-
-    
-    
-
     </div>
     
-
-    
-    
-
     <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position: absolute; overflow: hidden;">
-    
-
         <defs>
-    
-
             <filter
-    
-
             id="liquid-glass-filter"
-    
-
             x="0%"
-    
-
             y="0%"
-    
-
             width="100%"
-    
-
             height="100%"
-    
-
             >
-    
-
             <feTurbulence
-    
-
                 type="fractalNoise"
-    
-
                 baseFrequency="0.006 0.006"
-    
-
                 numOctaves="2"
-    
-
                 seed="92"
-    
-
                 result="noise"
-    
-
             />
-    
-
             <feGaussianBlur in="noise" stdDeviation="2" result="blurred" />
-    
-
             <feDisplacementMap
-    
-
                 in="SourceGraphic"
-    
-
                 in2="blurred"
-    
-
                 scale="32"
-    
-
                 xChannelSelector="R"
-    
-
                 yChannelSelector="G"
-    
-
             />
-    
-
             </filter>
-    
-
         </defs>
-    
-
     </svg>
     
-
-    
-    
-
     <header class="header" id="header">
-    
-
         <div class="content">
-    
-
             <div class="header--glass ">
-    
-
                 <div class="header__logo">
-    
-
                     <img src="./images/Frame.svg" alt="">
-    
-
                 </div>
-    
-
                 <nav>
-    
-
                     <ul class="header__nav">
-    
-
                         <li class="header__nav__element header__nav__element--active">
-    
-
                             <a href="">
-    
-
                                 <p>Главная</p>
-    
-
                             </a>
-    
-
                         </li>
-    
-
                         <li class="header__nav__element">
-    
-
                             <a href="">
-    
-
                                 <p>Услуги</p>
-    
-
                             </a>
-    
-
                         </li>
-    
-
                         <li class="header__nav__element">
-    
-
                             <a href="">
-    
-
                                 <p>Кейсы</p>
-    
-
                             </a>
-    
-
                         </li>
-    
-
                         <li class="header__nav__element">
-    
-
                             <a href="">
-    
-
                                 <p>О нас</p>
-    
-
                             </a>
-    
-
                         </li>
-    
-
                         <li class="header__nav__element">
-    
-
                             <a href="">
-    
-
                                 <p>Блог</p>
-    
-
                             </a>
-    
-
                         </li>
-    
-
                         <li class="header__nav__element">
-    
-
                             <a href="">
-    
-
                                 <p>Контакты</p>
-    
-
                             </a>
-    
-
                         </li>
-    
-
                     </ul>
-    
-
                 </nav>
-    
-
                 <button class="button button--blue button--icon button--icon--arrow width-280 header__button">
-    
-
                     <p>Обсудить проект</p>
-    
-
                 </button>
-    
-
             </div>
-    
-
             
-    
-
         </div>
-    
-
     </header>
+    
+    <div class="spacer--under">
+        
+    </div>
 
     <main class="main">
+
+        
+        <section class="hero">
+            <div class="content">
+        
+            </div>
+        </section>
+        
 
         <section id="faq">
             <div class="content">
