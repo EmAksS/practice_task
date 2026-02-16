@@ -30,6 +30,8 @@
 
     transition: $button-anim-time;
 
+    cursor: pointer;
+
 // Классы-модификаторы для реализации цветовых палитр кнопки -  белой (white), чёрной (black), синей (blue) и светящейся 
 // (shining, это белые кнопки с синим свечением изнутри при наведении), в этих же классах настроен цвет иконки при её наличии:
 
@@ -213,9 +215,7 @@
     @include width(70);
     @include height(70);
 
-    @include flexbox();
-    align-items: center;
-    justify-content: center;
+    @include centerContent();
 
     border: adaptive(1) solid #6363633D;
     @include borderRadius(15);
@@ -296,6 +296,148 @@
             filter: none;
         }
     }
+}
+
+.round-button{
+    @include width(60);
+    @include height(60);
+
+    @include centerContent();
+
+    border: none;
+    border-radius: 50%;
+
+    background: $black;
+
+    cursor: pointer;
+
+    transition: transform $button-anim-time;
+
+    &::before{
+        @include width(17);
+        @include height(17);
+
+        @include makeIconBackground();
+        background-image: url('../images/icons/button-arrow.svg');
+    }
+}
+
+.lazy-button{
+    @include width(60);
+    @include height(60);
+
+    @include centerContent();
+
+    border: none;
+    background-image: url('../images/lazy-dev-logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    filter: brightness(0);
+}
+
+// ===== Малая карточка услуги =====
+
+.card-small{
+    @include width(425);
+    @include height(700);
+
+    @include borderRadius(30);
+
+    @include padding(30, 20, 30, 20);
+
+    position: relative;
+    @include flexbox();
+    flex-direction: column;
+
+    box-shadow: adaptive(8) adaptive(8) adaptive(20) 0 #0000001A;
+
+    cursor: pointer;
+
+    .lazy-button, .round-button{
+        position: absolute;
+        @include top(25);
+        @include right(25);
+    }
+
+    &__image-container{
+        @include flexbox();
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+
+        @include marginTop(40);
+    }
+
+    &__image{
+        @include MaxWidth(221);
+        @include MaxHeight(221);
+
+        transition: transform $button-anim-time;
+    }
+
+    &__shadow{
+        @include width(242);
+        @include height(113);
+    }
+
+    &__text{
+
+        h3{
+            @include MaxWidth(180);
+
+            font-family: 'Manrope';
+            font-weight: 600;
+            @include fontSize(46);
+            @include lineHeight(56);
+            letter-spacing: 0%;
+
+            color: $black;
+
+            @include marginBottom(20);
+        }
+
+        p{
+            font-family: 'Manrope';
+            font-weight: 500;
+            @include fontSize(22);
+            line-height: 130%;
+            letter-spacing: 0%;
+
+            color: #0D0E0E66;
+        }
+    }
+
+    &--placeholder{
+
+        justify-content: end;
+
+        cursor: default;
+
+        h3{
+            font-family: Inter;
+            font-weight: 600;
+            @include fontSize(70);
+            @include lineHeight(61);
+            letter-spacing: 0%;
+        }
+
+        p{
+            @include marginBottom(20);
+        }
+    }
+
+    &:hover{
+        .round-button{
+            @include rotate(45deg);
+        }
+
+        .card-small__image{
+            @include tr(0, -40);
+        }
+    }
+
 }
 
 // ===== Текстовое поле =====

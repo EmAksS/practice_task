@@ -15,11 +15,11 @@ body {
 }
 
 main {
-  
+    @include paddingTop(250);
 }
 
 section {
-
+    @include marginBottom(250);
 }
 
 img {

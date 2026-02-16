@@ -1,0 +1,128 @@
+footer{
+    width: 100%;
+}
+
+.footer-container{
+    @include height(1260);
+    background-color: $black;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content{
+    display: inline;
+    @include margin(200, 0, 0, 0);
+    @include paddingLeft(75);
+    @include paddingRight(75);
+    @include height(240);
+    margin-left: auto;
+    margin-right: auto;
+    @include flexbox();
+    justify-content: space-between;
+    position: relative;
+}
+
+.footer-about{
+    @include flexbox();
+    flex-direction: column;
+    @include gap(15);
+
+    p{
+        color: #FFFFFF66;
+        font-family: 'Inter';
+        font-weight: 300;
+        @include fontSize(18);
+        line-height: 100%;
+        letter-spacing: 0%;
+    }
+}
+
+.lazy-dev-logo{
+    @include width(250);
+    @include height(50);
+    @include flexbox();
+    justify-content: space-between;
+    @include marginBottom(10);
+}
+
+.footer-info{
+    @include flexbox();
+    gap: 200px;
+
+    h4{
+        font-family: 'Manrope';
+        font-weight: 700;
+        @include fontSize(24);
+        color: $white;
+    }
+
+    div{
+        @include flexbox();
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    p{
+        font-family: 'Inter';
+        font-weight: 300;
+        @include fontSize(22);
+        color: #FFFFFF99;
+        line-height: 100%;
+        letter-spacing: 0%;
+    }
+
+    ul{
+        @include flexbox();
+        flex-direction: column;
+        @include gap(25);
+    }
+
+    .social-media{
+        flex-direction: row;
+        @include gap(10);
+    }
+}
+
+.big-logo{
+    @include width(1972);
+    @include height(450);
+    position: absolute;
+    @include bottom(-220);
+}
+
+.ellipse{
+    position: absolute;
+    bottom: 0;
+}
+
+.blur-rect{
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    @include height(100);
+    background-color: #2A2A2A33;
+    backdrop-filter: blur(adaptive(20));
+
+    mask-image: linear-gradient(to bottom, transparent, black 15%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%);
+}
+
+.blur-rect{
+    @include flexbox();
+    align-items: center;
+    justify-content: end;
+}
+
+.blur-rect a{
+    @include marginRight(80);
+    @include marginTop(20);
+    font-family: Inter;
+    font-weight: 300;
+    @include fontSize(18);
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-decoration: underline;
+    color: $white;
+}
