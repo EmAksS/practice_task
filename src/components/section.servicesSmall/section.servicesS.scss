@@ -1,0 +1,6 @@
+.servicesS{
+    &__layer{
+        @include flexbox();
+        justify-content: space-between;
+    }
+}
