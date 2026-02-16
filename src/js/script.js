@@ -25,7 +25,7 @@ $(document).ready(function(){
         
         // Применяем маску к каждому полю
         $input.inputmask('+7 (999) 999 - 99 - 99', {
-            'placeholder': '_',
+            'placeholder': ' ',
             'clearMaskOnLostFocus': true,
             'clearIncomplete': false,  // Ставим false, чтобы неполный номер не исчезал
             'showMaskOnHover': false,
