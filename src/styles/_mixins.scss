@@ -85,12 +85,11 @@
     justify-content: center;
 }
 @mixin tr($x, $y) {
-    transform: translate($x, $y);
-    -moz-transform: translate($x, $y);
-    -ms-transform: translate($x, $y);
-    -webkit-transform: translate($x, $y);
-    -o-transform: translate($x, $y);
-    transform: translate($x, $y);
+    transform: translate(adaptive($x), adaptive($y));
+    -moz-transform: translate(adaptive($x), adaptive($y));
+    -ms-transform: translate(adaptive($x), adaptive($y));
+    -webkit-transform: translate(adaptive($x), adaptive($y));
+    -o-transform: translate(adaptive($x), adaptive($y));
 }
 @mixin trIMPORTANT($x, $y) {
     transform: translate($x, $y) !important;
