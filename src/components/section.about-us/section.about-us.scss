@@ -23,7 +23,7 @@
         font-weight: 500;
         font-style: Medium;
         @include fontSize(22);
-        line-height: 36px;
+        @include lineHeight(36);
         letter-spacing: 0%;
         color: #0D0E0E99;
     }
