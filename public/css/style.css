@@ -1411,6 +1411,10 @@ body::-webkit-scrollbar-thumb {
   color: #0D0E0E;
 }
 
+.header.scrolled .header__nav__element::after {
+  background: #0D0E0E;
+}
+
 .header.scrolled .liquid-glass-apply {
   background-color: rgba(226, 226, 226, 0.2);
   backdrop-filter: blur(clamp(6px * var(--coefficient), 6 * 100vw / var(--design-width) * var(--mobile-coefficient), 6px * var(--mobile-coefficient))) url("#liquid-glass-filter");
@@ -1426,6 +1430,14 @@ body::-webkit-scrollbar-thumb {
 .header__logo {
   height: clamp(42px * var(--coefficient), 42 * 100vw / var(--design-width) * var(--mobile-coefficient), 42px * var(--mobile-coefficient));
   width: clamp(202px * var(--coefficient), 202 * 100vw / var(--design-width) * var(--mobile-coefficient), 202px * var(--mobile-coefficient));
+}
+
+.header__logo:hover path {
+  fill: #4A6FFE;
+}
+
+.header__logo path {
+  transition: fill 0.6s ease-out;
 }
 
 .header__nav {
@@ -1464,20 +1476,18 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   left: 0;
   bottom: clamp(-16px * var(--coefficient), -16 * 100vw / var(--design-width) * var(--mobile-coefficient), -16px * var(--mobile-coefficient));
-  background: black;
+  background: #FFFFFF;
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.6s ease-out, background-color 0.6s ease-out;
 }
 
 .header__nav__element:hover {
-  color: #4A6FFE;
   opacity: 1;
 }
 
 .header__nav__element:hover::after {
   transform: scaleX(1);
-  background: #4A6FFE;
 }
 
 .header__button {
