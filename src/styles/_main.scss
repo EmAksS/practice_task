@@ -68,11 +68,61 @@
     }
 }
 
-.bg-layer{
+// Общий класс для первой страницы
+.hero{
+    background-color: transparent;
+
+    color: $white;
+
+    &__basis{
+        @include flexbox();
+        @include gap(50);
+        flex-direction: column
+    }
+
+    &__text{
+        @include flexbox();
+        @include gap(30);
+        flex-direction: column;
+    }
+
+    &__title{
+        @include fontSize(70);
+        @include lineHeight(78);
+        font-weight: 600;
+        font-family: Manrope, sans-serif;
+    }
+
+    &__description{
+        @include fontSize(22);
+        opacity: 0.8;
+        font-weight: 400;
+        font-family: Manrope, sans-serif;
+    }
+
+    &__b-layer{
+        @include flexbox();
+        @include gap(40);
+    }
+
+    &__describe{
+        @include flexbox();
+        @include gap(80);
+    }
+}
+
+.bg-hero{
+    width: 100%;
+    @include height(1200);
+
     position: absolute;
     z-index: -5;
     top: 0;
-    width: 100%;
-    @include height(640);
+    
     background: black;
+    overflow: hidden;
+
+    > img{
+        width: 100%;
+    }
 }

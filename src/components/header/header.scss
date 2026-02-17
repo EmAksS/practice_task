@@ -15,6 +15,8 @@
 
     z-index: 10;
 
+    color: $white;
+
     // Специально для плавного перехода 
     .content{
         @include paddingLeft(57);
@@ -48,6 +50,8 @@
             border: adaptive(1) solid;
             border-image-slice: 1;
             border-image-source: linear-gradient(180deg, rgba(198, 198, 198, 0.2) 0%, rgba(255, 255, 255, 0.16) 100%);
+
+            color: $black;
         }
 
         .liquid-glass{
