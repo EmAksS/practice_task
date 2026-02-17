@@ -7,23 +7,14 @@
 
     @include centerContent();
 
-    flex-direction: column;
-    align-content: center;
-
-    .checkbox-container{
+    &__layer{
         @include flexbox();
         flex-direction: column;
-        justify-content: space-between;
+        align-items: center;
+        @include MaxWidth(1100);
     }
-}
 
-.small-form__layer {
-    @include flexbox();
-    flex-direction: column;
-    align-content: center;
-    @include MaxWidth(1100);
-
-    h2{
+    &__title{
         font-family: Manrope;
         font-weight: 600;
         @include fontSize(70);
@@ -33,29 +24,37 @@
         color: $white;
         @include marginBottom(30);
     }
-}
 
-.small-form__layer > p{
+    &__description{
         font-family: Manrope;
         font-weight: 500;
         @include fontSize(22);
-        line-height: 100%;
+        line-height: 150%;
         letter-spacing: 0%;
         text-align: center;
         color: #FFFFFFB2;
-        @include MaxWidth(820);
+        @include MaxWidth(737);
         @include marginBottom(100);
-}
+    }
 
-.small-form-upper-container{
-    @include flexbox();
+    &__upper-container{
+        @include flexbox();
+        @include gap(40);
+        @include marginBottom(100);
+    }
 
-    @include gap(40);
-    @include marginBottom(100);
-}
+    &__down-container{
+        @include flexbox();
+        @include gap(40);
+    }
+    
+    &__checkbox-container{
+        @include flexbox();
+        flex-direction: column;
+        justify-content: space-between;
+    }
 
-.small-form-down-container{
-    @include flexbox();
-
-    @include gap(40);
+    &__button{
+        @include margin(5, 0, 5, 0);
+    }
 }
