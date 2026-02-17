@@ -7,6 +7,9 @@
 
     @include centerContent();
 
+    padding-bottom: 0 !important;
+    @include marginBottom(250);
+
     &__layer{
         @include flexbox();
         flex-direction: column;
