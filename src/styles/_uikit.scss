@@ -296,6 +296,10 @@
             filter: none;
         }
     }
+
+    &:last-child{
+        @include rotate(180deg);
+    }
 }
 
 .round-button{
@@ -426,6 +430,10 @@
         }
 
         p{
+            @include marginBottom(30);
+        }
+
+        .services-button {
             @include marginBottom(20);
         }
     }
@@ -457,18 +465,6 @@
 
     transition: background-color 0.5s;
 
-    &__textarea {
-        resize: none;
-        overflow-y: hidden;
-        @include marginTop(10);
-        height: adaptive(240);
-        max-height: adaptive(240);
-        @include marginTop(7);
-        box-sizing: border-box;
-        padding: 0;
-        scroll-snap-type: y mandatory;
-    }
-
     &__container {
         position: relative;
         display: inline-flex;
@@ -479,9 +475,18 @@
         box-sizing: border-box;
     }
 
+    &__textarea {
+        resize: none;
+        overflow-y: hidden;
+        height: adaptive(240);
+        max-height: adaptive(240);
+        box-sizing: border-box;
+        padding: 0;
+        scroll-snap-type: y mandatory;
+    }
+
     &__input {
-        letter-spacing: inherit;
-        border: 0;
+        border: none;
         box-sizing: border-box;
         background: none;
         margin: 0;
@@ -490,8 +495,6 @@
         width: 100%;
         @include padding(20, 30, 16, 30);
         @include fontSize(26);
-        @include marginTop(5);
-        line-height: 1;
         outline: none;
         position: relative;
 
@@ -720,64 +723,173 @@
 // ===== Radioinput для формы =====
 
 .radio-group {
-            @include MaxWidth(800);
-            @include marginBottom(45);
-        }
+    @include MaxWidth(800);
+    @include marginBottom(45);
 
-        .radio-group h2 {
-            @include fontSize(40);
-            @include marginBottom(35);
-            color: #000;
-            font-family: Inter;
-            font-weight: 500;
-            line-height: 100%;
-            letter-spacing: 0%;
-        }
+    h2{
+        @include fontSize(40);
+        @include marginBottom(35);
+        color: #000;
+        font-family: Inter;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0%;
+    }
+}
 
-        .radio-options {
-            display: flex;
-            flex-wrap: wrap;
-            @include gap(20);
-        }
+.radio-options {
+    display: flex;
+    flex-wrap: wrap;
+    @include gap(20);
 
-        .radio-options input[type="radio"] {
-            display: none;
-        }
+    input[type="radio"] {
+        display: none;
+    }
 
-        .radio-options label {
-            @include padding(10, 40, 10, 40);
-            border: adaptive(1) solid #12121266;
-            @include borderRadius(50);
-            background: #fff;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            color: #333;
-            user-select: none;
+    label {
+        @include padding(10, 40, 10, 40);
+        border: adaptive(1) solid #12121266;
+        @include borderRadius(50);
+        background: #fff;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        color: #333;
+        user-select: none;
 
-            font-family: Inter;
-            font-weight: 400;
-            @include fontSize(26);
-            line-height: 100%;
-            letter-spacing: 0%;
-        }
+        font-family: Inter;
+        font-weight: 400;
+        @include fontSize(26);
+        line-height: 100%;
+        letter-spacing: 0%;
 
-        .radio-options label:hover {
+        &:hover{
             border-color: #bbb;
             background: #fafafa;
         }
+    }
 
-        .radio-options input[type="radio"]:checked + label {
-            background: #000;
-            color: #fff;
-            border-color: #000;
+    input[type="radio"]:checked + label {
+        background: #000;
+        color: #fff;
+        border-color: #000;
+    }
+
+    &.style-outlined input[type="radio"]:checked + label {
+        background: #fff;
+        color: #000;
+        border-color: #000;
+        border-width: adaptive(1);
+    }
+}
+
+// ===== Слайдер =====
+
+.swiper{
+    overflow: hidden;
+
+    &-wrapper{
+        width: 100%;
+    }
+
+    &--reviews{
+        .swiper-wrapper{
+            @include padding(0, 80, 40, 80);
         }
 
-        .radio-options.style-outlined input[type="radio"]:checked + label {
-            background: #fff;
-            color: #000;
-            border-color: #000;
-            border-width: adaptive(1);
+        .swiper-slide{
+            @include padding(0, 0, 0, 0);
+            opacity: 0;
         }
+
+        .swiper-slide.swiper-slide-visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+
+    &-slide{
+        @include padding(0, 80, 40, 80);
+    }
+
+    .card-content{
+        @include height(550);
+        background: white;
+        @include borderRadius(30);
+        @include padding(40, 40, 40, 40);
+        box-shadow: adaptive(10) adaptive(12) adaptive(20) 0 #0000001A;
+        display: flex;
+        justify-content: space-between;
+        @include gap(250);
+
+        &-left{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between
+        }
+
+        h3 {
+            font-family: Manrope;
+            font-weight: 600;
+            @include fontSize(50);
+            line-height: 100%;
+            letter-spacing: 0%;
+            color: $black;
+        };
+
+        p {
+            font-family: Manrope;
+            font-weight: 500;
+            @include fontSize(22);
+            @include lineHeight(34);
+            letter-spacing: 0%;
+            color: #12121299;
+        }
+    }
+}
+
+.slider{
+    &-controls{
+        @include margin(0, 80, 0, 80);
+        display: flex;
+        align-items: center;
+        @include gap(175);
+    }
+
+    &-tags{
+        @include flexbox();
+        @include gap(10);
+        flex-wrap: wrap;
+    }
+
+    &-buttons{
+        @include flexbox();
+        @include gap(30);
+    }
+}
+
+.custom-pagination {
+    @include flexbox();
+    @include gap(10);
+    flex: 1;
+}
+
+.pagination-bullet {
+    flex: 1;
+    @include height(6);
+    @include borderRadius(35);
+    background: #d0d0d0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &.active {
+        background: $black;
+    }
+}
+
+.navigation-buttons {
+    display: flex;
+    @include gap(20);
+}
 
 // =========== Часть Эмира ============
 
@@ -941,7 +1053,7 @@
 
     @include borderRadius(35);
 
-    border: adaptive(1) solid black;
+    border: adaptive(1) solid #0D0E0E66;
 
     @include fontSize(20);
     font-family: Inter, sans-serif;
