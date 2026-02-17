@@ -13,11 +13,12 @@ body {
 }
 
 main {
-  
+    @include paddingTop(250);
 }
 
 section {
     background-color: #FFFFFF;
+    @include marginBottom(250);
 }
 
 img {

@@ -7,9 +7,16 @@
 @import '_main';
 
 @import '../components//header/header.scss';
+@import '../components//footer/footer.scss';
+@import '../components/section.main-video/section.main-video.scss';
+@import '../components/section.about-us/section.about-us.scss';
 @import '../components/section.servicesLarge/section.servicesL.scss';
+@import '../components/section.servicesSmall/section.servicesS.scss';
 @import '../components/uikit.buttons/uikit.buttons.scss';
-@import '../components/uikit.form/uikit.form.scss';
+@import '../components/section.slider/section.slider.scss';
+@import '../components/section.reviews/section.reviews.scss';
+@import '../components/section.big-form/section.big-form.scss';
+@import '../components/section.small-form/section.small-form.scss';
 @import '../components/section.questions/section.questions.scss';
 
 @import '../components/background.hero.main/background.hero.main.scss';

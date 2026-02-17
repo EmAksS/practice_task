@@ -20,7 +20,7 @@
 
     background-color: transparent;
 
-    border: solid 1px;
+    border: solid adaptive(1);
 
     font-family: 'Inter', sans-serif;
     font-weight: 600;
@@ -29,6 +29,8 @@
     letter-spacing: 0%;
 
     transition: $button-anim-time;
+
+    cursor: pointer;
 
 // Классы-модификаторы для реализации цветовых палитр кнопки -  белой (white), чёрной (black), синей (blue) и светящейся 
 // (shining, это белые кнопки с синим свечением изнутри при наведении), в этих же классах настроен цвет иконки при её наличии:
@@ -76,7 +78,7 @@
         background: linear-gradient(90deg, #4A6FFE 0%, #2C4298 200.36%);
         background-size: 200% 100%;
         background-position: 100% 0;
-        box-shadow: 4px 4px 7px 0px #0000001A;
+        box-shadow: adaptive(4) adaptive(4) adaptive(7) 0 #0000001A;
 
         &::before {
             content: '';
@@ -92,7 +94,7 @@
 
             background: $blue;
 
-            @include blur(10);
+            filter: blur(adaptive(10));
 
             opacity: 0;
             transition: opacity $button-anim-time;
@@ -125,7 +127,7 @@
             height: 100%;
 
             background: $blue;
-            @include blur(10);
+            filter: blur(adaptive(10));
             opacity: 0;
 
             transition: opacity $button-anim-time;
@@ -163,7 +165,7 @@
             }
 
             &:hover::after{
-                transform: rotate(45deg);
+                @include rotate(45deg);
             }
         }
 
@@ -213,11 +215,9 @@
     @include width(70);
     @include height(70);
 
-    @include flexbox();
-    align-items: center;
-    justify-content: center;
+    @include centerContent();
 
-    border: 1px solid #6363633D;
+    border: adaptive(1) solid #6363633D;
     @include borderRadius(15);
 
     background: #63636326;
@@ -228,7 +228,7 @@
 
     &:hover{
         background: #FFFFFF26;
-        border: 1px solid #FFFFFF3D
+        border: adaptive(1) solid #FFFFFF3D
     }
 
     // Классы для сохранения размеров и пропорций SVG при изменении масштаба
@@ -270,13 +270,11 @@
 
     border-radius: 50%;
 
-    border: 2px solid #0D0E0E1A;
+    border: adaptive(2) solid #0D0E0E1A;
 
-    @include flexbox();
-    align-items: center;
-    justify-content: center;
+    @include centerContent();
 
-    transition: $button-anim-time;
+    transition: background-color $button-anim-time;
 
     &::before{
         @include width(17);
@@ -285,9 +283,11 @@
         @include makeIconBackground();
         background-image: url('../images/icons/button-arrow.svg');
 
+        transition: filter $button-anim-time;
+
         filter: brightness(0);
 
-        transform: rotate(-135deg);
+        @include rotate(-135deg);
     }
 
     &:hover{
@@ -296,36 +296,599 @@
             filter: none;
         }
     }
+
+    &:last-child{
+        @include rotate(180deg);
+    }
 }
 
-// ===== Элементы формы =====
+.round-button{
+    @include width(60);
+    @include height(60);
 
-.text-box{
+    @include centerContent();
+
+    border: none;
+    border-radius: 50%;
+
+    background: $black;
+
+    cursor: pointer;
+
+    transition: transform $button-anim-time;
+
+    &::before{
+        @include width(17);
+        @include height(17);
+
+        @include makeIconBackground();
+        background-image: url('../images/icons/button-arrow.svg');
+    }
+}
+
+.lazy-button{
+    @include width(60);
+    @include height(60);
+
+    @include centerContent();
+
+    border: none;
+    background-image: url('../images/lazy-dev-logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    filter: brightness(0);
+}
+
+// ===== Малая карточка услуги =====
+
+.card-small{
+    @include width(425);
+    @include height(700);
+
+    @include borderRadius(30);
+
+    @include padding(30, 20, 30, 20);
+
     position: relative;
+    @include flexbox();
+    flex-direction: column;
+
+    background-color: $white;
+
+    box-shadow: adaptive(8) adaptive(8) adaptive(20) 0 #0000001A;
+
+    cursor: pointer;
+
+    .lazy-button, .round-button{
+        position: absolute;
+        @include top(25);
+        @include right(25);
+    }
+
+    &__image-container{
+        @include flexbox();
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+
+        @include marginTop(40);
+    }
+
+    &__image{
+        @include MaxWidth(221);
+        @include MaxHeight(221);
+
+        transition: transform $button-anim-time;
+    }
+
+    &__shadow{
+        @include width(242);
+        @include height(113);
+    }
+
+    &__text{
+
+        h3{
+            @include MaxWidth(180);
+
+            font-family: 'Manrope';
+            font-weight: 600;
+            @include fontSize(46);
+            @include lineHeight(56);
+            letter-spacing: 0%;
+
+            color: $black;
+
+            @include marginBottom(20);
+        }
+
+        p{
+            font-family: 'Manrope';
+            font-weight: 500;
+            @include fontSize(22);
+            line-height: 130%;
+            letter-spacing: 0%;
+
+            color: #0D0E0E66;
+        }
+    }
+
+    &--placeholder{
+
+        justify-content: end;
+
+        cursor: default;
+
+        h3{
+            font-family: Inter;
+            font-weight: 600;
+            @include fontSize(70);
+            @include lineHeight(61);
+            letter-spacing: 0%;
+        }
+
+        p{
+            @include marginBottom(30);
+        }
+
+        .services-button {
+            @include marginBottom(20);
+        }
+    }
+
+    &:hover{
+        .round-button{
+            @include rotate(45deg);
+        }
+
+        .card-small__image{
+            @include tr(0, -40);
+        }
+    }
+
+}
+
+// ===== Текстовое поле =====
+
+.text-field {
+    position: relative;
+    @include inline_flexbox();
+    flex-direction: column;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: top;
+    width: 100%;
+    font-family: 'Manrope', sans-serif;
+
+    transition: background-color 0.5s;
+
+    &__container {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+        @include borderRadius(15);
+        cursor: text;
+        box-sizing: border-box;
+    }
+
+    &__textarea {
+        resize: none;
+        overflow-y: hidden;
+        height: adaptive(240);
+        max-height: adaptive(240);
+        box-sizing: border-box;
+        padding: 0;
+        scroll-snap-type: y mandatory;
+    }
+
+    &__input {
+        border: none;
+        box-sizing: border-box;
+        background: none;
+        margin: 0;
+        display: block;
+        min-width: 0;
+        width: 100%;
+        @include padding(20, 30, 16, 30);
+        @include fontSize(26);
+        outline: none;
+        position: relative;
+
+        transition: color $input-anim-time;
+    }
+
+    &__fieldset {
+        @include height(72);
+        position: absolute;
+        top: adaptive(-5);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+        padding: 0 adaptive(8);
+        pointer-events: none;
+        border-radius: inherit;
+        border: adaptive(1) solid;
+        text-align: left;
+        box-sizing: border-box;
+        z-index: 1;
+
+        .text-field__textarea ~ &{
+            height: adaptive(244);
+            max-height: adaptive(244);
+        }
+
+        transition: filter $input-anim-time, border-color $input-anim-time;
+    }
+
+    &__legend {
+        @include flexbox();
+        align-items: center;
+        width: auto;
+        @include height(22);
+        padding: 0;
+        @include marginLeft(20);
+        @include fontSize(26);
+        @include lineHeight(22);
+        white-space: nowrap;
+        visibility: hidden;
+        max-width: 0;
+        transition: margin-left $input-anim-time;
+
+        span {
+            @include marginTop(60);
+            display: inline-block;
+            visibility: visible;
+            font-size: inherit;
+            transition: all $input-anim-time;
+        }
+        
+        .text-field__input:not(:placeholder-shown) ~ .text-field__fieldset &,
+        .text-field__input:focus ~ .text-field__fieldset & {
+            max-width: 100%;
+            transition: max-width $input-anim-time;
+            @include marginLeft(30);
+            
+            span {
+                @include fontSize(16);
+                @include padding(0, 10, 0, 10);
+                margin-top: 0;
+            }
+        }
+    }
+
+    &.text-field--white{
+        .text-field__input{
+            color: $input-border-color;
+            &:focus{
+                color: $white;
+            }
+        }
+
+        .text-field__fieldset{
+            border-color: $input-border-color;
+
+        }
+
+        .text-field__input:hover ~ .text-field__fieldset,
+        .text-field__input:focus ~ .text-field__fieldset {
+            filter: drop-shadow(0 0 adaptive(1) $blue);
+        }
+
+        .text-field__legend{
+            span{
+                color: $input-text-color;
+            }
+        }
+    }
+
+    &.text-field--black{
+        .text-field__input{
+            color: $input-black-text-color;
+            &:focus{
+                color: $input-black-text-color;
+            }
+        }
+
+        .text-field__fieldset{
+            border-color: $input-black-border-color;
+        }
+
+        .text-field__input:hover ~ .text-field__fieldset {
+            border-color: $input-black-border-hover-color;
+            color: $input-black-text-hover-color;
+        }
+
+        .text-field__input:placeholder-shown:hover ~ .text-field__fieldset span {
+            color: $input-black-text-hover-color;
+        }
+
+        .text-field__input:focus ~ .text-field__fieldset{
+            border-color: $input-black-border-focus-color;
+        }
+
+        .text-field__legend{
+            span{
+                color: $input-black-text-color;
+            }
+        }
+    }
+
+    &.invalid {
+        .text-field__fieldset {
+            border-color: $input-invalid-color;
+            filter: drop-shadow(0 0 adaptive(1) $input-invalid-color);
+        }
+        
+        .text-field__legend span {
+            color: $input-invalid-color;
+        }
+        
+        .text-field__input:hover ~ .text-field__fieldset {
+            border-color: $input-invalid-color;
+            color: $input-invalid-color;
+        }
+
+        .text-field__input {
+            color: $input-invalid-color;
+        }
+    }
+}
+
+// ===== Чекбокс =====
+
+.checkbox{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &__label{
+        @include marginLeft(15);
+        font-family: Lato;
+        @include fontSize(20);
+        line-height: 100%;
+        letter-spacing: 0%;
+        a{
+            text-decoration: underline;
+            text-decoration-thickness: adaptive(1);
+        }
+    }
 
     &__input{
-        position: absolute;
-        top: 0;
-        left: 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
 
-        @include width(498);
-        @include height(68);
-
-        @include borderRadius(15);
-        border: 1px solid #FFFFFF66;
-        outline: none;
-
+    &__check{
+        @include width(26);
+        @include height(26);
         background: transparent;
+        stroke-dasharray: 131;
+        stroke-dashoffset: -131;
+        stroke-linecap: round;
+        stroke-width: 8;
+        fill: none;
+        @include borderRadius(8);
+        transition: background .2s, stroke-dashoffset .3s .25s, filter .4s;
+    }
 
-        font-family: 'Manrope', sans-serif;
+    &__input:checked + .checkbox__check{
+        stroke-dashoffset: 0;
+    }
+
+    &--white{
+        .checkbox__label{
+            color: $white;
+        }
+
+        .checkbox__check{
+            border: adaptive(1) solid $white;
+            stroke: $blue;
+        }
+
+        .checkbox__input:checked + .checkbox__check{
+            background: $white;
+        }
+
+        &:hover .checkbox__check{
+            filter: drop-shadow(0 0 adaptive(4) white);
+        }
+    }
+
+    &--black{
+        .checkbox__label{
+            color: $black;
+        }
+
+        .checkbox__check{
+            border: adaptive(1) solid black;
+            stroke: $white;
+        }
+
+        .checkbox__input:checked + .checkbox__check{
+            background: $black;
+        }
+
+        &:hover .checkbox__check{
+            filter: drop-shadow(0 0 adaptive(4) $black);
+        }
+    }
+}
+
+// ===== Radioinput для формы =====
+
+.radio-group {
+    @include MaxWidth(800);
+    @include marginBottom(45);
+
+    h2{
+        @include fontSize(40);
+        @include marginBottom(35);
+        color: #000;
+        font-family: Inter;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0%;
+    }
+}
+
+.radio-options {
+    display: flex;
+    flex-wrap: wrap;
+    @include gap(20);
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    label {
+        @include padding(10, 40, 10, 40);
+        border: adaptive(1) solid #12121266;
+        @include borderRadius(50);
+        background: #fff;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        color: #333;
+        user-select: none;
+
+        font-family: Inter;
         font-weight: 400;
         @include fontSize(26);
         line-height: 100%;
         letter-spacing: 0%;
 
-        color: #FFFFFF80;
-        @include padding(10, 10, 10, 10);
+        &:hover{
+            border-color: #bbb;
+            background: #fafafa;
+        }
     }
+
+    input[type="radio"]:checked + label {
+        background: #000;
+        color: #fff;
+        border-color: #000;
+    }
+
+    &.style-outlined input[type="radio"]:checked + label {
+        background: #fff;
+        color: #000;
+        border-color: #000;
+        border-width: adaptive(1);
+    }
+}
+
+// ===== Слайдер =====
+
+.swiper{
+    overflow: hidden;
+
+    &-wrapper{
+        width: 100%;
+    }
+
+    &--reviews{
+        .swiper-wrapper{
+            @include padding(0, 80, 40, 80);
+        }
+
+        .swiper-slide{
+            @include padding(0, 0, 0, 0);
+            opacity: 0;
+        }
+
+        .swiper-slide.swiper-slide-visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+
+    &-slide{
+        @include padding(0, 80, 40, 80);
+    }
+
+    .card-content{
+        @include height(550);
+        background: white;
+        @include borderRadius(30);
+        @include padding(40, 40, 40, 40);
+        box-shadow: adaptive(10) adaptive(12) adaptive(20) 0 #0000001A;
+        display: flex;
+        justify-content: space-between;
+        @include gap(250);
+
+        &-left{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between
+        }
+
+        h3 {
+            font-family: Manrope;
+            font-weight: 600;
+            @include fontSize(50);
+            line-height: 100%;
+            letter-spacing: 0%;
+            color: $black;
+        };
+
+        p {
+            font-family: Manrope;
+            font-weight: 500;
+            @include fontSize(22);
+            @include lineHeight(34);
+            letter-spacing: 0%;
+            color: #12121299;
+        }
+    }
+}
+
+.slider{
+    &-controls{
+        @include margin(0, 80, 0, 80);
+        display: flex;
+        align-items: center;
+        @include gap(175);
+    }
+
+    &-tags{
+        @include flexbox();
+        @include gap(10);
+        flex-wrap: wrap;
+    }
+
+    &-buttons{
+        @include flexbox();
+        @include gap(30);
+    }
+}
+
+.custom-pagination {
+    @include flexbox();
+    @include gap(10);
+    flex: 1;
+}
+
+.pagination-bullet {
+    flex: 1;
+    @include height(6);
+    @include borderRadius(35);
+    background: #d0d0d0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &.active {
+        background: $black;
+    }
+}
+
+.navigation-buttons {
+    display: flex;
+    @include gap(20);
 }
 
 // =========== Часть Эмира ============
@@ -490,7 +1053,7 @@
 
     @include borderRadius(35);
 
-    border: adaptive(1) solid black;
+    border: adaptive(1) solid #0D0E0E66;
 
     @include fontSize(20);
     font-family: Inter, sans-serif;

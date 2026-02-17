@@ -1,0 +1,35 @@
+.about-us{
+    &__layer{
+        @include flexbox();
+        @include gap(100);
+        align-items: center;
+    }
+
+    &__layer > div{
+        @include flexbox();
+        flex-direction: column;
+        @include gap(80);
+    }
+
+    &__image{
+        @include width(746);
+        @include height(755);
+        @include borderRadius(30);
+    }
+
+    &__text{
+        @include width(746);
+        font-family: 'Manrope';
+        font-weight: 500;
+        font-style: Medium;
+        @include fontSize(22);
+        @include lineHeight(36);
+        letter-spacing: 0%;
+        color: #0D0E0E99;
+    }
+
+    &__buttons-container{
+        @include flexbox();
+        @include gap(30);
+    }
+}

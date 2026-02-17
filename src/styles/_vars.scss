@@ -10,9 +10,20 @@
     $lime: #B5FF00;
     $red: #FF3434;
 
+    $input-invalid-color: #FF6E6ECC;
+    $input-text-color: #FFFFFF80;
+    $input-border-color: #FFFFFF66;
+    $input-black-border-color: #0D0E0E66;
+    $input-black-text-color: #0D0E0ECC;
+    $input-black-border-focus-color: #121212B2;
+    $input-black-border-hover-color: #4A6FFE66;
+    $input-black-text-hover-color: #4A6FFECC;
+
+
 //============= Timers =============
 
-    $button-anim-time: 0.75s;
+    $button-anim-time: 500ms ease-out;
+    $input-anim-time: 250ms ease-out;
 
 :root { 
     

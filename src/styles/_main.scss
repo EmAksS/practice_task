@@ -1,8 +1,12 @@
 // Разкомментировать для удобного фона для просмотра UI-кита
 
-// body {
-//     background-color: #3d3d3d;
-// }
+body {
+    background-color: #f8f8f8;
+}
+
+html { scrollbar-width: none; } 
+body { -ms-overflow-style: none; } 
+body::-webkit-scrollbar, body::-webkit-scrollbar-button { display: none; }
 
 // Контейнер для всего содержимого
 .content{

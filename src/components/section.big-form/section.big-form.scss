@@ -1,0 +1,28 @@
+.big-form{
+    .content{
+        @include gap(60);
+    }
+
+    form{
+        @include flexbox();
+        justify-content: space-between;
+    }
+
+    &__right-container{
+        @include width(746);
+    }
+
+    &__input-container{
+        @include flexbox();
+        flex-direction: column;
+        @include gap(5);
+    }
+
+    &__checkbox-container{
+        @include flexbox();
+        flex-direction: column;
+        @include margin(30, 0, 30, 0);
+        @include gap(20);
+    }
+}
+
