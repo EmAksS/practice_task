@@ -65,10 +65,15 @@
                     justify-content: center;
 
                     @include fontSize(46);
+                    font-family: Poppins, monospace;
                     font-weight: 500;
                     opacity: 0.6;
                 }
             }
+        }
+
+        + section{
+            @include borderRadiusFull(30, 30, 0, 0);
         }
     }
 

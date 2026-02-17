@@ -33,7 +33,7 @@ $(document).ready(function(){
             }
             });
         }, {
-            threshold: 1 // сработает, когда весь блок вышел из view
+            threshold: 0.2 // сработает, когда весь блок вышел из view
         });
     
     observer.observe($spacer);

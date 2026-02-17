@@ -135,6 +135,11 @@ ol {
   src: url("../fonts/Inter-VariableFont_opsz,wght.ttf");
 }
 
+@font-face {
+  font-family: Poppins;
+  src: url("../fonts/Poppins-Medium.ttf");
+}
+
 :root {
   --coefficient: 0.3333;
   --device-width: 1920;
@@ -685,7 +690,6 @@ body::-webkit-scrollbar-thumb {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: -1;
 }
 
 .white-style {
@@ -756,7 +760,6 @@ body::-webkit-scrollbar-thumb {
 
 .bg-hero {
   width: 100%;
-  height: clamp(1200px * var(--coefficient), 1200 * 100vw / var(--design-width) * var(--mobile-coefficient), 1200px * var(--mobile-coefficient));
   position: absolute;
   z-index: -5;
   top: 0;
@@ -773,7 +776,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .spacer--under {
-  height: clamp(40px * var(--coefficient), 40 * 100vw / var(--design-width) * var(--mobile-coefficient), 40px * var(--mobile-coefficient));
+  height: clamp(214px * var(--coefficient), 214 * 100vw / var(--design-width) * var(--mobile-coefficient), 214px * var(--mobile-coefficient));
 }
 
 .header {
@@ -922,6 +925,10 @@ body::-webkit-scrollbar-thumb {
   transform: rotate(180deg);
 }
 
+.bg-hero--main {
+  height: clamp(1200px * var(--coefficient), 1200 * 100vw / var(--design-width) * var(--mobile-coefficient), 1200px * var(--mobile-coefficient));
+}
+
 .hero--main {
   background-color: transparent;
 }
@@ -1000,8 +1007,13 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   justify-content: center;
   font-size: clamp(46px * var(--coefficient), 46 * 100vw / var(--design-width) * var(--mobile-coefficient), 46px * var(--mobile-coefficient));
+  font-family: Poppins, monospace;
   font-weight: 500;
   opacity: 0.6;
+}
+
+.hero--main + section {
+  border-radius: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient)) clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient));
 }
 
 @media only screen and (max-width: 640px) {

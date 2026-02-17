@@ -55,7 +55,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: -1;
 }
 
 // Белый стиль (изменение цвета шрифтов при темном фоне например)
@@ -113,7 +112,6 @@
 
 .bg-hero{
     width: 100%;
-    @include height(1200);
 
     position: absolute;
     z-index: -5;
