@@ -214,6 +214,11 @@ body::-webkit-scrollbar-thumb {
   /* закругления плашки */
 }
 
+.preload .header__nav__element::after {
+  transition: none !important;
+  animation: none !important;
+}
+
 .button {
   height: clamp(60px * var(--coefficient), 60 * 100vw / var(--design-width) * var(--mobile-coefficient), 60px * var(--mobile-coefficient));
   border-radius: clamp(50px * var(--coefficient), 50 * 100vw / var(--design-width) * var(--mobile-coefficient), 50px * var(--mobile-coefficient));

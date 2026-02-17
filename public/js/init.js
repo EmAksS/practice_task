@@ -26,3 +26,7 @@ $(document).ready(function() {
         }
     });
 });
+
+$(window).on("load", function() {
+    $("body").removeClass("preload");
+});

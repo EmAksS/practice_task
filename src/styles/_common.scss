@@ -66,3 +66,11 @@ body::-webkit-scrollbar-thumb {
     border-radius: 5px;       /* закругления плашки */
      
 }
+
+// ====================Предзагрузка =============
+.preload {
+    .header__nav__element::after{
+        transition: none !important;
+        animation: none !important;
+    }
+}
