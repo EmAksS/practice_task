@@ -59,7 +59,6 @@ body::-webkit-scrollbar, body::-webkit-scrollbar-button { display: none; }
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: -1;
 }
 
 // Белый стиль (изменение цвета шрифтов при темном фоне например)
@@ -69,5 +68,63 @@ body::-webkit-scrollbar, body::-webkit-scrollbar-button { display: none; }
     border-color: $white;
     * {
         border-color: inherit;
+    }
+}
+
+// Общий класс для первой страницы
+.hero{
+    background-color: transparent;
+
+    color: $white;
+
+    &__basis{
+        @include flexbox();
+        @include gap(50);
+        flex-direction: column
+    }
+
+    &__text{
+        @include flexbox();
+        @include gap(30);
+        flex-direction: column;
+    }
+
+    &__title{
+        @include fontSize(70);
+        @include lineHeight(78);
+        font-weight: 600;
+        font-family: Manrope, sans-serif;
+    }
+
+    &__description{
+        @include fontSize(22);
+        opacity: 0.8;
+        font-weight: 400;
+        font-family: Manrope, sans-serif;
+    }
+
+    &__b-layer{
+        @include flexbox();
+        @include gap(40);
+    }
+
+    &__describe{
+        @include flexbox();
+        @include gap(80);
+    }
+}
+
+.bg-hero{
+    width: 100%;
+
+    position: absolute;
+    z-index: -5;
+    top: 0;
+    
+    background: black;
+    overflow: hidden;
+
+    > img{
+        width: 100%;
     }
 }

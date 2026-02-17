@@ -9,10 +9,13 @@
 </head>
 <body>
 
-    <!--=include header.html -->
+    <!--=include background.hero.main.html-->
+
+    <!--=include header.html-->
 
     <main class="main">
 
+        <!--=include section.hero.main.html -->
         <!--=include section.main-video.html -->
 
         <!--=include section.about-us.html -->
@@ -38,5 +41,27 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        (function() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isChromium = userAgent.includes('chrome') || userAgent.includes('edg') || userAgent.includes('opr') || userAgent.includes('opera');
+            
+            if (!isChromium) {
+                document.documentElement.classList.add('no-liquid-glass-support');
+                const elements = document.querySelectorAll('.header--glass');
+                elements.forEach(el => {
+                    el.classList.add('liquid-glass-fallback');
+                });
+            }
+            else{
+                const elements = document.querySelectorAll('.header--glass');
+                elements.forEach(el => {
+                    el.classList.add('liquid-glass-apply');
+                });
+            }
+        })();
+    </script>
 </body>
 </html>
+
+

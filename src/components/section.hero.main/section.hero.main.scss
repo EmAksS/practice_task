@@ -1,0 +1,81 @@
+.hero{
+    &--main{
+        background-color: transparent;
+
+        .content{
+            @include gap(202);
+            align-items: center;
+            justify-content: center;
+
+            @include paddingBottom(64);
+        }
+
+        &__text{
+            align-items: center;
+            text-align: center;
+        }
+
+        &__b-layer{
+            align-self: center;
+        }
+
+        &__describe{
+            list-style: none;
+            counter-reset: item;
+
+            &__el{
+                @include flexbox();
+                flex-direction: column;
+                counter-increment: item;
+
+                &__text{
+                    @include flexbox();
+                    @include gap(20);
+                    flex-direction: column;
+
+                    @include width(300);
+
+                    .line{
+                        @include height(1);
+                        width: 100%;
+
+                        background-color: #D9D9D9;
+                    }
+
+                    p{
+                        @include fontSize(20);
+                        font-weight: 500;
+                        font-family: Manrope, sans-serif;
+                    }
+                }
+            }
+
+            .number{
+
+                @include flexbox();
+                align-items: center;
+
+                @include height(69);
+
+                &::before{
+                    content: counter(item);
+
+                    @include flexbox();
+                    align-items: center;
+                    justify-content: center;
+
+                    @include fontSize(46);
+                    font-family: Poppins, monospace;
+                    font-weight: 500;
+                    opacity: 0.6;
+                }
+            }
+        }
+
+        + section{
+            @include borderRadiusFull(30, 30, 0, 0);
+        }
+    }
+
+    
+}

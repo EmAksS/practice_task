@@ -18,6 +18,25 @@ $(document).ready(function(){
         });
     });
 
+
+    const $header = $("#header");
+    const $spacer = $(".spacer--under")[0]; // чистый DOM для IntersectionObserver
+
+    // 1️⃣ IntersectionObserver для полного пролистывания spacer
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (!entry.isIntersecting) {
+                // блок полностью вышел из viewport
+                $header.addClass("scrolled");
+            } else {
+                $header.removeClass("scrolled");
+            }
+            });
+        }, {
+            threshold: 0.2 // сработает, когда весь блок вышел из view
+        });
+    
+    observer.observe($spacer);
     // Валидация полей с классом phone-input
     $('.phone-input').each(function() {
         const $input = $(this);

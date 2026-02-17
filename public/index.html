@@ -9,52 +9,150 @@
 </head>
 <body>
 
-    <header>
+    <div class="bg-hero bg-hero--main">
+        <img src="./images/background/main-background.webp" alt="background">
+    </div>
+
+    <div class="spacer">
+    
+    </div>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position: absolute; overflow: hidden;">
+        <defs>
+            <filter
+            id="liquid-glass-filter"
+            x="0%"
+            y="0%"
+            width="100%"
+            height="100%"
+            >
+            <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0.006 0.006"
+                numOctaves="2"
+                seed="92"
+                result="noise"
+            />
+            <feGaussianBlur in="noise" stdDeviation="2" result="blurred" />
+            <feDisplacementMap
+                in="SourceGraphic"
+                in2="blurred"
+                scale="32"
+                xChannelSelector="R"
+                yChannelSelector="G"
+            />
+            </filter>
+        </defs>
+    </svg>
+    
+    <header class="header" id="header">
         <div class="content">
-            <div class="header__logo">
-                <img src="./images/Frame.svg" alt="">
+            <div class="header--glass ">
+                <div class="header__logo">
+                    <img src="./images/Frame.svg" alt="">
+                </div>
+                <nav>
+                    <ul class="header__nav">
+                        <li class="header__nav__element header__nav__element--active">
+                            <a href="">
+                                <p>Главная</p>
+                            </a>
+                        </li>
+                        <li class="header__nav__element">
+                            <a href="">
+                                <p>Услуги</p>
+                            </a>
+                        </li>
+                        <li class="header__nav__element">
+                            <a href="">
+                                <p>Кейсы</p>
+                            </a>
+                        </li>
+                        <li class="header__nav__element">
+                            <a href="">
+                                <p>О нас</p>
+                            </a>
+                        </li>
+                        <li class="header__nav__element">
+                            <a href="">
+                                <p>Блог</p>
+                            </a>
+                        </li>
+                        <li class="header__nav__element">
+                            <a href="">
+                                <p>Контакты</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="button button--blue button--icon button--icon--arrow width-280 header__button">
+                    <p>Обсудить проект</p>
+                </button>
             </div>
-            <nav>
-                <ul class="header__nav">
-                    <li class="header__nav__element">
-                        <a href="">
-                            <p>Главная</p>
-                        </a>
-                    </li>
-                    <li class="header__nav__element">
-                        <a href="">
-                            <p>Услуги</p>
-                        </a>
-                    </li>
-                    <li class="header__nav__element">
-                        <a href="">
-                            <p>Кейсы</p>
-                        </a>
-                    </li>
-                    <li class="header__nav__element">
-                        <a href="">
-                            <p>О нас</p>
-                        </a>
-                    </li>
-                    <li class="header__nav__element">
-                        <a href="">
-                            <p>Блог</p>
-                        </a>
-                    </li>
-                    <li class="header__nav__element">
-                        <a href="">
-                            <p>Контакты</p>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <button class="header__button">
-                <p>Обсудить проект</p>
-            </button>
+            
         </div>
     </header>
+    
+    <div class="spacer--under">
+        
+    </div>
 
     <main class="main">
+
+        
+        <section class="hero hero--main">
+            <div class="content">
+                <div class="hero__basis hero--main__basis">
+                    <div class="hero__text hero--main__text">
+                        <h1 class="hero__title">Разработка IT-решений <br> для вашего бизнеса</h1>
+                        <p class="hero__description">Повышаем эффективность и конкурентноспособность вашей компании через <br> инновационные технологии</p>
+                    </div>
+                    <div class="hero__b-layer hero--main__b-layer">
+                        <button class="button button--white button--icon button--icon--arrow width-280">
+                            <p>Начать проект</p>
+                        </button>
+                        <button class="button button--white width-240">
+                            <p>Наши кейсы</p>
+                        </button>
+                    </div>
+                </div>
+                <ol class="hero__describe hero--main__describe">
+                    <li class="hero--main__describe__el">
+                        <div class="number"></div>
+                        <div class="hero--main__describe__el__text">
+                            <div class="line"></div>
+                            <p>Быстрый запуск проекта</p>
+                        </div>
+                        
+                    </li>
+                    <li class="hero--main__describe__el">
+                        <div class="number"></div>
+                        <div class="hero--main__describe__el__text">
+                            <div class="line"></div>
+                            <p>Оперативная поддержка</p>
+                        </div>
+                        
+                    </li>
+                    <li class="hero--main__describe__el">
+                        <div class="number"></div>
+                        <div class="hero--main__describe__el__text">
+                            <div class="line"></div>
+                            <p>Гарантия качества проекта</p>
+                        </div>
+                        
+                    </li>
+                    <li class="hero--main__describe__el">
+                        <div class="number"></div>
+                        <div class="hero--main__describe__el__text">
+                            <div class="line"></div>
+                            <p>Индивидуальный подход</p>
+                        </div>
+                        
+                    </li>
+                </ol>
+            </div>
+        </section>
+        
 
         <section id="faq">
             <div class="content">
@@ -169,7 +267,7 @@
                 <div class="servicesL__layer">
                     <a>
                         <article class="card-large img-box white-style">
-                            <img class="background" src="./images/test1.webp" alt="">
+                            <img class="background" src="./images/cards/test1.webp" alt="">
                             <div class="card-large__content">
                                 <div class="card-large__text">
                                     <h3 class="card-large__title">
@@ -181,11 +279,20 @@
                                 </div>
                             
                                 <div class="card-large__tags">
-                                    <div class="card-tag">PWA</div>
-                                    <div class="card-tag">IOS</div>
-                                    <div class="card-tag">Anfroid</div>
-                                    <div class="tag-break"></div>
-                                    <div class="card-tag">Cross-platform</div>
+                                    <div class="card-tag">
+                                        <p>PWA</p>
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>IOS</p>
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>Android</p>
+                                    </div>
+                                    <div class="tag-break">
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>Cross-platform</p>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -193,7 +300,7 @@
         
                     <a>
                         <article class="card-large img-box white-style">
-                            <img class="background" src="./images/test1.webp" alt="">
+                            <img class="background" src="./images/cards/test1.webp" alt="">
                             <div class="card-large__content">
                                 <div class="card-large__text">
                                     <h3 class="card-large__title">
@@ -205,11 +312,20 @@
                                 </div>
                             
                                 <div class="card-large__tags">
-                                    <div class="card-tag">PWA</div>
-                                    <div class="card-tag">IOS</div>
-                                    <div class="card-tag">Anfroid</div>
-                                    <div class="tag-break"></div>
-                                    <div class="card-tag">Cross-platform</div>
+                                    <div class="card-tag">
+                                        <p>PWA</p>
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>IOS</p>
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>Android</p>
+                                    </div>
+                                    <div class="tag-break">
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>Cross-platform</p>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -217,7 +333,7 @@
         
                     <a>
                         <article class="card-large img-box white-style">
-                            <img class="background" src="./images/test1.webp" alt="">
+                            <img class="background" src="./images/cards/test1.webp" alt="">
                             <div class="card-large__content">
                                 <div class="card-large__text">
                                     <h3 class="card-large__title">
@@ -229,11 +345,20 @@
                                 </div>
                             
                                 <div class="card-large__tags">
-                                    <div class="card-tag">PWA</div>
-                                    <div class="card-tag">IOS</div>
-                                    <div class="card-tag">Anfroid</div>
-                                    <div class="tag-break"></div>
-                                    <div class="card-tag">Cross-platform</div>
+                                    <div class="card-tag">
+                                        <p>PWA</p>
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>IOS</p>
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>Android</p>
+                                    </div>
+                                    <div class="tag-break">
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>Cross-platform</p>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -241,7 +366,7 @@
         
                     <a>
                         <article class="card-large img-box white-style">
-                            <img class="background" src="./images/test1.webp" alt="">
+                            <img class="background" src="./images/cards/test1.webp" alt="">
                             <div class="card-large__content">
                                 <div class="card-large__text">
                                     <h3 class="card-large__title">
@@ -253,11 +378,20 @@
                                 </div>
                             
                                 <div class="card-large__tags">
-                                    <div class="card-tag">PWA</div>
-                                    <div class="card-tag">IOS</div>
-                                    <div class="card-tag">Anfroid</div>
-                                    <div class="tag-break"></div>
-                                    <div class="card-tag">Cross-platform</div>
+                                    <div class="card-tag">
+                                        <p>PWA</p>
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>IOS</p>
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>Android</p>
+                                    </div>
+                                    <div class="tag-break">
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>Cross-platform</p>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -267,13 +401,36 @@
         </section>
 
     </main>
-        <footer>
-            <p>Конец!</p>
-        </footer>
+
+    <footer>
+        <p>Конец!</p>
+    </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        (function() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isChromium = userAgent.includes('chrome') || userAgent.includes('edg') || userAgent.includes('opr') || userAgent.includes('opera');
+            
+            if (!isChromium) {
+                document.documentElement.classList.add('no-liquid-glass-support');
+                const elements = document.querySelectorAll('.header--glass');
+                elements.forEach(el => {
+                    el.classList.add('liquid-glass-fallback');
+                });
+            }
+            else{
+                const elements = document.querySelectorAll('.header--glass');
+                elements.forEach(el => {
+                    el.classList.add('liquid-glass-apply');
+                });
+            }
+        })();
+    </script>
 </body>
 </html>
+
+
