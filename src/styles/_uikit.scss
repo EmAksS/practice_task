@@ -28,7 +28,11 @@
     line-height: 100%;
     letter-spacing: 0%;
 
-    transition: $button-anim-time;
+    transition: color $button-anim-time,
+                background-color $button-anim-time,
+                filter $button-anim-time,
+                border-color $button-anim-time,
+                box-shadow $button-anim-time;
 
     cursor: pointer;
 
@@ -156,7 +160,8 @@
 
             @include makeIconBackground();
 
-            transition: $button-anim-time;
+            transition: transform $button-anim-time,
+                        color $button-anim-time;
         }
 
         &--arrow{
@@ -224,7 +229,8 @@
 
     cursor: pointer;
 
-    transition: $button-anim-time;
+    transition: background-color $button-anim-time,
+                border-color $button-anim-time;
 
     &:hover{
         background: #FFFFFF26;

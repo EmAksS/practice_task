@@ -153,109 +153,236 @@
             </div>
         </section>
         
+        <section id="main-video" class="main-video">
+            <div class="main-video__container">
+                <iframe 
+                    src="https://player.vimeo.com/video/412097464?badge=1&amp;autopause=0&amp;title=0&amp;portrait=0&amp;byline=0&amp;player_id=0&amp;app_id=58479"
+                    allow="autoplay; fullscreen; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
 
-        <section id="faq">
+        <section id="about-us" class="about-us">
             <div class="content">
                 <div class="title">
-                    <div class="title__tag">FAQ</div>
-                    <h2>Часто задаваемые вопросы</h2>
+                    <div class="title__tag">about us</div>
+                    <h2>О нас</h2>
                 </div>
-                <ul class="faq__accordeon accordeon">
-                    <li>
-                        <details class="accordeon__element">
-                            <summary>
-                                <p class="accordeon__element__title">Что такое LazyDev?</p>
-                                <div class="accordeon__element__arrow arrow">
-                                    <img src="./images/arrow.svg" alt="">
+                <div class="about-us__layer">
+                    <img class="about-us__image" src="./images/about-us-image.png" alt="Lazy Dev logo on a black-blue-white linear gradient">
+                    <div>
+                        <p class="about-us__text">
+                            Lazy Dev — креативная IT-студия, специализирующаяся на разработке современных digital-продуктов: сайтов, мобильных 
+                            и web-приложений, Telegram-ботов и IT-решений под ключ.<br><br>
+        
+                            Мы работаем с бизнесом, стартапами и экспертами, помогая превращать идеи в работающие инструменты, которые приносят результат.<br><br>
+        
+                            Наша миссия — создавать понятные, эстетичные и эффективные цифровые продукты, которые усиливают бизнес и упрощают взаимодействие с пользователями.
+                        </p>
+                        <div class="about-us__buttons-container">
+                            <a class="button button--blue width-280">
+                                <p>Подробнее</p>
+                            </a>
+                            <a class="button button--black button--icon button--icon--black button--icon--arrow width-280">
+                                <p>Обсудить проект</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicesS" class="servicesS">
+            <div class="content">
+                <div class="title">
+                    <div class="title__tag">services</div>
+                    <h2>Услуги студии</h2>
+                </div>
+                <div class="servicesS__layer">
+                    <article class="card-small">
+                        <a class="round-button"></a>
+                        <div class="card-small__image-container">
+                            <img class="card-small__image" src="./images/small-card-image.png" alt="">
+                            <img class="card-small__shadow" src="./images/small-card-image-shadow.png">
+                        </div>
+                        <div class="card-small__text">
+                            <h3>Разработка сайтов</h3>
+                            <p>Создаём сайты, которые работают на Ваш бизнес</p>
+                        </div>
+                    </article>
+                    <article class="card-small">
+                        <a class="round-button"></a>
+                        <div class="card-small__image-container">
+                            <img class="card-small__image" src="./images/small-card-image.png" alt="">
+                            <img class="card-small__shadow" src="./images/small-card-image-shadow.png">
+                        </div>
+                        <div class="card-small__text">
+                            <h3>Разработка приложений</h3>
+                            <p>Создаём сайты, которые работают на Ваш бизнес</p>
+                        </div>
+                    </article>
+                    <article class="card-small">
+                        <a class="round-button"></a>
+                        <div class="card-small__image-container">
+                            <img class="card-small__image" src="./images/small-card-image.png" alt="">
+                            <img class="card-small__shadow" src="./images/small-card-image-shadow.png">
+                        </div>
+                        <div class="card-small__text">
+                            <h3>UX | UI Дизайн</h3>
+                            <p>Создаём сайты, которые работают на Ваш бизнес</p>
+                        </div>
+                    </article>
+                    <article class="card-small card-small--placeholder">
+                        <a class="lazy-button"></a>
+                        <div class="card-small__text">
+                            <h3>Все услуги студии</h3>
+                            <p>Создаём сайты, которые работают на Ваш бизнес<br>Создаём сайты, которые работают на Ваш бизнес</p>
+                        </div>
+                        <button class="button button--black button--icon button--icon--arrow width-375 services-button">Подробнее</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects-slider" class="projects-slider">
+            <div class="content">
+                <div class="title">
+                    <div class="title__tag">cases</div>
+                    <h2>Наши проекты</h2>
+                </div>
+                <div class="slider-container">
+                <div class="swiper" id="projects-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card-content">
+                                <div class="card-content-left">
+                                    <h3>Ultimate Store</h3>
+                                    <p>
+                                        Знакомься: это брат, брат это тоже брат, брат<br>
+                                        Кандидаты в мастера и мастера пера, брат<br>
+                                        Новые бампера висят на старых номерах, брат<br>
+                                        Нас держит любовь и то, что мы зовём «уклад», брат, вот так-то
+                                    </p>
+                                    <div class="slider-tags">
+                                        <div class="card-tag">Web-приложение</div>
+                                        <div class="card-tag">UX / UI</div>
+                                        <div class="card-tag">PWA</div>
+                                        <div class="card-tag">Разработка дизайна</div>
+                                        <div class="card-tag">Brandbook</div>
+                                        <div class="card-tag">Сайт</div>
+                                    </div>
+                                    <div class="slider-buttons">
+                                        <button class="button button--black button--icon button--icon--arrow width-280">Смотреть все</button>
+                                        <button class="button button--blue width-280">Подробнее</button>
+                                    </div>
                                 </div>
-                            </summary>
-                            <div class="accordeon__element__content">
-                                <p>Lorem ipsum dolor sit amet.</p>
-                                <p>Lorem ipsum dolor sit amet.</p>
-                                <p>Lorem ipsum dolor sit amet.</p>
+                                <img src="./images/ultimate-store.png" alt="">
                             </div>
-                        </details>
-                    </li>
-                    <li>
-                        <details class="accordeon__element">
-                            <summary>
-                                <p class="accordeon__element__title">Что такое LazyDev?</p>
-                                <div class="accordeon__element__arrow arrow">
-                                    <img src="./images/arrow.svg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card-content">
+                                <div class="card-content-left">
+                                    <h3>Awesome Project</h3>
+                                    <p>
+                                        Wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow
+                                         wow wow wow wow wow wow wow wow wow wow wow wow
+                                    </p>
+                                    <div class="slider-tags">
+                                        <div class="card-tag">Web-приложение</div>
+                                        <div class="card-tag">Telegram бот</div>
+                                        <div class="card-tag">Brandbook</div>
+                                        <div class="card-tag">Сайт</div>
+                                    </div>
+                                    <div class="slider-buttons">
+                                        <button class="button button--black button--icon button--icon--arrow width-280">Смотреть все</button>
+                                        <button class="button button--blue width-280">Подробнее</button>
+                                    </div>
                                 </div>
-                            </summary>
-                            <div class="accordeon__element__content">
-                                <p></p>
+                                <img src="./images/projects-slider-mockup-image-2.webp" alt="">
                             </div>
-                        </details>
-                    </li>
-                    <li>
-                        <details class="accordeon__element">
-                            <summary>
-                                <p class="accordeon__element__title">Что такое LazyDev?</p>
-                                <div class="accordeon__element__arrow arrow">
-                                    <img src="./images/arrow.svg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card-content">
+                                <div class="card-content-left">
+                                    <h3>No Image Example</h3>
+                                    <p>
+                                        Wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow
+                                         wow wow wow wow wow wow wow wow wow wow wow wow
+                                    </p>
+                                    <div class="slider-tags">
+                                        <div class="card-tag">Web-приложение</div>
+                                        <div class="card-tag">Telegram бот</div>
+                                        <div class="card-tag">Brandbook</div>
+                                        <div class="card-tag">Сайт</div>
+                                    </div>
+                                    <div class="slider-buttons">
+                                        <button class="button button--black button--icon button--icon--arrow width-280">Смотреть все</button>
+                                        <button class="button button--blue width-280">Подробнее</button>
+                                    </div>
                                 </div>
-                            </summary>
-                            <div class="accordeon__element__content">
-                                <p></p>
                             </div>
-                        </details>
-                    </li>
-                    <li>
-                        <details class="accordeon__element">
-                            <summary>
-                                <p class="accordeon__element__title">Что такое LazyDev?</p>
-                                <div class="accordeon__element__arrow arrow">
-                                    <img src="./images/arrow.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <div class="custom-pagination" id="pagination-1"></div>
+                    <div class="navigation-buttons">
+                        <button class="slider-button prev-1"></button>
+                        <button class="slider-button next-1"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="small-form" class="small-form">
+            <div class="small-form__layer">
+                <h2 class="small-form__title">Хотите IT-решение, которое работает на бизнес?</h2>
+                <p class="small-form__description">Оставьте заявку и получите бесплатную консультацию от Lazy Dev — подскажем оптимальное решение для вашего бизнеса</p>
+                <form>
+                        <div class="small-form__upper-container">
+                            <div class="text-field text-field--white">
+                                <div class="text-field__container">
+                                    <input class="text-field__input" placeholder=" "></input>
+                                    <fieldset aria-hidden="true" class="text-field__fieldset">
+                                        <legend class="text-field__legend">
+                                            <span>Как к Вам обращаться ?</span>
+                                        </legend>
+                                    </fieldset>
                                 </div>
-                            </summary>
-                            <div class="accordeon__element__content">
-                                <p></p>
                             </div>
-                        </details>
-                    </li>
-                    <li>
-                        <details class="accordeon__element">
-                            <summary>
-                                <p class="accordeon__element__title">Что такое LazyDev?</p>
-                                <div class="accordeon__element__arrow arrow">
-                                    <img src="./images/arrow.svg" alt="">
+                            <div class="text-field text-field--white">
+                                <div class="text-field__container">
+                                    <input class="text-field__input phone-input" placeholder=" "></input>
+                                    <fieldset aria-hidden="true" class="text-field__fieldset">
+                                        <legend class="text-field__legend">
+                                            <span>Телефон</span>
+                                        </legend>
+                                    </fieldset>
                                 </div>
-                            </summary>
-                            <div class="accordeon__element__content">
-                                <p></p>
                             </div>
-                        </details>
-                    </li>
-                    <li>
-                        <details class="accordeon__element">
-                            <summary>
-                                <p class="accordeon__element__title">Что такое LazyDev?</p>
-                                <div class="accordeon__element__arrow arrow">
-                                    <img src="./images/arrow.svg" alt="">
-                                </div>
-                            </summary>
-                            <div class="accordeon__element__content">
-                                <p></p>
-                            </div>
-                        </details>
-                    </li>
-                    <li>
-                        <details class="accordeon__element">
-                            <summary>
-                                <p class="accordeon__element__title">Что такое LazyDev?</p>
-                                <div class="accordeon__element__arrow arrow">
-                                    <img src="./images/arrow.svg" alt="">
-                                </div>
-                            </summary>
-                            <div class="accordeon__element__content">
-                                <p></p>
-                            </div>
-                        </details>
-                    </li>
-                </ul>
-            </div>  
+                        </div>
+                    <div class="small-form__down-container">
+                        <div class="small-form__checkbox-container">
+                            <label class="checkbox checkbox--white">
+                                <input type="checkbox" class="checkbox__input">
+                                <svg class="checkbox__check" viewBox="0 0 128 128" width="26" height="26">
+                                    <polyline points="106 32 48 91 22 64"></polyline>
+                                </svg>
+                                <p class="checkbox__label">Я принимаю условия <a href="">обработки персональных данных</a></p>
+                            </label>
+                            <label class="checkbox checkbox--white">
+                                <input type="checkbox" class="checkbox__input">
+                                <svg class="checkbox__check" viewBox="0 0 128 128" width="26" height="26">
+                                    <polyline points="106 32 48 91 22 64"></polyline>
+                                </svg>
+                                <p class="checkbox__label">Я принимаю условия <a href="">обработки персональных данных</a></p>
+                            </label>
+                        </div>
+                        <button class="button button--white button--icon button--icon--arrow width-380 small-form__button">Получить консультацию</button>
+                    </div>
+                </form>
+            </div>
         </section>
 
         <section id="servicesL" class="servicesL">
@@ -400,15 +527,332 @@
             </div>
         </section>
 
+        <section id="faq">
+            <div class="content">
+                <div class="title">
+                    <div class="title__tag">FAQ</div>
+                    <h2>Часто задаваемые вопросы</h2>
+                </div>
+                <ul class="faq__accordeon accordeon">
+                    <li>
+                        <details class="accordeon__element">
+                            <summary>
+                                <p class="accordeon__element__title">Что такое LazyDev?</p>
+                                <div class="accordeon__element__arrow arrow">
+                                    <img src="./images/arrow.svg" alt="">
+                                </div>
+                            </summary>
+                            <div class="accordeon__element__content">
+                                <p>Lorem ipsum dolor sit amet.</p>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="accordeon__element">
+                            <summary>
+                                <p class="accordeon__element__title">Что такое LazyDev?</p>
+                                <div class="accordeon__element__arrow arrow">
+                                    <img src="./images/arrow.svg" alt="">
+                                </div>
+                            </summary>
+                            <div class="accordeon__element__content">
+                                <p></p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="accordeon__element">
+                            <summary>
+                                <p class="accordeon__element__title">Что такое LazyDev?</p>
+                                <div class="accordeon__element__arrow arrow">
+                                    <img src="./images/arrow.svg" alt="">
+                                </div>
+                            </summary>
+                            <div class="accordeon__element__content">
+                                <p></p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="accordeon__element">
+                            <summary>
+                                <p class="accordeon__element__title">Что такое LazyDev?</p>
+                                <div class="accordeon__element__arrow arrow">
+                                    <img src="./images/arrow.svg" alt="">
+                                </div>
+                            </summary>
+                            <div class="accordeon__element__content">
+                                <p></p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="accordeon__element">
+                            <summary>
+                                <p class="accordeon__element__title">Что такое LazyDev?</p>
+                                <div class="accordeon__element__arrow arrow">
+                                    <img src="./images/arrow.svg" alt="">
+                                </div>
+                            </summary>
+                            <div class="accordeon__element__content">
+                                <p></p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="accordeon__element">
+                            <summary>
+                                <p class="accordeon__element__title">Что такое LazyDev?</p>
+                                <div class="accordeon__element__arrow arrow">
+                                    <img src="./images/arrow.svg" alt="">
+                                </div>
+                            </summary>
+                            <div class="accordeon__element__content">
+                                <p></p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="accordeon__element">
+                            <summary>
+                                <p class="accordeon__element__title">Что такое LazyDev?</p>
+                                <div class="accordeon__element__arrow arrow">
+                                    <img src="./images/arrow.svg" alt="">
+                                </div>
+                            </summary>
+                            <div class="accordeon__element__content">
+                                <p></p>
+                            </div>
+                        </details>
+                    </li>
+                </ul>
+            </div>  
+        </section>
+
+        <section id="big-form" class="big-form">
+            <div class="content">
+                <div class="title">
+                    <h2>Расскажите нам свою идею !</h2>
+                </div>
+                <form>
+                    <div class="big-form__radio-container">
+                        <div class="radio-group">
+                            <h2>Какой проект вам нужен?</h2>
+                            <div class="radio-options">
+                                <input type="radio" id="web-app" name="project" value="web-app" checked>
+                                <label for="web-app">Web - приложение</label>
+        
+                                <input type="radio" id="landing" name="project" value="landing">
+                                <label for="landing">Лендинг</label>
+        
+                                <input type="radio" id="online-store" name="project" value="online-store">
+                                <label for="online-store">Интернет - магазин</label>
+        
+                                <input type="radio" id="telegram-bot-1" name="project" value="telegram-bot-1">
+                                <label for="telegram-bot-1">Telegram - бот</label>
+        
+                                <input type="radio" id="telegram-mini" name="project" value="telegram-mini">
+                                <label for="telegram-mini">Telegram - mini app</label>
+        
+                                <input type="radio" id="ios-app" name="project" value="ios-app">
+                                <label for="ios-app">IOS приложение</label>
+                            </div>
+                        </div>
+                        <div class="radio-group">
+                            <h2>Бюджет проекта</h2>
+                            <div class="radio-options">
+                                <input type="radio" id="50-100" name="budget" value="50-100" checked>
+                                <label for="50-100">50 - 100 тыс. ₽</label>
+        
+                                <input type="radio" id="100-200" name="budget" value="100-200">
+                                <label for="100-200">100 - 200 тыс. ₽</label>
+        
+                                <input type="radio" id="200-500" name="budget" value="200-500">
+                                <label for="200-500">200 - 500 тыс. ₽</label>
+        
+                                <input type="radio" id="more_than_500" name="budget" value="more_than_500">
+                                <label for="more_than_500">> 500 тыс. ₽</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="big-form__right-container">
+                        <div class="big-form__input-container">
+                            <div class="text-field text-field--black">
+                                <div class="text-field__container">
+                                    <input class="text-field__input" placeholder=" "></input>
+                                    <fieldset aria-hidden="true" class="text-field__fieldset">
+                                        <legend class="text-field__legend">
+                                            <span>Как к Вам обращаться ?</span>
+                                        </legend>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="text-field text-field--black">
+                                <div class="text-field__container">
+                                    <input class="text-field__input phone-input" placeholder=" "></input>
+                                    <fieldset aria-hidden="true" class="text-field__fieldset">
+                                        <legend class="text-field__legend">
+                                            <span>Телефон</span>
+                                        </legend>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="text-field text-field--black">
+                                <div class="text-field__container">
+                                    <textarea class="text-field__input text-field__textarea" placeholder=" "></textarea>
+                                    <fieldset aria-hidden="true" class="text-field__fieldset">
+                                        <legend class="text-field__legend">
+                                            <span>Расскажите о своём проекте ...</span>
+                                        </legend>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="big-form__checkbox-container">
+                            <label class="checkbox checkbox--black">
+                                <input type="checkbox" class="checkbox__input">
+                                <svg class="checkbox__check" viewBox="0 0 128 128" width="26" height="26">
+                                    <polyline points="106 32 48 91 22 64"></polyline>
+                                </svg>
+                                <p class="checkbox__label">Я принимаю условия <a href="">обработки персональных данных</a></p>
+                            </label>
+                            <label class="checkbox checkbox--black">
+                                <input type="checkbox" class="checkbox__input">
+                                <svg class="checkbox__check" viewBox="0 0 128 128" width="26" height="26">
+                                    <polyline points="106 32 48 91 22 64"></polyline>
+                                </svg>
+                                <p class="checkbox__label">Я принимаю условия <a href="">обработки персональных данных</a></p>
+                            </label>
+                        </div>
+                        <button class="button button--black button--icon button--icon--black button--icon--arrow width-full">Отправить</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        
+
     </main>
 
     <footer>
-        <p>Конец!</p>
+        <div class="footer-container">
+            <img src="./images/ellipse-1.svg" class="ellipse" alt="">
+            <img src="./images/ellipse-2.svg" class="ellipse" alt="">
+            <img src="./images/ellipse-3.svg" class="ellipse" alt="">
+            <img src="./images/big-logo.svg" class="big-logo" alt="">
+            <div class="blur-rect">
+                <a href="">
+                    <p>Политика конфиденциальности</p>
+                </a>
+            </div>
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="lazy-dev-logo">
+                        <img src="./images/lazy-dev-logo.svg" alt="">
+                        <img src="./images/lazy-dev-title.svg" alt="">
+                    </div>
+                    <p>© ООО «ЛЭЙЗИ ДЭВ»</p>
+                    <p>ИНН 2101111111</p>
+                    <p>ОГРН 1221100011111</p>
+                </div>
+                <div class="footer-info">
+                    <nav>
+                        <div>
+                            <h4>Главная</h4>
+                            <ul>
+                                <li>
+                                    <a href="">
+                                        <p>О компании</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <p>Кейсы</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <p>Контакты</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <p>Блог</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="footer-services">
+                        <h4>Услуги</h4>
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <p>Разработка сайта</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>Веб-приложения</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>Телеграм боты</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>SEO-продвижение</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <address>
+                        <div>
+                            <h4>Контакты</h4>
+                            <ul>
+                                <li>
+                                    <p>+7 (978) 777-77-77</p>
+                                </li>
+                                <li>
+                                    <p>info@itslazydev.ru</p>
+                                </li>
+                            </ul>
+                            <ul class="social-media">
+                                <li>
+                                    <a href="" class="social-net-link social-net-link--dribble">
+                                        <img src="./images/icons/dribble.svg" alt="Dribble Logo">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" class="social-net-link social-net-link--behance">
+                                        <img src="./images/icons/behance.svg" alt="Behance Logo">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" class="social-net-link social-net-link--telegram">
+                                        <img src="./images/icons/telegram.svg" alt="Telegram Logo">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" class="social-net-link social-net-link--vk">
+                                        <img src="./images/icons/vk.svg" alt="VK Logo">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </address>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
     <script src="js/script.js"></script>
     <script>
         (function() {
