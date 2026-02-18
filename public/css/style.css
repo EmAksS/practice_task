@@ -1417,8 +1417,28 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   gap: clamp(50px * var(--coefficient), 50 * 100vw / var(--design-width) * var(--mobile-coefficient), 50px * var(--mobile-coefficient));
   flex-direction: column;
-  -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
-  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  overflow: visible;
+  position: relative;
+}
+
+.sliding::before,
+.sliding::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: clamp(440px * var(--coefficient), 440 * 100vw / var(--design-width) * var(--mobile-coefficient), 440px * var(--mobile-coefficient));
+  height: 100%;
+  z-index: 5;
+}
+
+.sliding:before {
+  left: 0;
+  background: linear-gradient(to right, #F4F4F4, transparent);
+}
+
+.sliding::after {
+  right: 0;
+  background: linear-gradient(to left, #F4F4F4, transparent);
 }
 
 .sliding__layer {
@@ -1450,15 +1470,28 @@ body::-webkit-scrollbar-thumb {
   display: -webkit-flex;
   display: flex;
   gap: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient));
+  overflow: visible;
 }
 
 .sliding__element {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: clamp(60px * var(--coefficient), 60 * 100vw / var(--design-width) * var(--mobile-coefficient), 60px * var(--mobile-coefficient));
   width: clamp(280px * var(--coefficient), 280 * 100vw / var(--design-width) * var(--mobile-coefficient), 280px * var(--mobile-coefficient));
+  padding: clamp(5px * var(--coefficient), 5 * 100vw / var(--design-width) * var(--mobile-coefficient), 5px * var(--mobile-coefficient)) clamp(5px * var(--coefficient), 5 * 100vw / var(--design-width) * var(--mobile-coefficient), 5px * var(--mobile-coefficient)) clamp(5px * var(--coefficient), 5 * 100vw / var(--design-width) * var(--mobile-coefficient), 5px * var(--mobile-coefficient)) clamp(5px * var(--coefficient), 5 * 100vw / var(--design-width) * var(--mobile-coefficient), 5px * var(--mobile-coefficient));
   border-radius: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
   box-shadow: clamp(3px * var(--coefficient), 3 * 100vw / var(--design-width) * var(--mobile-coefficient), 3px * var(--mobile-coefficient)) clamp(4px * var(--coefficient), 4 * 100vw / var(--design-width) * var(--mobile-coefficient), 4px * var(--mobile-coefficient)) clamp(8px * var(--coefficient), 8 * 100vw / var(--design-width) * var(--mobile-coefficient), 8px * var(--mobile-coefficient)) 0px rgba(0, 0, 0, 0.1019607843);
   flex-shrink: 0;
   background-color: #FFFFFF;
+}
+
+.sliding__element > * {
+  width: clamp(174px * var(--coefficient), 174 * 100vw / var(--design-width) * var(--mobile-coefficient), 174px * var(--mobile-coefficient));
 }
 
 .gap-60 {

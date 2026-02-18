@@ -141,8 +141,33 @@
     @include gap(50);
     flex-direction: column;
 
-    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
-    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    overflow: visible;
+
+   
+    position: relative;
+
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+
+        @include width(440);
+        height: 100%;
+
+        z-index: 5;
+    }
+
+    &:before {
+        left: 0;
+        background: linear-gradient(to right, #F4F4F4, transparent);
+    }
+
+    &::after {
+        right: 0;
+        background: linear-gradient(to left, #F4F4F4, transparent);
+    }
 
     &__layer{
         @include flexbox();
@@ -171,11 +196,18 @@
     &__group{
         @include flexbox();
         @include gap(20);
+
+        overflow: visible;
     }
 
     &__element{
+        @include flexbox();
+        align-items: center;
+        justify-content: center;
+
         @include height(60);
         @include width(280);
+        @include padding(5, 5, 5, 5);
 
         @include borderRadius(16);
 
@@ -184,6 +216,11 @@
         flex-shrink: 0;
 
         background-color: $white;
+
+        > *{
+            @include width(174);
+        }
+
     }
 }
 
