@@ -63,7 +63,7 @@ footer{
         height: 100%;
     }
 
-    p{
+    p, a{
         font-family: 'Inter';
         font-weight: 300;
         @include fontSize(22);
