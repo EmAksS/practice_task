@@ -1326,6 +1326,26 @@ body::-webkit-scrollbar-thumb {
   color: #FFFFFF;
 }
 
+.hero--linked .content {
+  gap: clamp(135px * var(--coefficient), 135 * 100vw / var(--design-width) * var(--mobile-coefficient), 135px * var(--mobile-coefficient));
+}
+
+.hero__link {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  gap: clamp(5px * var(--coefficient), 5 * 100vw / var(--design-width) * var(--mobile-coefficient), 5px * var(--mobile-coefficient));
+  font-size: clamp(22px * var(--coefficient), 22 * 100vw / var(--design-width) * var(--mobile-coefficient), 22px * var(--mobile-coefficient));
+  font-weight: 400;
+  font-family: Manrope, sans-serif;
+}
+
+.hero__link > *:not(:first-child) {
+  opacity: 0.7;
+}
+
 .hero__basis {
   display: -webkit-box;
   display: -moz-box;
@@ -1378,7 +1398,16 @@ body::-webkit-scrollbar-thumb {
   gap: clamp(80px * var(--coefficient), 80 * 100vw / var(--design-width) * var(--mobile-coefficient), 80px * var(--mobile-coefficient));
 }
 
+.hero + section {
+  padding-top: clamp(250px * var(--coefficient), 250 * 100vw / var(--design-width) * var(--mobile-coefficient), 250px * var(--mobile-coefficient));
+}
+
 .bg-hero {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
   width: 100%;
   position: absolute;
   z-index: -5;
@@ -1389,6 +1418,10 @@ body::-webkit-scrollbar-thumb {
 
 .bg-hero > img {
   width: 100%;
+}
+
+.bg-hero--linked {
+  border-radius: clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(60px * var(--coefficient), 60 * 100vw / var(--design-width) * var(--mobile-coefficient), 60px * var(--mobile-coefficient)) clamp(60px * var(--coefficient), 60 * 100vw / var(--design-width) * var(--mobile-coefficient), 60px * var(--mobile-coefficient));
 }
 
 .naming {
@@ -2052,6 +2085,21 @@ footer {
   height: clamp(1200px * var(--coefficient), 1200 * 100vw / var(--design-width) * var(--mobile-coefficient), 1200px * var(--mobile-coefficient));
 }
 
+.bg-hero--services {
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  background-color: #000000;
+  height: clamp(1068px * var(--coefficient), 1068 * 100vw / var(--design-width) * var(--mobile-coefficient), 1068px * var(--mobile-coefficient));
+}
+
+.bg-hero--services > img {
+  right: 0;
+  left: auto;
+  width: clamp(1104px * var(--coefficient), 1104 * 100vw / var(--design-width) * var(--mobile-coefficient), 1104px * var(--mobile-coefficient));
+  margin-top: clamp(540px * var(--coefficient), 540 * 100vw / var(--design-width) * var(--mobile-coefficient), 540px * var(--mobile-coefficient));
+}
+
 .hero--main {
   background-color: transparent;
 }
@@ -2136,12 +2184,19 @@ footer {
 }
 
 .hero--main + section {
-  padding-top: clamp(250px * var(--coefficient), 250 * 100vw / var(--design-width) * var(--mobile-coefficient), 250px * var(--mobile-coefficient));
   border-radius: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient)) clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient));
 }
 
 .spacer--under--main {
   height: clamp(214px * var(--coefficient), 214 * 100vw / var(--design-width) * var(--mobile-coefficient), 214px * var(--mobile-coefficient));
+}
+
+.hero--services {
+  border-radius: clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(60px * var(--coefficient), 60 * 100vw / var(--design-width) * var(--mobile-coefficient), 60px * var(--mobile-coefficient)) clamp(60px * var(--coefficient), 60 * 100vw / var(--design-width) * var(--mobile-coefficient), 60px * var(--mobile-coefficient));
+}
+
+.hero--services .content {
+  padding-bottom: clamp(356px * var(--coefficient), 356 * 100vw / var(--design-width) * var(--mobile-coefficient), 356px * var(--mobile-coefficient));
 }
 
 @media only screen and (max-width: 640px) {
