@@ -1,0 +1,78 @@
+$modal-bg: #00000033;
+$transition: 0.3s ease;
+
+.modal {
+  @include centerContent();
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  &.is-open {
+    display: flex;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: $modal-bg;
+    animation: fadeIn $transition;
+  }
+
+  &__window {
+    @include width(630);
+    @include height(616);
+    position: relative;
+    z-index: 1;
+    background: #242424;
+    // background: #24242480;
+    border-radius: adaptive(30);
+    @include padding(40, 40, 40, 40);
+    animation: slideUp $transition;
+    border: adaptive(1) solid #4E4E4EA8;
+    @include flexbox();
+    flex-direction: column;
+  }
+
+  &__close {
+    position: absolute;
+    @include fontSize(20);
+    cursor: pointer;
+    color: #6b7280;
+    line-height: 1;
+    color: $white;
+
+    &:hover {
+      color: #111;
+    }
+  }
+
+  &__title {
+    font-family: Manrope;
+    font-weight: 600;
+    @include fontSize(40);
+    @include lineHeight(50);
+    letter-spacing: 0%;
+    text-align: center;
+    color: $white;
+    @include margin(30, 0, 30, 0);
+  }
+
+  &__content{
+    flex: 1;
+
+    @include flexbox();
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(adaptive(30)); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
