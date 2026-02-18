@@ -68,26 +68,42 @@ $(document).ready(function(){
         })
     });
 
-    const swiper1 = new Swiper('#projects-swiper', {
+    const projectsSwiper = new Swiper('#projects-swiper', {
         loop: true,
         speed: 600,
         slidesPerView: 1,
         spaceBetween: 0,
 
         navigation: {
-            nextEl: '.next-1',
-            prevEl: '.prev-1',
+            nextEl: '#next-project',
+            prevEl: '#prev-project',
         },
 
         on: {
-            init: function () { createPagination1(this); },
-            slideChange: function () { updatePagination1(this); },
+            init: function () { createPagination(this, 'project-pagination'); },
+            slideChange: function () { updatePagination(this, 'project-pagination'); },
         }
     });
 
+    const videoSwiper = new Swiper('#video-swiper', {
+        loop: true,
+        speed: 600,
+        slidesPerView: 'auto',
+        spaceBetween: 25,
 
-    function createPagination1(swiperInstance) {
-        const $pagination = $('#pagination-1');
+        navigation: {
+            nextEl: '#next-video',
+            prevEl: '#prev-video',
+        },
+
+        on: {
+            init: function () { createPagination(this, 'video-pagination'); },
+            slideChange: function () { updatePagination(this, 'video-pagination'); },
+        }
+    });
+
+    function createPagination(swiperInstance, id) {
+        const $pagination = $(`#${id}`);
         const totalSlides = $(swiperInstance.el)
             .find('.swiper-slide:not(.swiper-slide-duplicate)')
             .length;
@@ -105,78 +121,11 @@ $(document).ready(function(){
         }
     }
 
-    function updatePagination1(swiperInstance) {
-        $('#pagination-1 .pagination-bullet')
+    function updatePagination(swiperInstance, id) {
+        $(`#${id} .pagination-bullet`)
             .removeClass('active')
             .eq(swiperInstance.realIndex)
             .addClass('active');
     }
 
-
-    // =====================
-    // Слайдер 2 — 3 слайда
-    // =====================
-
-    const swiper2 = new Swiper('#reviews-swiper', {
-        loop: false,
-        speed: 600,
-        slidesPerView: 3,
-        slidesPerGroup: 1,  // перематываем тройками
-        spaceBetween: 20,
-
-        watchOverflow: true,  // отключает навигацию если слайдов не хватает
-        rewind: false,        // отключает перемотку к началу с конца
-        normalizeSlideIndex: false, // отключает подтягивание слайдов
-        resistanceRatio: 0,
-
-        watchSlidesProgress: true,
-
-        breakpoints: {
-            0:    { slidesPerView: 1, slidesPerGroup: 1, spaceBetween: 10 },
-            768:  { slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 15 },
-            1024: { slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 20 },
-        },
-
-        navigation: {
-            nextEl: '.next-2',
-            prevEl: '.prev-2',
-        },
-
-        on: {
-            slideChange: function () { updatePagination2(this); },
-            breakpoint: function () { createPagination2(this); },
-        }
-    });
-
-    function createPagination2(swiperInstance) {
-        const $pagination = $('#pagination-2');
-        const totalSlides = $(swiperInstance.el).find('.swiper-slide').length;
-
-        const slidesPerGroup = swiperInstance.params.slidesPerGroup;
-        const groupsCount = Math.ceil(totalSlides / slidesPerGroup);
-
-        $pagination.empty();
-
-        for (let i = 0; i < groupsCount; i++) {
-            $('<div>')
-                .addClass('pagination-bullet')
-                .toggleClass('active', i === 0)
-                .on('click', function () {
-                    swiperInstance.slideTo(i * slidesPerGroup);
-                })
-                .appendTo($pagination);
-        }
-    }
-
-    function updatePagination2(swiperInstance) {
-        const slidesPerGroup = swiperInstance.params.slidesPerGroup;
-
-        // Определяем номер тройки
-        const activeGroup = Math.floor(swiperInstance.activeIndex / slidesPerGroup);
-
-        $('#pagination-2 .pagination-bullet')
-            .removeClass('active')
-            .eq(activeGroup)
-            .addClass('active');
-    }
 })
