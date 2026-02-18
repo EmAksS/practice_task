@@ -913,7 +913,7 @@
         @include borderRadius(30);
         box-shadow: adaptive(5) adaptive(4) adaptive(15) 0px #0000001A;
 
-        transition: 0.5s;
+        transition: height 0.5s;
 
         &:hover{
             .accordeon__element__arrow{

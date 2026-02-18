@@ -1,9 +1,9 @@
 // Подложка под header
 .spacer{
-    @include height(50);
+    @include height(37);
 
     &--under{
-        @include height(214);
+        @include height(97);
     }
 }
 

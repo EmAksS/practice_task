@@ -1,5 +1,25 @@
 @charset "UTF-8";
 
+@keyframes scrollLeft {
+  from {
+    transform: translate(0%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scrollRight {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
 /* Reset and base styles  */
 
 * {
@@ -173,7 +193,7 @@ section {
   background-color: #F4F4F4;
 }
 
-section:not(:first-child) {
+section:not(:first-of-type) {
   padding-bottom: clamp(250px * var(--coefficient), 250 * 100vw / var(--design-width) * var(--mobile-coefficient), 250px * var(--mobile-coefficient));
 }
 
@@ -1080,7 +1100,7 @@ body::-webkit-scrollbar-thumb {
   padding: clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient)) clamp(43px * var(--coefficient), 43 * 100vw / var(--design-width) * var(--mobile-coefficient), 43px * var(--mobile-coefficient)) clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient)) clamp(43px * var(--coefficient), 43 * 100vw / var(--design-width) * var(--mobile-coefficient), 43px * var(--mobile-coefficient));
   border-radius: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient));
   box-shadow: clamp(5px * var(--coefficient), 5 * 100vw / var(--design-width) * var(--mobile-coefficient), 5px * var(--mobile-coefficient)) clamp(4px * var(--coefficient), 4 * 100vw / var(--design-width) * var(--mobile-coefficient), 4px * var(--mobile-coefficient)) clamp(15px * var(--coefficient), 15 * 100vw / var(--design-width) * var(--mobile-coefficient), 15px * var(--mobile-coefficient)) 0px rgba(0, 0, 0, 0.1019607843);
-  transition: 0.5s;
+  transition: height 0.5s;
 }
 
 .accordeon__element:hover .accordeon__element__arrow {
@@ -1371,12 +1391,91 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
 }
 
+.naming {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  gap: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient));
+  flex-direction: column;
+  align-items: center;
+  font-family: Manrope, sans-serif;
+}
+
+.naming__desc {
+  font-size: clamp(22px * var(--coefficient), 22 * 100vw / var(--design-width) * var(--mobile-coefficient), 22px * var(--mobile-coefficient));
+  text-align: center;
+  opacity: 0.5;
+}
+
+.sliding {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  gap: clamp(50px * var(--coefficient), 50 * 100vw / var(--design-width) * var(--mobile-coefficient), 50px * var(--mobile-coefficient));
+  flex-direction: column;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+
+.sliding__layer {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  gap: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient));
+  overflow: visible;
+  will-change: transform;
+}
+
+.sliding__layer:first-of-type {
+  margin-left: clamp(120px * var(--coefficient), 120 * 100vw / var(--design-width) * var(--mobile-coefficient), 120px * var(--mobile-coefficient));
+  animation: scrollLeft 20s linear infinite;
+}
+
+.sliding__layer:last-of-type {
+  flex-direction: row-reverse;
+  margin-right: clamp(120px * var(--coefficient), 120 * 100vw / var(--design-width) * var(--mobile-coefficient), 120px * var(--mobile-coefficient));
+  animation: scrollRight 20s linear infinite;
+}
+
+.sliding__group {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  gap: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient));
+}
+
+.sliding__element {
+  height: clamp(60px * var(--coefficient), 60 * 100vw / var(--design-width) * var(--mobile-coefficient), 60px * var(--mobile-coefficient));
+  width: clamp(280px * var(--coefficient), 280 * 100vw / var(--design-width) * var(--mobile-coefficient), 280px * var(--mobile-coefficient));
+  border-radius: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+  box-shadow: clamp(3px * var(--coefficient), 3 * 100vw / var(--design-width) * var(--mobile-coefficient), 3px * var(--mobile-coefficient)) clamp(4px * var(--coefficient), 4 * 100vw / var(--design-width) * var(--mobile-coefficient), 4px * var(--mobile-coefficient)) clamp(8px * var(--coefficient), 8 * 100vw / var(--design-width) * var(--mobile-coefficient), 8px * var(--mobile-coefficient)) 0px rgba(0, 0, 0, 0.1019607843);
+  flex-shrink: 0;
+  background-color: #FFFFFF;
+}
+
+.gap-60 {
+  gap: clamp(60px * var(--coefficient), 60 * 100vw / var(--design-width) * var(--mobile-coefficient), 60px * var(--mobile-coefficient));
+}
+
+.no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .spacer {
-  height: clamp(50px * var(--coefficient), 50 * 100vw / var(--design-width) * var(--mobile-coefficient), 50px * var(--mobile-coefficient));
+  height: clamp(37px * var(--coefficient), 37 * 100vw / var(--design-width) * var(--mobile-coefficient), 37px * var(--mobile-coefficient));
 }
 
 .spacer--under {
-  height: clamp(214px * var(--coefficient), 214 * 100vw / var(--design-width) * var(--mobile-coefficient), 214px * var(--mobile-coefficient));
+  height: clamp(97px * var(--coefficient), 97 * 100vw / var(--design-width) * var(--mobile-coefficient), 97px * var(--mobile-coefficient));
 }
 
 .header {
@@ -2006,6 +2105,10 @@ footer {
 .hero--main + section {
   padding-top: clamp(250px * var(--coefficient), 250 * 100vw / var(--design-width) * var(--mobile-coefficient), 250px * var(--mobile-coefficient));
   border-radius: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient)) clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient));
+}
+
+.spacer--under--main {
+  height: clamp(214px * var(--coefficient), 214 * 100vw / var(--design-width) * var(--mobile-coefficient), 214px * var(--mobile-coefficient));
 }
 
 @media only screen and (max-width: 640px) {

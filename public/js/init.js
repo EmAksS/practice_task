@@ -17,7 +17,6 @@ $(document).ready(function() {
     }
 
     const currentPage = "./" + window.location.pathname.split("/").pop();
-    console.log(currentPage);
 
     $(".header__nav__element a").each(function () {
         console.log($(this).attr("href"));

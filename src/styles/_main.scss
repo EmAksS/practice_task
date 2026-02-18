@@ -118,3 +118,82 @@
         width: 100%;
     }
 }
+
+.naming{
+    @include flexbox();
+    @include gap(30);
+    flex-direction: column;
+    align-items: center;
+
+    font-family: Manrope, sans-serif;
+
+    &__desc{
+        @include fontSize(22);
+        text-align: center;
+
+        opacity: 0.5;
+
+    }
+}
+
+.sliding{
+    @include flexbox();
+    @include gap(50);
+    flex-direction: column;
+
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+
+    &__layer{
+        @include flexbox();
+        @include gap(20);
+
+        overflow: visible;
+
+        
+        will-change: transform;
+
+        &:first-of-type{
+            @include marginLeft(120);
+
+            animation: scrollLeft 20s linear infinite;
+        }
+
+        &:last-of-type{
+            flex-direction: row-reverse;
+            @include marginRight(120);
+
+            animation: scrollRight 20s linear infinite;
+        }
+
+    }
+
+    &__group{
+        @include flexbox();
+        @include gap(20);
+    }
+
+    &__element{
+        @include height(60);
+        @include width(280);
+
+        @include borderRadius(16);
+
+        box-shadow: adaptive(3) adaptive(4) adaptive(8) 0px #0000001A;
+
+        flex-shrink: 0;
+
+        background-color: $white;
+    }
+}
+
+/// Стили для секций с разным gap по умолчанию стоит 30px
+/// 
+.gap-60{
+    @include gap(60);
+}
+
+.no-padding{
+    padding-left: 0;
+    padding-right: 0;
+}
