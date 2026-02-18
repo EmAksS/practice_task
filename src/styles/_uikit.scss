@@ -30,6 +30,8 @@
 
     transition: color $button-anim-time,
                 background-color $button-anim-time,
+                background-size $button-anim-time,
+                background-position $button-anim-time,
                 filter $button-anim-time,
                 border-color $button-anim-time,
                 box-shadow $button-anim-time;
@@ -797,22 +799,6 @@
         width: 100%;
     }
 
-    &--reviews{
-        .swiper-wrapper{
-            @include padding(0, 80, 40, 80);
-        }
-
-        .swiper-slide{
-            @include padding(0, 0, 0, 0);
-            opacity: 0;
-        }
-
-        .swiper-slide.swiper-slide-visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
-    }
-
     &-slide{
         @include padding(0, 80, 40, 80);
     }
@@ -821,7 +807,7 @@
         @include height(550);
         background: white;
         @include borderRadius(30);
-        @include padding(40, 40, 40, 40);
+        @include padding(50, 50, 50, 50);
         box-shadow: adaptive(10) adaptive(12) adaptive(20) 0 #0000001A;
         display: flex;
         justify-content: space-between;
@@ -911,6 +897,7 @@
         @include padding(32, 43, 32, 43);
 
         @include borderRadius(30);
+        background-color: $white;
         box-shadow: adaptive(5) adaptive(4) adaptive(15) 0px #0000001A;
 
         transition: 0.5s;
