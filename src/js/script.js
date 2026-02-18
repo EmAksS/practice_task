@@ -1,3 +1,18 @@
+// Логика модального окна
+
+const $modal = $('#modal');
+
+const open  = () => $modal.addClass('is-open');
+const close = () => $modal.removeClass('is-open');
+
+$('#openModal').on('click', open);
+$('#closeModal').on('click', close);
+$('#modalOverlay').on('click', close);
+
+$(document).on('keydown', e => {
+  if (e.key === 'Escape') close();
+});
+
 $(document).ready(function(){
 
     // Анимация "аккордеона"

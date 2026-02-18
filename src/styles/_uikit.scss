@@ -270,6 +270,34 @@
     }
 }
 
+.close-button{
+    @include width(48);
+    @include height(48);
+
+    border-radius: 50%;
+
+    @include centerContent();
+
+    position: absolute;
+
+    @include top(25);
+    @include right(25);
+
+    cursor: pointer;
+
+    background-color: $white;
+
+    &::before{
+        @include width(21);
+        @include height(21);
+
+        @include makeIconBackground();
+        background-image: url('../images/close-icon.svg');
+
+        transition: filter $button-anim-time;
+    }
+}
+
 // ===== Кнопка слайдера =====
 
 .slider-button{
