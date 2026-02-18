@@ -1,9 +1,9 @@
 // Подложка под header
 .spacer{
-    @include height(50);
+    @include height(37);
 
     &--under{
-        @include height(214);
+        @include height(97);
     }
 }
 
@@ -54,6 +54,16 @@
             color: $black;
         }
 
+        .header{
+            &__nav{
+                &__element{
+                    &::after{
+                        background: $black;
+                    }
+                }
+            }
+        }
+
         .liquid-glass{
             // Поддержка 
             &-apply{
@@ -77,6 +87,16 @@
     &__logo{
         @include height(42);
         @include width(202);
+
+        &:hover{
+            path{
+                fill: $blue;
+            }
+        }
+
+        path{
+            transition: fill 0.6s ease-out;
+        }
     }
 
     &__nav{
@@ -116,7 +136,7 @@
                 left: 0;
                 @include bottom(-16);
                 
-                background: black;
+                background: $white;
                 
                 transform: scaleX(0);
                 transform-origin: center;
@@ -126,11 +146,9 @@
                 
             }
             &:hover{
-                color: $blue;
                 opacity: 1;
                 &::after{
                     transform: scaleX(1);
-                    background: $blue;
                 }  
             }
         }

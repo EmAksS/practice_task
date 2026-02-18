@@ -73,10 +73,13 @@
         }
 
         + section{
-            @include paddingTop(250);
             @include borderRadiusFull(30, 30, 0, 0);
         }
     }
 
     
+}
+
+.spacer--under--main{
+    @include height(214);
 }

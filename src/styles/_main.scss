@@ -67,6 +67,25 @@
 
     color: $white;
 
+    &--linked{
+        .content{
+            @include gap(135);
+        }
+    }
+
+    &__link{
+        @include flexbox();
+        @include gap(5);
+
+        @include fontSize(22);
+        font-weight: 400;
+        font-family: Manrope,sans-serif;
+
+        > *:not(:first-child) {
+            opacity: 0.7;
+        }
+    }
+
     &__basis{
         @include flexbox();
         @include gap(50);
@@ -102,9 +121,14 @@
         @include flexbox();
         @include gap(80);
     }
+
+    + section{
+        @include paddingTop(250);
+    }
 }
 
 .bg-hero{
+    @include flexbox();
     width: 100%;
 
     position: absolute;
@@ -117,4 +141,124 @@
     > img{
         width: 100%;
     }
+
+    &--linked{
+        @include borderRadiusFull(0, 0, 60, 60);
+    }
+}
+
+.naming{
+    @include flexbox();
+    @include gap(30);
+    flex-direction: column;
+    align-items: center;
+
+    font-family: Manrope, sans-serif;
+
+    &__desc{
+        @include fontSize(22);
+        text-align: center;
+
+        opacity: 0.5;
+
+    }
+}
+
+.sliding{
+    @include flexbox();
+    @include gap(50);
+    flex-direction: column;
+
+    overflow: visible;
+
+   
+    position: relative;
+
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+
+        @include width(440);
+        height: 100%;
+
+        z-index: 5;
+    }
+
+    &:before {
+        left: 0;
+        background: linear-gradient(to right, #F4F4F4, transparent);
+    }
+
+    &::after {
+        right: 0;
+        background: linear-gradient(to left, #F4F4F4, transparent);
+    }
+
+    &__layer{
+        @include flexbox();
+        @include gap(20);
+
+        overflow: visible;
+
+        
+        will-change: transform;
+
+        &:first-of-type{
+            @include marginLeft(120);
+
+            animation: scrollLeft 20s linear infinite;
+        }
+
+        &:last-of-type{
+            flex-direction: row-reverse;
+            @include marginRight(120);
+
+            animation: scrollRight 20s linear infinite;
+        }
+
+    }
+
+    &__group{
+        @include flexbox();
+        @include gap(20);
+
+        overflow: visible;
+    }
+
+    &__element{
+        @include flexbox();
+        align-items: center;
+        justify-content: center;
+
+        @include height(60);
+        @include width(280);
+        @include padding(5, 5, 5, 5);
+
+        @include borderRadius(16);
+
+        box-shadow: adaptive(3) adaptive(4) adaptive(8) 0px #0000001A;
+
+        flex-shrink: 0;
+
+        background-color: $white;
+
+        > *{
+            @include width(174);
+        }
+
+    }
+}
+
+/// Стили для секций с разным gap по умолчанию стоит 30px
+/// 
+.gap-60{
+    @include gap(60);
+}
+
+.no-padding{
+    padding-left: 0;
+    padding-right: 0;
 }

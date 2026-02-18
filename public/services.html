@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <title>Lazy Dev</title>
+    <title>Services</title>
 </head>
 <body class="preload">
 
-    <div class="bg-hero bg-hero--main">
-        <img src="./images/background/main-background.webp" alt="background">
+    <div class="bg-hero bg-hero--services bg-hero--linked">
+        <img src="./images/background/service-background.webp" alt="background">
     </div>
 
     <div class="spacer">
@@ -113,17 +113,21 @@
 
     <main class="main">
 
-        <div class="spacer--under spacer--under--main">
-            
-        </div>
-        <section class="hero hero--main">
+        <div class="spacer--under"></div>
+        
+        <section id="hero--services" class="hero hero--linked hero--services">
             <div class="content">
-                <div class="hero__basis hero--main__basis">
-                    <div class="hero__text hero--main__text">
-                        <h1 class="hero__title">Разработка IT-решений <br> для вашего бизнеса</h1>
-                        <p class="hero__description">Повышаем эффективность и конкурентноспособность вашей компании через <br> инновационные технологии</p>
+                <div class="hero__link">
+                    <a href="">LazyDev </a>
+                    <span> > </span>
+                    <a href=""> Услуги</a>
+                </div>
+                <div class="hero__basis hero--services__basis">
+                    <div class="hero__text hero--services__text">
+                        <h1 class="hero__title">Разработка цифровых <br> продуктов под бизнес-задачи</h1>
+                        <p class="hero__description">Мы берем на себя весь цикл — от аналитики до запуска и поддержки</p>
                     </div>
-                    <div class="hero__b-layer hero--main__b-layer">
+                    <div class="hero__b-layer hero--services__b-layer">
                         <button class="button button--white button--icon button--icon--arrow width-280">
                             <p>Начать проект</p>
                         </button>
@@ -132,132 +136,147 @@
                         </button>
                     </div>
                 </div>
-                <ol class="hero__describe hero--main__describe">
-                    <li class="hero--main__describe__el">
-                        <div class="number"></div>
-                        <div class="hero--main__describe__el__text">
-                            <div class="line"></div>
-                            <p>Быстрый запуск проекта</p>
-                        </div>
-                        
-                    </li>
-                    <li class="hero--main__describe__el">
-                        <div class="number"></div>
-                        <div class="hero--main__describe__el__text">
-                            <div class="line"></div>
-                            <p>Оперативная поддержка</p>
-                        </div>
-                        
-                    </li>
-                    <li class="hero--main__describe__el">
-                        <div class="number"></div>
-                        <div class="hero--main__describe__el__text">
-                            <div class="line"></div>
-                            <p>Гарантия качества проекта</p>
-                        </div>
-                        
-                    </li>
-                    <li class="hero--main__describe__el">
-                        <div class="number"></div>
-                        <div class="hero--main__describe__el__text">
-                            <div class="line"></div>
-                            <p>Индивидуальный подход</p>
-                        </div>
-                        
-                    </li>
-                </ol>
-            </div>
-        </section>
-        
-
-        <section id="main-video" class="main-video">
-            <div class="main-video__container">
-                <iframe 
-                    src="https://player.vimeo.com/video/412097464?badge=1&amp;autopause=0&amp;title=0&amp;portrait=0&amp;byline=0&amp;player_id=0&amp;app_id=58479"
-                    allow="autoplay; fullscreen; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
             </div>
         </section>
 
-        <section id="about-us" class="about-us">
-            <div class="content">
-                <div class="title">
-                    <div class="title__tag">about us</div>
-                    <h2>О нас</h2>
-                </div>
-                <div class="about-us__layer">
-                    <img class="about-us__image" src="./images/about-us-image.png" alt="Lazy Dev logo on a black-blue-white linear gradient">
-                    <div>
-                        <p class="about-us__text">
-                            Lazy Dev — креативная IT-студия, специализирующаяся на разработке современных digital-продуктов: сайтов, мобильных 
-                            и web-приложений, Telegram-ботов и IT-решений под ключ.<br><br>
-        
-                            Мы работаем с бизнесом, стартапами и экспертами, помогая превращать идеи в работающие инструменты, которые приносят результат.<br><br>
-        
-                            Наша миссия — создавать понятные, эстетичные и эффективные цифровые продукты, которые усиливают бизнес и упрощают взаимодействие с пользователями.
-                        </p>
-                        <div class="about-us__buttons-container">
-                            <a class="button button--blue width-280">
-                                <p>Подробнее</p>
-                            </a>
-                            <a class="button button--black button--icon button--icon--black button--icon--arrow width-280">
-                                <p>Обсудить проект</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="servicesS" class="servicesS">
-            <div class="content">
+        <section id="servicesL" class="servicesL">
+            <div class="content gap-60">
                 <div class="title">
                     <div class="title__tag">services</div>
                     <h2>Услуги студии</h2>
                 </div>
-                <div class="servicesS__layer">
-                    <article class="card-small">
-                        <a class="round-button"></a>
-                        <div class="card-small__image-container">
-                            <img class="card-small__image" src="./images/small-card-image.png" alt="">
-                            <img class="card-small__shadow" src="./images/small-card-image-shadow.png">
-                        </div>
-                        <div class="card-small__text">
-                            <h3>Разработка сайтов</h3>
-                            <p>Создаём сайты, которые работают на Ваш бизнес</p>
-                        </div>
-                    </article>
-                    <article class="card-small">
-                        <a class="round-button"></a>
-                        <div class="card-small__image-container">
-                            <img class="card-small__image" src="./images/small-card-image.png" alt="">
-                            <img class="card-small__shadow" src="./images/small-card-image-shadow.png">
-                        </div>
-                        <div class="card-small__text">
-                            <h3>Разработка приложений</h3>
-                            <p>Создаём сайты, которые работают на Ваш бизнес</p>
-                        </div>
-                    </article>
-                    <article class="card-small">
-                        <a class="round-button"></a>
-                        <div class="card-small__image-container">
-                            <img class="card-small__image" src="./images/small-card-image.png" alt="">
-                            <img class="card-small__shadow" src="./images/small-card-image-shadow.png">
-                        </div>
-                        <div class="card-small__text">
-                            <h3>UX | UI Дизайн</h3>
-                            <p>Создаём сайты, которые работают на Ваш бизнес</p>
-                        </div>
-                    </article>
-                    <article class="card-small card-small--placeholder">
-                        <a class="lazy-button"></a>
-                        <div class="card-small__text">
-                            <h3>Все услуги студии</h3>
-                            <p>Создаём сайты, которые работают на Ваш бизнес<br>Создаём сайты, которые работают на Ваш бизнес</p>
-                        </div>
-                        <button class="button button--black button--icon button--icon--arrow width-375 services-button">Подробнее</button>
-                    </article>
+                <div class="servicesL__layer">
+                    <a>
+                        <article class="card-large img-box white-style">
+                            <img class="background" src="./images/cards/test1.webp" alt="">
+                            <div class="card-large__content">
+                                <div class="card-large__text">
+                                    <h3 class="card-large__title">
+                                        Разработка <br> приложений
+                                    </h3>
+                                    <p class="card-large__description">
+                                        Lazy Dev — креативная IT-студия, специализирующаяся на разработке современных digital-продуктов: сайтов, мобильных <br >и web-приложений, Telegram-ботов и IT-решений под ключ.
+                                    </p>
+                                </div>
+                            
+                                <div class="card-large__tags">
+                                    <div class="card-tag">
+                                        <p>PWA</p>
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>IOS</p>
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>Android</p>
+                                    </div>
+                                    <div class="tag-break">
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>Cross-platform</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+        
+                    <a>
+                        <article class="card-large img-box white-style">
+                            <img class="background" src="./images/cards/test1.webp" alt="">
+                            <div class="card-large__content">
+                                <div class="card-large__text">
+                                    <h3 class="card-large__title">
+                                        Разработка <br> сайтов
+                                    </h3>
+                                    <p class="card-large__description">
+                                        Lazy Dev — креативная IT-студия, специализирующаяся на разработке современных digital-продуктов: сайтов, мобильных <br >и web-приложений, Telegram-ботов и IT-решений под ключ.
+                                    </p>
+                                </div>
+                            
+                                <div class="card-large__tags">
+                                    <div class="card-tag">
+                                        <p>Лендинг</p>
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>Интернет-магазин</p>
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>Корпоративный сайт</p>
+                                    </div>
+                                    <div class="tag-break">
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>Сайт - каталог</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+        
+                    <a>
+                        <article class="card-large img-box white-style">
+                            <img class="background" src="./images/cards/test1.webp" alt="">
+                            <div class="card-large__content">
+                                <div class="card-large__text">
+                                    <h3 class="card-large__title">
+                                        Telegram <br> решения
+                                    </h3>
+                                    <p class="card-large__description">
+                                        Lazy Dev — креативная IT-студия, специализирующаяся на разработке современных digital-продуктов: сайтов, мобильных <br >и web-приложений, Telegram-ботов и IT-решений под ключ.
+                                    </p>
+                                </div>
+                            
+                                <div class="card-large__tags">
+                                    <div class="card-tag">
+                                        <p>PWA</p>
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>IOS</p>
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>Android</p>
+                                    </div>
+                                    <div class="tag-break">
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>Cross-platform</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+        
+                    <a>
+                        <article class="card-large img-box white-style">
+                            <img class="background" src="./images/cards/test1.webp" alt="">
+                            <div class="card-large__content">
+                                <div class="card-large__text">
+                                    <h3 class="card-large__title">
+                                        Индивидуальные <br> решения для бизнеса
+                                    </h3>
+                                    <p class="card-large__description">
+                                        Lazy Dev — креативная IT-студия, специализирующаяся на разработке современных digital-продуктов: сайтов, мобильных <br >и web-приложений, Telegram-ботов и IT-решений под ключ.
+                                    </p>
+                                </div>
+                            
+                                <div class="card-large__tags">
+                                    <div class="card-tag">
+                                        <p>Лендинг</p>
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>Интернет-магазин</p>
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>Корпоративный сайт</p>
+                                    </div>
+                                    <div class="tag-break">
+                                    </div>
+                                    <div class="card-tag">
+                                        <p>Сайт - каталог</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
                 </div>
             </div>
         </section>
@@ -347,283 +366,6 @@
                     <div class="navigation-buttons">
                         <button class="slider-button prev-1"></button>
                         <button class="slider-button next-1"></button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="small-form" class="small-form">
-            <div class="small-form__layer">
-                <h2 class="small-form__title">Хотите IT-решение, которое работает на бизнес?</h2>
-                <p class="small-form__description">Оставьте заявку и получите бесплатную консультацию от Lazy Dev — подскажем оптимальное решение для вашего бизнеса</p>
-                <form>
-                        <div class="small-form__upper-container">
-                            <div class="text-field text-field--white">
-                                <div class="text-field__container">
-                                    <input class="text-field__input" placeholder=" "></input>
-                                    <fieldset aria-hidden="true" class="text-field__fieldset">
-                                        <legend class="text-field__legend">
-                                            <span>Как к Вам обращаться ?</span>
-                                        </legend>
-                                    </fieldset>
-                                </div>
-                            </div>
-                            <div class="text-field text-field--white">
-                                <div class="text-field__container">
-                                    <input class="text-field__input phone-input" placeholder=" "></input>
-                                    <fieldset aria-hidden="true" class="text-field__fieldset">
-                                        <legend class="text-field__legend">
-                                            <span>Телефон</span>
-                                        </legend>
-                                    </fieldset>
-                                </div>
-                            </div>
-                        </div>
-                    <div class="small-form__down-container">
-                        <div class="small-form__checkbox-container">
-                            <label class="checkbox checkbox--white">
-                                <input type="checkbox" class="checkbox__input">
-                                <svg class="checkbox__check" viewBox="0 0 128 128" width="26" height="26">
-                                    <polyline points="106 32 48 91 22 64"></polyline>
-                                </svg>
-                                <p class="checkbox__label">Я принимаю условия <a href="">обработки персональных данных</a></p>
-                            </label>
-                            <label class="checkbox checkbox--white">
-                                <input type="checkbox" class="checkbox__input">
-                                <svg class="checkbox__check" viewBox="0 0 128 128" width="26" height="26">
-                                    <polyline points="106 32 48 91 22 64"></polyline>
-                                </svg>
-                                <p class="checkbox__label">Я принимаю условия <a href="">обработки персональных данных</a></p>
-                            </label>
-                        </div>
-                        <button class="button button--white button--icon button--icon--arrow width-380 small-form__button">Получить консультацию</button>
-                    </div>
-                </form>
-            </div>
-        </section>
-
-        <section id="clients">
-            <div class="content gap-60 no-padding">
-                <div class="naming">
-                    <div class="title">
-                        <div class="title__tag">clients</div>
-                        <h2>Наши клиенты</h2>
-                    </div>
-                    <div class="naming__desc">
-                        <p>Повышаем эффективность и конкурентноспособность вашей <br> компании через инновационные технологии</p>
-                    </div>
-                </div>
-                <div class="sliding">
-                    <div class="sliding__layer">
-                        <ul class="sliding__group">
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                        </ul>
-        
-                        <ul class="sliding__group">
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="sliding__layer">
-                        <ul class="sliding__group">
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                        </ul>
-        
-                        <ul class="sliding__group">
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="partners">
-            <div class="content gap-60 no-padding">
-                <div class="naming">
-                    <div class="title">
-                        <div class="title__tag">parnters</div>
-                        <h2>Наши партнеры</h2>
-                    </div>
-                    <div class="naming__desc">
-                        <p>Повышаем эффективность и конкурентноспособность вашей <br> компании через инновационные технологии</p>
-                    </div>
-                </div>
-                <div class="sliding">
-                    <div class="sliding__layer">
-                        <ul class="sliding__group">
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                        </ul>
-                        <ul class="sliding__group">
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="sliding__layer">
-                        <ul class="sliding__group">
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                        </ul>
-        
-                        <ul class="sliding__group">
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                            <li class="sliding__element">
-                                <img src="./images/icons/small_lazy.svg" alt="">
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
