@@ -9,12 +9,28 @@
         @include flexbox();
         flex-direction: column;
         @include gap(80);
+        opacity: 0;
+        transform: translateY(adaptive(40));
+        transition: opacity 1s ease, transform 1s ease;
+
+        &.animated{
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     &__image{
         @include width(746);
         @include height(755);
         @include borderRadius(30);
+        opacity: 0;
+        transform: translateY(adaptive(40));
+        transition: opacity 1s ease, transform 1s ease;
+
+        &.animated{
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     &__text{
@@ -31,5 +47,16 @@
     &__buttons-container{
         @include flexbox();
         @include gap(30);
+    }
+
+    .title{
+        opacity: 0;
+        transform: translateY(adaptive(-30));
+        transition: opacity 0.7s ease, transform 0.7s ease;
+
+        &.animated{
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }

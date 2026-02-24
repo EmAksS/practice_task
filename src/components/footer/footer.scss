@@ -38,16 +38,15 @@ footer{
 }
 
 .lazy-dev-logo{
-    @include width(250);
     @include height(50);
     @include flexbox();
-    justify-content: space-between;
+    @include gap(35);
     @include marginBottom(10);
 }
 
 .footer-info{
     @include flexbox();
-    gap: 200px;
+    @include gap(200);
 
     h4{
         font-family: 'Manrope';

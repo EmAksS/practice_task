@@ -20,31 +20,24 @@ $transition: 0.3s ease;
   }
 
   &__window {
-    @include width(630);
+    @include width(610);
     @include height(616);
     position: relative;
     z-index: 1;
-    background: #242424;
-    // background: #24242480;
+    background: #24242480;
     border-radius: adaptive(30);
-    @include padding(40, 40, 40, 40);
+    @include padding(20, 15, 35, 15);
     animation: slideUp $transition;
     border: adaptive(1) solid #4E4E4EA8;
     @include flexbox();
     flex-direction: column;
+
+    backdrop-filter: blur(adaptive(23));
   }
 
-  &__close {
-    position: absolute;
-    @include fontSize(20);
-    cursor: pointer;
-    color: #6b7280;
-    line-height: 1;
-    color: $white;
-
-    &:hover {
-      color: #111;
-    }
+  .close-button-container {
+    @include flexbox();
+    justify-content: right;
   }
 
   &__title {
@@ -55,7 +48,7 @@ $transition: 0.3s ease;
     letter-spacing: 0%;
     text-align: center;
     color: $white;
-    @include margin(30, 0, 30, 0);
+    @include margin(20, 0, 20, 0);
   }
 
   &__content{
@@ -64,6 +57,27 @@ $transition: 0.3s ease;
     @include flexbox();
     flex-direction: column;
     justify-content: space-between;
+
+    @include paddingRight(35);
+    @include paddingLeft(35);
+
+    &__input-container{
+      @include flexbox();
+      flex-direction: column;
+      @include gap(10);
+    }
+
+    &__checkbox-container{
+      @include flexbox();
+      flex-direction: column;
+      @include gap(15);
+    }
+  }
+
+  .checkbox{
+    &__label{
+        @include fontSize(18);
+    }
   }
 }
 

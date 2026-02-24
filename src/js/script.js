@@ -1,3 +1,9 @@
+//=require header/header.js
+//=require section.hero.main/section.hero.main.js
+//=require section.about-us/section.about-us.js
+//=require section.servicesSmall/section.servicesS.js
+//=require section.small-form/section.small-form.js
+
 // Логика модального окна
 
 const $modal = $('#modal');
@@ -11,6 +17,16 @@ $('#modalOverlay').on('click', close);
 
 $(document).on('keydown', e => {
   if (e.key === 'Escape') close();
+});
+
+// Логика превью видео
+
+$('.video__preview').on('click', function () {
+    $(this).addClass('is-hidden');
+    
+    const $iframe = $(this).siblings('iframe');
+    const src = $iframe.attr('src');
+    $iframe.attr('src', src + '&autoplay=1');
 });
 
 $(document).ready(function(){
@@ -142,5 +158,4 @@ $(document).ready(function(){
             .eq(swiperInstance.realIndex)
             .addClass('active');
     }
-
 })

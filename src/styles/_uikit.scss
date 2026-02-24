@@ -278,8 +278,6 @@
 
     @include centerContent();
 
-    position: absolute;
-
     @include top(25);
     @include right(25);
 
@@ -287,14 +285,58 @@
 
     background-color: $white;
 
+    transition: background-color $button-anim-time;
+
     &::before{
         @include width(21);
         @include height(21);
 
         @include makeIconBackground();
-        background-image: url('../images/close-icon.svg');
+        background-image: url('../images/icons/close-icon.svg');
+
+        filter: brightness(0);
 
         transition: filter $button-anim-time;
+    }
+
+    &:hover {
+        background-color: $black;
+
+        &::before {
+            filter: brightness(1);
+        }
+    }
+}
+
+.play-button{
+    @include width(160);
+    @include height(160);
+
+    border: adaptive(5) solid $white;
+
+    border-radius: 50%;
+
+    @include centerContent();
+
+    backdrop-filter: blur(adaptive(18));
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease, opacity 0.2s ease;
+
+    &::before{
+        @include width(50);
+        @include height(50);
+
+        @include centerContent();
+
+        @include makeIconBackground();
+        background-image: url('../images/icons/player-icon.svg');
+    }
+
+    &:hover {
+        transform: scale(1.1);
+        opacity: 0.9;
     }
 }
 
@@ -376,6 +418,93 @@
     filter: brightness(0);
 }
 
+// ===== Плеер и превью =====
+
+.video{
+    @include centerContent();
+
+    &__container{
+        @include width(1760);
+        @include height(600);
+        @include borderRadius(30);
+        overflow: hidden;
+        position: relative;
+        background: $black;
+
+        iframe{
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    }
+
+    &__preview {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        // Скрытое состояние
+        &.is-hidden {
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        &__title {
+            position: absolute;
+            @include left(40);
+            @include bottom(30);
+
+            @include flexbox();
+            flex-direction: column;
+            @include gap(15);
+
+            p {
+                font: 700 adaptive(30) Inter;
+                line-height: 100%;
+                letter-spacing: 0%;
+                color: $white;
+            }
+
+            p:last-child {
+                @include fontSize(20);
+                font-weight: 600;
+                color: #FFFFFFCC;
+            }
+        }
+    }
+
+    &__preview-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // Подгоняет изображение под контейнер без искажений
+        object-position: center;
+    }
+
+    &--mini{
+        .video__container{
+            @include width(570);
+            @include height(373);
+        }
+
+        .play-button{
+            @include width(97);
+            @include height(97);
+
+            &::before{
+                @include width(25);
+                @include height(25);
+            }
+        }
+    }
+}
+
 // ===== Малая карточка услуги =====
 
 .card-small{
@@ -416,7 +545,7 @@
         @include MaxWidth(221);
         @include MaxHeight(221);
 
-        transition: transform $button-anim-time;
+        transition: transform 0.3s ease;
     }
 
     &__shadow{
@@ -580,7 +709,9 @@
             display: inline-block;
             visibility: visible;
             font-size: inherit;
-            transition: all $input-anim-time;
+            transition: font-size $input-anim-time,
+                        padding $input-anim-time,
+                        margin-top $input-anim-time;
         }
         
         .text-field__input:not(:placeholder-shown) ~ .text-field__fieldset &,
@@ -765,7 +896,7 @@
     h2{
         @include fontSize(40);
         @include marginBottom(35);
-        color: #000;
+        color: $black;
         font-family: Inter;
         font-weight: 500;
         line-height: 100%;
@@ -786,10 +917,11 @@
         @include padding(10, 40, 10, 40);
         border: adaptive(1) solid #12121266;
         @include borderRadius(50);
-        background: #fff;
+        background: transparent;
         cursor: pointer;
-        transition: all 0.2s ease;
-        color: #333;
+        transition: border-color 0.4s ease,
+                    background 0.4s ease;
+        color: $black;
         user-select: none;
 
         font-family: Inter;
@@ -797,24 +929,12 @@
         @include fontSize(26);
         line-height: 100%;
         letter-spacing: 0%;
-
-        &:hover{
-            border-color: #bbb;
-            background: #fafafa;
-        }
     }
 
     input[type="radio"]:checked + label {
-        background: #000;
-        color: #fff;
-        border-color: #000;
-    }
-
-    &.style-outlined input[type="radio"]:checked + label {
-        background: #fff;
-        color: #000;
-        border-color: #000;
-        border-width: adaptive(1);
+        background: $black;
+        color: $white;
+        border-color: $black;
     }
 }
 
@@ -899,10 +1019,10 @@
     @include borderRadius(35);
     background: #d0d0d0;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
 
     &.active {
-        background: $black;
+        background-color: $black;
     }
 }
 
