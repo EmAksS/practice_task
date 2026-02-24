@@ -1,0 +1,8 @@
+.bg-hero--cases{
+    @include height(658); 
+
+    > img{
+        position: absolute;
+        @include top(-520);
+    }
+}

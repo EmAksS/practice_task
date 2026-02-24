@@ -1,0 +1,7 @@
+.hero--cases{
+    @include borderRadiusFull(0, 0, 60, 60);
+
+    .content{
+        @include paddingBottom(135);
+    }
+}

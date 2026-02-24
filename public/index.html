@@ -80,7 +80,7 @@
                             </a>
                         </li>
                         <li class="header__nav__element">
-                            <a href="">
+                            <a href="./cases.html">
                                 <p>Кейсы</p>
                             </a>
                         </li>
@@ -113,62 +113,107 @@
 
     <main class="main">
 
-        <div class="spacer--under spacer--under--main">
-            
-        </div>
-        <section class="hero hero--main">
-            <div class="content">
-                <div class="hero__basis hero--main__basis">
-                    <div class="hero__text hero--main__text">
-                        <h1 class="hero__title">Разработка IT-решений <br> для вашего бизнеса</h1>
-                        <p class="hero__description">Повышаем эффективность и конкурентноспособность вашей компании через <br> инновационные технологии</p>
-                    </div>
-                    <div class="hero__b-layer hero--main__b-layer">
-                        <button class="button button--white button--icon button--icon--arrow width-280">
-                            <p>Начать проект</p>
-                        </button>
-                        <button class="button button--white width-240">
-                            <p>Наши кейсы</p>
-                        </button>
+        <div class="modal" id="modal">
+            <div class="modal__overlay" id="modalOverlay"></div>
+            <div class="modal__window">
+                <button class="close-button" id="closeModal"></button>
+                <h2 class="modal__title">Оставьте заявку и наш менеджер свяжется с вами</h2>
+                <div class="modal__content">
+        
+                <div class="text-field text-field--white">
+                    <div class="text-field__container">
+                        <input class="text-field__input" placeholder=" "></input>
+                        <fieldset aria-hidden="true" class="text-field__fieldset">
+                            <legend class="text-field__legend">
+                                <span>Как к Вам обращаться ?</span>
+                            </legend>
+                        </fieldset>
                     </div>
                 </div>
-                <ol class="hero__describe hero--main__describe">
-                    <li class="hero--main__describe__el">
-                        <div class="number"></div>
-                        <div class="hero--main__describe__el__text">
-                            <div class="line"></div>
-                            <p>Быстрый запуск проекта</p>
-                        </div>
-                        
-                    </li>
-                    <li class="hero--main__describe__el">
-                        <div class="number"></div>
-                        <div class="hero--main__describe__el__text">
-                            <div class="line"></div>
-                            <p>Оперативная поддержка</p>
-                        </div>
-                        
-                    </li>
-                    <li class="hero--main__describe__el">
-                        <div class="number"></div>
-                        <div class="hero--main__describe__el__text">
-                            <div class="line"></div>
-                            <p>Гарантия качества проекта</p>
-                        </div>
-                        
-                    </li>
-                    <li class="hero--main__describe__el">
-                        <div class="number"></div>
-                        <div class="hero--main__describe__el__text">
-                            <div class="line"></div>
-                            <p>Индивидуальный подход</p>
-                        </div>
-                        
-                    </li>
-                </ol>
+                <div class="text-field text-field--white">
+                    <div class="text-field__container">
+                        <input class="text-field__input phone-input" placeholder=" "></input>
+                        <fieldset aria-hidden="true" class="text-field__fieldset">
+                            <legend class="text-field__legend">
+                                <span>Телефон</span>
+                            </legend>
+                        </fieldset>
+                    </div>
+                </div>
+                <label class="checkbox checkbox--white">
+                                <input type="checkbox" class="checkbox__input">
+                                <svg class="checkbox__check" viewBox="0 0 128 128" width="26" height="26">
+                                    <polyline points="106 32 48 91 22 64"></polyline>
+                                </svg>
+                                <p class="checkbox__label">Я принимаю условия <a href="">обработки персональных данных</a></p>
+                            </label>
+                            <label class="checkbox checkbox--white">
+                                <input type="checkbox" class="checkbox__input">
+                                <svg class="checkbox__check" viewBox="0 0 128 128" width="26" height="26">
+                                    <polyline points="106 32 48 91 22 64"></polyline>
+                                </svg>
+                                <p class="checkbox__label">Я принимаю условия <a href="">обработки персональных данных</a></p>
+                            </label>
+                <button class="button button--white button--icon button--icon--arrow width-full">Отправить</button>
+                </div>
             </div>
-        </section>
-        
+        </div>
+                <div class="spacer--under spacer--under--main">
+                    
+                </div>
+                <section class="hero hero--main">
+                    <div class="content">
+                        <div class="hero__basis hero--main__basis">
+                            <div class="hero__text hero--main__text">
+                                <h1 class="hero__title">Разработка IT-решений <br> для вашего бизнеса</h1>
+                                <p class="hero__description">Повышаем эффективность и конкурентноспособность вашей компании через <br> инновационные технологии</p>
+                            </div>
+                            <div class="hero__b-layer hero--main__b-layer">
+                                <button class="button button--white button--icon button--icon--arrow width-280">
+                                    <p>Начать проект</p>
+                                </button>
+                                <button class="button button--white width-240">
+                                    <p>Наши кейсы</p>
+                                </button>
+                            </div>
+                        </div>
+                        <ol class="hero__describe hero--main__describe">
+                            <li class="hero--main__describe__el">
+                                <div class="number"></div>
+                                <div class="hero--main__describe__el__text">
+                                    <div class="line"></div>
+                                    <p>Быстрый запуск проекта</p>
+                                </div>
+                                
+                            </li>
+                            <li class="hero--main__describe__el">
+                                <div class="number"></div>
+                                <div class="hero--main__describe__el__text">
+                                    <div class="line"></div>
+                                    <p>Оперативная поддержка</p>
+                                </div>
+                                
+                            </li>
+                            <li class="hero--main__describe__el">
+                                <div class="number"></div>
+                                <div class="hero--main__describe__el__text">
+                                    <div class="line"></div>
+                                    <p>Гарантия качества проекта</p>
+                                </div>
+                                
+                            </li>
+                            <li class="hero--main__describe__el">
+                                <div class="number"></div>
+                                <div class="hero--main__describe__el__text">
+                                    <div class="line"></div>
+                                    <p>Индивидуальный подход</p>
+                                </div>
+                                
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+                
 
         <section id="main-video" class="main-video">
             <div class="main-video__container">
@@ -201,7 +246,7 @@
                             <a class="button button--blue width-280">
                                 <p>Подробнее</p>
                             </a>
-                            <a class="button button--black button--icon button--icon--black button--icon--arrow width-280">
+                            <a class="button button--black button--icon button--icon--black button--icon--arrow width-280" id="openModal">
                                 <p>Обсудить проект</p>
                             </a>
                         </div>
@@ -268,7 +313,7 @@
                     <div class="title__tag">cases</div>
                     <h2>Наши проекты</h2>
                 </div>
-                <div class="slider-container">
+                <div>
                 <div class="swiper" id="projects-swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -343,10 +388,10 @@
                     </div>
                 </div>
                 <div class="slider-controls">
-                    <div class="custom-pagination" id="pagination-1"></div>
+                    <div class="custom-pagination" id="project-pagination"></div>
                     <div class="navigation-buttons">
-                        <button class="slider-button prev-1"></button>
-                        <button class="slider-button next-1"></button>
+                        <button class="slider-button" id="prev-project"></button>
+                        <button class="slider-button" id="next-project"></button>
                     </div>
                 </div>
             </div>
@@ -624,6 +669,69 @@
                                 <img src="./images/icons/small_lazy.svg" alt="">
                             </li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="reviews-slider" class="reviews-slider">
+            <div class="content">
+                <div class="title">
+                    <div class="title__tag">reviews</div>
+                    <h2>Отзывы наших клиентов</h2>
+                </div>
+                <div>
+                <div class="swiper-container-outer">
+                <div class="swiper" id="video-swiper">
+                    <div class="swiper-wrapper">
+        
+                        <div class="swiper-slide">
+                            <iframe
+                                src="https://player.vimeo.com/video/76979871?title=0&byline=0&portrait=0"
+                                allow="autoplay; fullscreen; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+        
+                        <div class="swiper-slide">
+                            <iframe
+                                src="https://player.vimeo.com/video/76979871?title=0&byline=0&portrait=0"
+                                allow="autoplay; fullscreen; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+        
+                        <div class="swiper-slide">
+                            <iframe
+                                src="https://player.vimeo.com/video/76979871?title=0&byline=0&portrait=0"
+                                allow="autoplay; fullscreen; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+        
+                        <div class="swiper-slide">
+                            <iframe
+                                src="https://player.vimeo.com/video/76979871?title=0&byline=0&portrait=0"
+                                allow="autoplay; fullscreen; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+        
+                        <div class="swiper-slide">
+                            <iframe
+                                src="https://player.vimeo.com/video/76979871?title=0&byline=0&portrait=0"
+                                allow="autoplay; fullscreen; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+        
+                    </div>
+                </div>
+                </div>
+                <div class="slider-controls">
+                    <div class="custom-pagination" id="video-pagination"></div>
+                    <div class="navigation-buttons">
+                        <button class="slider-button" id="prev-video"></button>
+                        <button class="slider-button" id="next-video"></button>
                     </div>
                 </div>
             </div>
@@ -916,10 +1024,10 @@
                             <h4>Контакты</h4>
                             <ul>
                                 <li>
-                                    <p>+7 (978) 777-77-77</p>
+                                    <a>+7 (978) 777-77-77</a>
                                 </li>
                                 <li>
-                                    <p>info@itslazydev.ru</p>
+                                    <a>info@itslazydev.ru</a>
                                 </li>
                             </ul>
                             <ul class="social-media">
