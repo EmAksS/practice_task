@@ -257,7 +257,7 @@ body::-webkit-scrollbar-thumb {
   font-size: clamp(18px * var(--coefficient), 18 * 100vw / var(--design-width) * var(--mobile-coefficient), 18px * var(--mobile-coefficient));
   line-height: 100%;
   letter-spacing: 0%;
-  transition: color 500ms ease-out, background-color 500ms ease-out, filter 500ms ease-out, border-color 500ms ease-out, box-shadow 500ms ease-out;
+  transition: color 500ms ease-out, background-color 500ms ease-out, background-size 500ms ease-out, background-position 500ms ease-out, filter 500ms ease-out, border-color 500ms ease-out, box-shadow 500ms ease-out;
   cursor: pointer;
 }
 
@@ -450,6 +450,36 @@ body::-webkit-scrollbar-thumb {
 .social-net-link--vk svg {
   width: clamp(40px * var(--coefficient), 40 * 100vw / var(--design-width) * var(--mobile-coefficient), 40px * var(--mobile-coefficient));
   height: clamp(23px * var(--coefficient), 23 * 100vw / var(--design-width) * var(--mobile-coefficient), 23px * var(--mobile-coefficient));
+}
+
+.close-button {
+  width: clamp(48px * var(--coefficient), 48 * 100vw / var(--design-width) * var(--mobile-coefficient), 48px * var(--mobile-coefficient));
+  height: clamp(48px * var(--coefficient), 48 * 100vw / var(--design-width) * var(--mobile-coefficient), 48px * var(--mobile-coefficient));
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: clamp(25px * var(--coefficient), 25 * 100vw / var(--design-width) * var(--mobile-coefficient), 25px * var(--mobile-coefficient));
+  right: clamp(25px * var(--coefficient), 25 * 100vw / var(--design-width) * var(--mobile-coefficient), 25px * var(--mobile-coefficient));
+  cursor: pointer;
+  background-color: #FFFFFF;
+}
+
+.close-button::before {
+  width: clamp(21px * var(--coefficient), 21 * 100vw / var(--design-width) * var(--mobile-coefficient), 21px * var(--mobile-coefficient));
+  height: clamp(21px * var(--coefficient), 21 * 100vw / var(--design-width) * var(--mobile-coefficient), 21px * var(--mobile-coefficient));
+  content: "";
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../images/close-icon.svg");
+  transition: filter 500ms ease-out;
 }
 
 .slider-button {
@@ -978,20 +1008,6 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
 }
 
-.swiper--reviews .swiper-wrapper {
-  padding: clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(80px * var(--coefficient), 80 * 100vw / var(--design-width) * var(--mobile-coefficient), 80px * var(--mobile-coefficient)) clamp(40px * var(--coefficient), 40 * 100vw / var(--design-width) * var(--mobile-coefficient), 40px * var(--mobile-coefficient)) clamp(80px * var(--coefficient), 80 * 100vw / var(--design-width) * var(--mobile-coefficient), 80px * var(--mobile-coefficient));
-}
-
-.swiper--reviews .swiper-slide {
-  padding: clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient));
-  opacity: 0;
-}
-
-.swiper--reviews .swiper-slide.swiper-slide-visible {
-  opacity: 1;
-  pointer-events: auto;
-}
-
 .swiper-slide {
   padding: clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(80px * var(--coefficient), 80 * 100vw / var(--design-width) * var(--mobile-coefficient), 80px * var(--mobile-coefficient)) clamp(40px * var(--coefficient), 40 * 100vw / var(--design-width) * var(--mobile-coefficient), 40px * var(--mobile-coefficient)) clamp(80px * var(--coefficient), 80 * 100vw / var(--design-width) * var(--mobile-coefficient), 80px * var(--mobile-coefficient));
 }
@@ -1000,7 +1016,7 @@ body::-webkit-scrollbar-thumb {
   height: clamp(550px * var(--coefficient), 550 * 100vw / var(--design-width) * var(--mobile-coefficient), 550px * var(--mobile-coefficient));
   background: white;
   border-radius: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient));
-  padding: clamp(40px * var(--coefficient), 40 * 100vw / var(--design-width) * var(--mobile-coefficient), 40px * var(--mobile-coefficient)) clamp(40px * var(--coefficient), 40 * 100vw / var(--design-width) * var(--mobile-coefficient), 40px * var(--mobile-coefficient)) clamp(40px * var(--coefficient), 40 * 100vw / var(--design-width) * var(--mobile-coefficient), 40px * var(--mobile-coefficient)) clamp(40px * var(--coefficient), 40 * 100vw / var(--design-width) * var(--mobile-coefficient), 40px * var(--mobile-coefficient));
+  padding: clamp(50px * var(--coefficient), 50 * 100vw / var(--design-width) * var(--mobile-coefficient), 50px * var(--mobile-coefficient)) clamp(50px * var(--coefficient), 50 * 100vw / var(--design-width) * var(--mobile-coefficient), 50px * var(--mobile-coefficient)) clamp(50px * var(--coefficient), 50 * 100vw / var(--design-width) * var(--mobile-coefficient), 50px * var(--mobile-coefficient)) clamp(50px * var(--coefficient), 50 * 100vw / var(--design-width) * var(--mobile-coefficient), 50px * var(--mobile-coefficient));
   box-shadow: clamp(10px * var(--coefficient), 10 * 100vw / var(--design-width) * var(--mobile-coefficient), 10px * var(--mobile-coefficient)) clamp(12px * var(--coefficient), 12 * 100vw / var(--design-width) * var(--mobile-coefficient), 12px * var(--mobile-coefficient)) clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient)) 0 rgba(0, 0, 0, 0.1019607843);
   display: flex;
   justify-content: space-between;
@@ -1099,6 +1115,7 @@ body::-webkit-scrollbar-thumb {
 .accordeon__element {
   padding: clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient)) clamp(43px * var(--coefficient), 43 * 100vw / var(--design-width) * var(--mobile-coefficient), 43px * var(--mobile-coefficient)) clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient)) clamp(43px * var(--coefficient), 43 * 100vw / var(--design-width) * var(--mobile-coefficient), 43px * var(--mobile-coefficient));
   border-radius: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient));
+  background-color: #FFFFFF;
   box-shadow: clamp(5px * var(--coefficient), 5 * 100vw / var(--design-width) * var(--mobile-coefficient), 5px * var(--mobile-coefficient)) clamp(4px * var(--coefficient), 4 * 100vw / var(--design-width) * var(--mobile-coefficient), 4px * var(--mobile-coefficient)) clamp(15px * var(--coefficient), 15 * 100vw / var(--design-width) * var(--mobile-coefficient), 15px * var(--mobile-coefficient)) 0px rgba(0, 0, 0, 0.1019607843);
   transition: height 0.5s;
 }
@@ -1185,6 +1202,46 @@ body::-webkit-scrollbar-thumb {
 
 .card-large:hover::before {
   opacity: 0;
+}
+
+.card-large:hover .card-large__button {
+  background-color: #0D0E0E;
+}
+
+.card-large:hover .card-large__button > * {
+  transform: rotateZ(45deg);
+}
+
+.card-large:hover .card-large__button path {
+  fill: white;
+}
+
+.card-large__button {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(60px * var(--coefficient), 60 * 100vw / var(--design-width) * var(--mobile-coefficient), 60px * var(--mobile-coefficient));
+  width: clamp(60px * var(--coefficient), 60 * 100vw / var(--design-width) * var(--mobile-coefficient), 60px * var(--mobile-coefficient));
+  border-radius: 100%;
+  position: absolute;
+  top: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient));
+  right: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient));
+  background-color: white;
+  transition: background-color 0.6s ease-out;
+}
+
+.card-large__button > * {
+  height: clamp(17px * var(--coefficient), 17 * 100vw / var(--design-width) * var(--mobile-coefficient), 17px * var(--mobile-coefficient));
+  width: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+  transition: transform 0.6s ease-out;
+}
+
+.card-large__button > * path {
+  transition: fill 0.6s ease-out;
 }
 
 .card-large__content {
@@ -1751,7 +1808,8 @@ footer {
   height: 100%;
 }
 
-.footer-info p {
+.footer-info p,
+.footer-info a {
   font-family: "Inter";
   font-weight: 300;
   font-size: clamp(22px * var(--coefficient), 22 * 100vw / var(--design-width) * var(--mobile-coefficient), 22px * var(--mobile-coefficient));
@@ -1945,19 +2003,32 @@ footer {
   padding-right: clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient));
 }
 
-.video__container {
+.swiper-container-outer {
+  overflow: hidden;
+  padding: clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(80px * var(--coefficient), 80 * 100vw / var(--design-width) * var(--mobile-coefficient), 80px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(80px * var(--coefficient), 80 * 100vw / var(--design-width) * var(--mobile-coefficient), 80px * var(--mobile-coefficient));
+}
+
+#video-swiper {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+
+#video-swiper .swiper-slide {
   width: clamp(570px * var(--coefficient), 570 * 100vw / var(--design-width) * var(--mobile-coefficient), 570px * var(--mobile-coefficient));
   height: clamp(373px * var(--coefficient), 373 * 100vw / var(--design-width) * var(--mobile-coefficient), 373px * var(--mobile-coefficient));
   border-radius: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient));
   overflow: hidden;
-  position: relative;
   background: #0D0E0E;
+  flex-shrink: 0;
+  padding: clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient));
 }
 
-.video__container iframe {
+#video-swiper .swiper-slide iframe {
   width: 100%;
   height: 100%;
-  border: 0;
+  border: none;
+  display: block;
 }
 
 .big-form .content {
@@ -2100,6 +2171,15 @@ footer {
   margin-top: clamp(540px * var(--coefficient), 540 * 100vw / var(--design-width) * var(--mobile-coefficient), 540px * var(--mobile-coefficient));
 }
 
+.bg-hero--cases {
+  height: clamp(658px * var(--coefficient), 658 * 100vw / var(--design-width) * var(--mobile-coefficient), 658px * var(--mobile-coefficient));
+}
+
+.bg-hero--cases > img {
+  position: absolute;
+  top: clamp(-520px * var(--coefficient), -520 * 100vw / var(--design-width) * var(--mobile-coefficient), -520px * var(--mobile-coefficient));
+}
+
 .hero--main {
   background-color: transparent;
 }
@@ -2197,6 +2277,114 @@ footer {
 
 .hero--services .content {
   padding-bottom: clamp(356px * var(--coefficient), 356 * 100vw / var(--design-width) * var(--mobile-coefficient), 356px * var(--mobile-coefficient));
+}
+
+.hero--cases {
+  border-radius: clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(60px * var(--coefficient), 60 * 100vw / var(--design-width) * var(--mobile-coefficient), 60px * var(--mobile-coefficient)) clamp(60px * var(--coefficient), 60 * 100vw / var(--design-width) * var(--mobile-coefficient), 60px * var(--mobile-coefficient));
+}
+
+.hero--cases .content {
+  padding-bottom: clamp(135px * var(--coefficient), 135 * 100vw / var(--design-width) * var(--mobile-coefficient), 135px * var(--mobile-coefficient));
+}
+
+.modal {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.modal.is-open {
+  display: flex;
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal__window {
+  width: clamp(630px * var(--coefficient), 630 * 100vw / var(--design-width) * var(--mobile-coefficient), 630px * var(--mobile-coefficient));
+  height: clamp(616px * var(--coefficient), 616 * 100vw / var(--design-width) * var(--mobile-coefficient), 616px * var(--mobile-coefficient));
+  position: relative;
+  z-index: 1;
+  background: #242424;
+  border-radius: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient));
+  padding: clamp(40px * var(--coefficient), 40 * 100vw / var(--design-width) * var(--mobile-coefficient), 40px * var(--mobile-coefficient)) clamp(40px * var(--coefficient), 40 * 100vw / var(--design-width) * var(--mobile-coefficient), 40px * var(--mobile-coefficient)) clamp(40px * var(--coefficient), 40 * 100vw / var(--design-width) * var(--mobile-coefficient), 40px * var(--mobile-coefficient)) clamp(40px * var(--coefficient), 40 * 100vw / var(--design-width) * var(--mobile-coefficient), 40px * var(--mobile-coefficient));
+  animation: slideUp 0.3s ease;
+  border: clamp(1px * var(--coefficient), 1 * 100vw / var(--design-width) * var(--mobile-coefficient), 1px * var(--mobile-coefficient)) solid rgba(78, 78, 78, 0.6588235294);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__close {
+  position: absolute;
+  font-size: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient));
+  cursor: pointer;
+  color: #6b7280;
+  line-height: 1;
+  color: #FFFFFF;
+}
+
+.modal__close:hover {
+  color: #111;
+}
+
+.modal__title {
+  font-family: Manrope;
+  font-weight: 600;
+  font-size: clamp(40px * var(--coefficient), 40 * 100vw / var(--design-width) * var(--mobile-coefficient), 40px * var(--mobile-coefficient));
+  line-height: clamp(50px * var(--coefficient), 50 * 100vw / var(--design-width) * var(--mobile-coefficient), 50px * var(--mobile-coefficient));
+  letter-spacing: 0%;
+  text-align: center;
+  color: #FFFFFF;
+  margin: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient));
+}
+
+.modal__content {
+  flex: 1;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient)));
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @media only screen and (max-width: 640px) {
