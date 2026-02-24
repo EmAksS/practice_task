@@ -1,3 +1,4 @@
+@import '_animation';
 @import '_reset';
 @import '_vars';
 @import '_fonts';
@@ -20,7 +21,11 @@
 @import '../components/section.questions/section.questions.scss';
 
 @import '../components/background.hero.main/background.hero.main.scss';
+@import '../components/background.hero.services/background.hero.services.scss';
+@import '../components/background.hero.cases/background.hero.cases.scss';
 @import '../components/section.hero.main/section.hero.main.scss';
+@import '../components/section.hero.services/section.hero.services.scss';
+@import '../components/section.hero.cases/section.hero.cases.scss';
 @import '../components/modal.form/modal.form.scss';
 
 @import '_media';

@@ -26,7 +26,7 @@ main {
 
 section {
     background-color: $gray;
-    &:not(:first-child){
+    &:not(:first-of-type){
         @include paddingBottom(250);
     }
 }
@@ -65,4 +65,12 @@ body::-webkit-scrollbar-thumb {
     // background-color: $gray;    /* цвет плашки */
     border-radius: 5px;       /* закругления плашки */
      
+}
+
+// ====================Предзагрузка =============
+.preload {
+    .header__nav__element::after{
+        transition: none !important;
+        animation: none !important;
+    }
 }
