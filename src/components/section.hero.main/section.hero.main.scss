@@ -10,6 +10,17 @@
             @include paddingBottom(64);
         }
 
+        &__basis{
+            opacity: 0;
+            transform: translateY(adaptive(100));
+            transition: opacity 1s ease, transform 1s ease;
+
+            &.animated{
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         &__text{
             align-items: center;
             text-align: center;
@@ -40,12 +51,28 @@
                         width: 100%;
 
                         background-color: #D9D9D9;
+
+                        opacity: 0;
+                        transition: opacity 0.4s ease;
+
+                        &.animated{
+                            opacity: 1;
+                        }
                     }
 
                     p{
                         @include fontSize(20);
                         font-weight: 500;
                         font-family: Manrope, sans-serif;
+
+                        opacity: 0;
+                        transform: translateY(adaptive(40));
+                        transition: opacity 1s ease, transform 1s ease;
+
+                        &.animated{
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
                     }
                 }
             }
@@ -68,6 +95,15 @@
                     font-family: Poppins, monospace;
                     font-weight: 500;
                     opacity: 0.6;
+                }
+
+                opacity: 0;
+                transform: translateY(adaptive(-40));
+                transition: opacity 1s ease, transform 1s ease;
+
+                &.animated{
+                    opacity: 1;
+                    transform: translateY(0);
                 }
             }
         }

@@ -23,6 +23,14 @@
         @include paddingRight(57);
     }
 
+    opacity: 0;
+    transform: translateY(adaptive(-30));
+    transition: opacity 1.2s ease, transform 1.2s ease;
+
+    &.animated{
+        opacity: 1;
+        transform: translateY(0);
+    }
 
     &--glass{
         @include flexbox();

@@ -38,7 +38,7 @@ function scripts() {
     return src("./src/js/**.js")
         .pipe(
             includeFiles({
-                includePaths: "./src/components/**/",
+                includePaths: "./src/components",
             })
         )
         .pipe(dest("./public/js/"))
