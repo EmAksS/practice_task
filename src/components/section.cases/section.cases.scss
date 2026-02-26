@@ -1,0 +1,168 @@
+.hero{
+    + .cases{
+        @include paddingTop(100);
+    }
+}
+
+.cases{
+    .content{
+        @include gap(80);
+    }
+
+    &__radio{
+        @include flexbox();
+        @include gap(20);
+    }
+
+    &__stuff{
+        @include flexbox();
+        @include gap(100);
+        flex-direction: column;
+
+        > button{
+            align-self: center;
+        }
+    }
+
+    &__list{
+        @include flexbox();
+        row-gap: adaptive(50);
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    #show-more{
+        @include height(50);
+    }
+}
+
+.case-card{
+    @include flexbox();
+    @include gap(20);
+    flex-direction: column;
+
+    @include width(865);
+    @include height(900);
+
+    @include paddingTop(30);
+
+    @include borderRadius(30);
+
+    background-color: $white;
+    box-shadow: adaptive(3) adaptive(4) adaptive(100) 0px #0000001A;
+
+    &__content{
+        @include flexbox();
+        @include gap(19);
+        flex-direction: column;
+
+        @include paddingLeft(30);
+        @include paddingRight(30);
+
+        flex-grow: 1;
+
+        &__head{
+            @include flexbox();
+            @include gap(20);
+            flex-direction: column;
+
+            &__info{
+                @include flexbox();
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            &__logo{
+                @include height(40);
+
+                > img{
+                    height: 100%;
+                }
+            }
+
+            &__tags{
+                @include flexbox();
+                @include gap(15);
+            }
+
+            &__line{
+                @include height(1);
+                width: 100%;
+
+                @include borderRadius(47);
+
+                background-color: #EBEBEB;
+            }
+        }
+
+        &__naming{
+            @include flexbox();
+            @include gap(30);
+
+            flex-grow: 1;
+
+            &__text{
+                @include flexbox();
+                @include gap(20);
+
+                flex-direction: column;
+                flex-grow: 1;
+
+                color: $black;
+
+                > h2{
+                    @include fontSize(40);
+                    font-family: Manrope, sans-serif;
+                    font-weight: 600;
+                }
+
+                > p{
+                    @include fontSize(22);
+                    @include lineHeight(34);
+                    font-family: Manrope, sans-serif;
+                    font-weight: 500;
+
+                    color: #121212;
+
+                    opacity: 0.6;
+                }
+            }
+
+            &__more{
+                @include height(50);
+                align-self: center;
+            }
+        }
+    }
+
+    &__img{
+        width: 100%;
+        @include height(570);
+
+        @include borderRadius(30);
+
+        background-color: black;
+        border: adaptive(1) solid #CBCBCB;
+
+        @include centerContent();
+
+        > img{
+            width: 100%;
+        }
+    }
+
+}
+
+.case-radio{
+
+    @include fontSize(24);
+
+    input{
+        display: none;
+    }
+
+    &:has(input:checked){
+        color: $blue;
+        border-color: #4A6FFE66;
+    }
+}

@@ -55,9 +55,10 @@
     &.scrolled{
         .header--glass{
 
-            border: adaptive(1) solid;
-            border-image-slice: 1;
-            border-image-source: linear-gradient(180deg, rgba(198, 198, 198, 0.2) 0%, rgba(255, 255, 255, 0.16) 100%);
+            border: adaptive(1) solid transparent;
+            background: 
+                    linear-gradient(transparent, transparent) padding-box,
+                    linear-gradient(180deg, rgba(198, 198, 198, 0.2) 0%, rgba(255, 255, 255, 0.16) 100%) border-box;
 
             color: $black;
         }

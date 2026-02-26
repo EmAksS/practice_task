@@ -9,6 +9,57 @@
 </head>
 <body class="preload">
 
+    <div class="modal" id="modal">
+        <div class="modal__overlay" id="modalOverlay"></div>
+        <div class="modal__window">
+            <div class="close-button-container">
+                <button class="close-button" id="closeModal"></button>
+            </div>
+            <h2 class="modal__title">Оставьте заявку и наш менеджер свяжется с вами</h2>
+            <div class="modal__content">
+                <div class="modal__content__input-container">
+                    <div class="text-field text-field--white">
+                        <div class="text-field__container">
+                            <input class="text-field__input" placeholder=" "></input>
+                            <fieldset aria-hidden="true" class="text-field__fieldset">
+                                <legend class="text-field__legend">
+                                    <span>Как к Вам обращаться ?</span>
+                                </legend>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="text-field text-field--white">
+                        <div class="text-field__container">
+                            <input class="text-field__input phone-input" placeholder=" "></input>
+                            <fieldset aria-hidden="true" class="text-field__fieldset">
+                                <legend class="text-field__legend">
+                                    <span>Телефон</span>
+                                </legend>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__content__checkbox-container">
+                    <label class="checkbox checkbox--white">
+                        <input type="checkbox" class="checkbox__input">
+                        <svg class="checkbox__check" viewBox="0 0 128 128" width="26" height="26">
+                            <polyline points="106 32 48 91 22 64"></polyline>
+                        </svg>
+                        <p class="checkbox__label">Я принимаю условия <a href="">обработки персональных данных</a></p>
+                    </label>
+                    <label class="checkbox checkbox--white">
+                        <input type="checkbox" class="checkbox__input">
+                        <svg class="checkbox__check" viewBox="0 0 128 128" width="26" height="26">
+                            <polyline points="106 32 48 91 22 64"></polyline>
+                        </svg>
+                        <p class="checkbox__label">Я принимаю условия <a href="">обработки персональных данных</a></p>
+                    </label>
+                </div>
+                <button class="button button--white button--icon button--icon--arrow width-full">Отправить</button>
+            </div>
+        </div>
+    </div>
+
     <div class="bg-hero bg-hero--main">
         <img src="./images/background/main-background.webp" alt="background">
     </div>
@@ -112,52 +163,6 @@
     
 
     <main class="main">
-
-        <div class="modal" id="modal">
-            <div class="modal__overlay" id="modalOverlay"></div>
-            <div class="modal__window">
-                <button class="close-button" id="closeModal"></button>
-                <h2 class="modal__title">Оставьте заявку и наш менеджер свяжется с вами</h2>
-                <div class="modal__content">
-        
-                <div class="text-field text-field--white">
-                    <div class="text-field__container">
-                        <input class="text-field__input" placeholder=" "></input>
-                        <fieldset aria-hidden="true" class="text-field__fieldset">
-                            <legend class="text-field__legend">
-                                <span>Как к Вам обращаться ?</span>
-                            </legend>
-                        </fieldset>
-                    </div>
-                </div>
-                <div class="text-field text-field--white">
-                    <div class="text-field__container">
-                        <input class="text-field__input phone-input" placeholder=" "></input>
-                        <fieldset aria-hidden="true" class="text-field__fieldset">
-                            <legend class="text-field__legend">
-                                <span>Телефон</span>
-                            </legend>
-                        </fieldset>
-                    </div>
-                </div>
-                <label class="checkbox checkbox--white">
-                                <input type="checkbox" class="checkbox__input">
-                                <svg class="checkbox__check" viewBox="0 0 128 128" width="26" height="26">
-                                    <polyline points="106 32 48 91 22 64"></polyline>
-                                </svg>
-                                <p class="checkbox__label">Я принимаю условия <a href="">обработки персональных данных</a></p>
-                            </label>
-                            <label class="checkbox checkbox--white">
-                                <input type="checkbox" class="checkbox__input">
-                                <svg class="checkbox__check" viewBox="0 0 128 128" width="26" height="26">
-                                    <polyline points="106 32 48 91 22 64"></polyline>
-                                </svg>
-                                <p class="checkbox__label">Я принимаю условия <a href="">обработки персональных данных</a></p>
-                            </label>
-                <button class="button button--white button--icon button--icon--arrow width-full">Отправить</button>
-                </div>
-            </div>
-        </div>
                 <div class="spacer--under spacer--under--main">
                     
                 </div>
@@ -169,7 +174,7 @@
                                 <p class="hero__description">Повышаем эффективность и конкурентноспособность вашей компании через <br> инновационные технологии</p>
                             </div>
                             <div class="hero__b-layer hero--main__b-layer">
-                                <button class="button button--white button--icon button--icon--arrow width-280">
+                                <button class="button button--white button--icon button--icon--arrow width-280" id="openModal">
                                     <p>Начать проект</p>
                                 </button>
                                 <button class="button button--white width-240">
@@ -215,8 +220,18 @@
                 </section>
                 
 
-        <section id="main-video" class="main-video">
-            <div class="main-video__container">
+        <section id="main-video" class="video">
+            <div class="video__container">
+                <div class="video__preview">
+                    <img 
+                        src="./images/big_preview.png" 
+                        alt="Video preview" 
+                        class="video__preview-img"
+                    />
+                    <button class="play-button" aria-label="Play video">
+                    </button>
+                </div>
+        
                 <iframe 
                     src="https://player.vimeo.com/video/412097464?badge=1&amp;autopause=0&amp;title=0&amp;portrait=0&amp;byline=0&amp;player_id=0&amp;app_id=58479"
                     allow="autoplay; fullscreen; picture-in-picture" 
@@ -246,7 +261,7 @@
                             <a class="button button--blue width-280">
                                 <p>Подробнее</p>
                             </a>
-                            <a class="button button--black button--icon button--icon--black button--icon--arrow width-280" id="openModal">
+                            <a class="button button--black button--icon button--icon--black button--icon--arrow width-280">
                                 <p>Обсудить проект</p>
                             </a>
                         </div>
@@ -399,8 +414,10 @@
 
         <section id="small-form" class="small-form">
             <div class="small-form__layer">
-                <h2 class="small-form__title">Хотите IT-решение, которое работает на бизнес?</h2>
-                <p class="small-form__description">Оставьте заявку и получите бесплатную консультацию от Lazy Dev — подскажем оптимальное решение для вашего бизнеса</p>
+                <div class="small-form__layer__logo">
+                    <h2 class="small-form__title">Хотите IT-решение, которое работает на бизнес?</h2>
+                    <p class="small-form__description">Оставьте заявку и получите бесплатную консультацию от Lazy Dev — подскажем оптимальное решение для вашего бизнеса</p>
+                </div>
                 <form>
                         <div class="small-form__upper-container">
                             <div class="text-field text-field--white">
@@ -684,44 +701,129 @@
                 <div class="swiper" id="video-swiper">
                     <div class="swiper-wrapper">
         
-                        <div class="swiper-slide">
-                            <iframe
-                                src="https://player.vimeo.com/video/76979871?title=0&byline=0&portrait=0"
-                                allow="autoplay; fullscreen; picture-in-picture"
-                                allowfullscreen>
-                            </iframe>
+                        <div class="swiper-slide video--mini">
+                            <div class="video__container">
+                                <div class="video__preview">
+                                    <img 
+                                        src="./images/small_preview.png" 
+                                        alt="Video preview" 
+                                        class="video__preview-img"
+                                    />
+                                    <button class="play-button" aria-label="Play video">
+                                    </button>
+        
+                                    <div class="video__preview__title">
+                                        <p>Макан Братов</p>
+                                        <p>CEO ООО “M5 F90”</p>
+                                    </div>
+                                </div>
+        
+                                <iframe 
+                                    src="https://player.vimeo.com/video/76979871?badge=1&amp;autopause=0&amp;title=0&amp;portrait=0&amp;byline=0&amp;player_id=0&amp;app_id=58479"
+                                    allow="autoplay; fullscreen; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
                         </div>
         
-                        <div class="swiper-slide">
-                            <iframe
-                                src="https://player.vimeo.com/video/76979871?title=0&byline=0&portrait=0"
-                                allow="autoplay; fullscreen; picture-in-picture"
-                                allowfullscreen>
-                            </iframe>
+                        <div class="swiper-slide video--mini">
+                            <div class="video__container">
+                                <div class="video__preview">
+                                    <img 
+                                        src="./images/small_preview.png" 
+                                        alt="Video preview" 
+                                        class="video__preview-img"
+                                    />
+                                    <button class="play-button" aria-label="Play video">
+                                    </button>
+        
+                                    <div class="video__preview__title">
+                                        <p>Макан Братов</p>
+                                        <p>CEO ООО “M5 F90”</p>
+                                    </div>
+                                </div>
+        
+                                <iframe 
+                                    src="https://player.vimeo.com/video/76979871?badge=1&amp;autopause=0&amp;title=0&amp;portrait=0&amp;byline=0&amp;player_id=0&amp;app_id=58479"
+                                    allow="autoplay; fullscreen; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
                         </div>
         
-                        <div class="swiper-slide">
-                            <iframe
-                                src="https://player.vimeo.com/video/76979871?title=0&byline=0&portrait=0"
-                                allow="autoplay; fullscreen; picture-in-picture"
-                                allowfullscreen>
-                            </iframe>
+                        <div class="swiper-slide video--mini">
+                            <div class="video__container">
+                                <div class="video__preview">
+                                    <img 
+                                        src="./images/small_preview.png" 
+                                        alt="Video preview" 
+                                        class="video__preview-img"
+                                    />
+                                    <button class="play-button" aria-label="Play video">
+                                    </button>
+        
+                                    <div class="video__preview__title">
+                                        <p>Макан Братов</p>
+                                        <p>CEO ООО “M5 F90”</p>
+                                    </div>
+                                </div>
+        
+                                <iframe 
+                                    src="https://player.vimeo.com/video/76979871?badge=1&amp;autopause=0&amp;title=0&amp;portrait=0&amp;byline=0&amp;player_id=0&amp;app_id=58479"
+                                    allow="autoplay; fullscreen; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
                         </div>
         
-                        <div class="swiper-slide">
-                            <iframe
-                                src="https://player.vimeo.com/video/76979871?title=0&byline=0&portrait=0"
-                                allow="autoplay; fullscreen; picture-in-picture"
-                                allowfullscreen>
-                            </iframe>
+                        <div class="swiper-slide video--mini">
+                            <div class="video__container">
+                                <div class="video__preview">
+                                    <img 
+                                        src="./images/small_preview.png" 
+                                        alt="Video preview" 
+                                        class="video__preview-img"
+                                    />
+                                    <button class="play-button" aria-label="Play video">
+                                    </button>
+        
+                                    <div class="video__preview__title">
+                                        <p>Макан Братов</p>
+                                        <p>CEO ООО “M5 F90”</p>
+                                    </div>
+                                </div>
+        
+                                <iframe 
+                                    src="https://player.vimeo.com/video/76979871?badge=1&amp;autopause=0&amp;title=0&amp;portrait=0&amp;byline=0&amp;player_id=0&amp;app_id=58479"
+                                    allow="autoplay; fullscreen; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
                         </div>
         
-                        <div class="swiper-slide">
-                            <iframe
-                                src="https://player.vimeo.com/video/76979871?title=0&byline=0&portrait=0"
-                                allow="autoplay; fullscreen; picture-in-picture"
-                                allowfullscreen>
-                            </iframe>
+                        <div class="swiper-slide video--mini">
+                            <div class="video__container">
+                                <div class="video__preview">
+                                    <img 
+                                        src="./images/small_preview.png" 
+                                        alt="Video preview" 
+                                        class="video__preview-img"
+                                    />
+                                    <button class="play-button" aria-label="Play video">
+                                    </button>
+        
+                                    <div class="video__preview__title">
+                                        <p>Макан Братов</p>
+                                        <p>CEO ООО “M5 F90”</p>
+                                    </div>
+                                </div>
+        
+                                <iframe 
+                                    src="https://player.vimeo.com/video/76979871?badge=1&amp;autopause=0&amp;title=0&amp;portrait=0&amp;byline=0&amp;player_id=0&amp;app_id=58479"
+                                    allow="autoplay; fullscreen; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
                         </div>
         
                     </div>
