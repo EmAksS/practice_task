@@ -1,37 +1,5 @@
 @charset "UTF-8";
 
-@keyframes easeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-40%);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scrollLeft {
-  from {
-    transform: translate(0%);
-  }
-
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes scrollRight {
-  from {
-    transform: translateX(0%);
-  }
-
-  to {
-    transform: translateX(100%);
-  }
-}
-
 /* Reset and base styles  */
 
 * {
@@ -182,6 +150,75 @@ ol {
   --device-width: 1920;
   --mobile-coefficient: 1;
   --design-width: 1920;
+}
+
+@keyframes easeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translate(0%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scrollRight {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.sliders-animation .naming {
+  opacity: 0;
+  transform: translateY(clamp(108px * var(--coefficient), 108 * 100vw / var(--design-width) * var(--mobile-coefficient), 108px * var(--mobile-coefficient)));
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.sliders-animation .sliding__animate {
+  opacity: 0;
+}
+
+.sliders-animation .sliding__animate:first-child {
+  transform: translateX(clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient)));
+  transition: opacity 1s ease-out 1s, transform 1s ease-out 1s;
+}
+
+.sliders-animation .sliding__animate:last-child {
+  transform: translateY(clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient)));
+  transition: opacity 1s ease-out 1.4s, transform 1s ease-out 1.4s;
+}
+
+.sliders-animation.animated .naming {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sliders-animation.animated .sliding__animate {
+  opacity: 1;
+}
+
+.sliders-animation.animated .sliding__animate:first-child {
+  transform: translateX(0);
+}
+
+.sliders-animation.animated .sliding__animate:last-child {
+  transform: translateY(0);
 }
 
 html {
@@ -1675,6 +1712,17 @@ body::-webkit-scrollbar-thumb {
   background: linear-gradient(to left, #F4F4F4, transparent);
 }
 
+.sliding__animate:first-of-type .sliding__layer {
+  margin-left: clamp(120px * var(--coefficient), 120 * 100vw / var(--design-width) * var(--mobile-coefficient), 120px * var(--mobile-coefficient));
+  animation: scrollLeft 20s linear infinite;
+}
+
+.sliding__animate:last-of-type .sliding__layer {
+  flex-direction: row-reverse;
+  margin-right: clamp(120px * var(--coefficient), 120 * 100vw / var(--design-width) * var(--mobile-coefficient), 120px * var(--mobile-coefficient));
+  animation: scrollRight 20s linear infinite;
+}
+
 .sliding__layer {
   display: -webkit-box;
   display: -moz-box;
@@ -1684,17 +1732,6 @@ body::-webkit-scrollbar-thumb {
   gap: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient));
   overflow: visible;
   will-change: transform;
-}
-
-.sliding__layer:first-of-type {
-  margin-left: clamp(120px * var(--coefficient), 120 * 100vw / var(--design-width) * var(--mobile-coefficient), 120px * var(--mobile-coefficient));
-  animation: scrollLeft 20s linear infinite;
-}
-
-.sliding__layer:last-of-type {
-  flex-direction: row-reverse;
-  margin-right: clamp(120px * var(--coefficient), 120 * 100vw / var(--design-width) * var(--mobile-coefficient), 120px * var(--mobile-coefficient));
-  animation: scrollRight 20s linear infinite;
 }
 
 .sliding__group {
