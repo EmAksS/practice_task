@@ -1,4 +1,3 @@
-//=require header/header.js
 //=require section.hero.main/section.hero.main.js
 //=require section.about-us/section.about-us.js
 //=require section.servicesSmall/section.servicesS.js

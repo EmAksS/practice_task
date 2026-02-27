@@ -23,14 +23,8 @@
         @include paddingRight(57);
     }
 
-    opacity: 0;
-    transform: translateY(adaptive(-30));
-    transition: opacity 1.2s ease, transform 1.2s ease;
+    animation: easeDown 1.2s ease;
 
-    &.animated{
-        opacity: 1;
-        transform: translateY(0);
-    }
 
     &--glass{
         @include flexbox();
@@ -64,6 +58,13 @@
         }
 
         .header{
+            &__logo{
+                .logo--path{
+                    fill: #0D0E0E;
+                }
+                
+            }
+
             &__nav{
                 &__element{
                     &::after{
@@ -97,15 +98,16 @@
         @include height(42);
         @include width(202);
 
-        &:hover{
-            path{
-                fill: $blue;
-            }
-        }
-
         path{
             transition: fill 0.6s ease-out;
         }
+
+        &--white{
+            .logo--path{
+                fill: $white;
+            }
+        }
+
     }
 
     &__nav{
