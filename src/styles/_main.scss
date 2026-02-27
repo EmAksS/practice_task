@@ -197,6 +197,24 @@
         background: linear-gradient(to left, #F4F4F4, transparent);
     }
 
+    &__animate{
+        &:first-of-type{
+            .sliding__layer{
+                @include marginLeft(120);
+                animation: scrollLeft 20s linear infinite;
+            }
+        }
+
+        &:last-of-type{
+            .sliding__layer{
+                flex-direction: row-reverse;
+                @include marginRight(120);
+
+                animation: scrollRight 20s linear infinite;
+            }
+        }
+    }
+
     &__layer{
         @include flexbox();
         @include gap(20);
@@ -205,19 +223,6 @@
 
         
         will-change: transform;
-
-        &:first-of-type{
-            @include marginLeft(120);
-
-            animation: scrollLeft 20s linear infinite;
-        }
-
-        &:last-of-type{
-            flex-direction: row-reverse;
-            @include marginRight(120);
-
-            animation: scrollRight 20s linear infinite;
-        }
 
     }
 

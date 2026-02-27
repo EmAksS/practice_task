@@ -1,3 +1,15 @@
+// Блок для keyframes
+@keyframes easeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes scrollLeft {
   from {
     transform: translate(0%);
@@ -8,10 +20,54 @@
 }
 
 @keyframes scrollRight {
-  from {
-    transform: translateX(0%);
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+}
+
+// Блок для анимаций "паттернов"
+.sliders-animation{
+  .naming{
+    opacity: 0;
+    transform: translateY(adaptive(108));
+    transition: opacity 1s ease-out,
+                transform 1s ease-out;
   }
-  to {
-    transform: translateX(100%);
+  .sliding__animate{
+    opacity: 0;
+
+    &:first-child{
+      transform: translateX(adaptive(30));
+      transition: opacity 1s ease-out 1s,
+                transform 1s ease-out 1s;
+    }
+
+    &:last-child{
+      transform: translateY(adaptive(30));
+      transition: opacity 1s ease-out 1.4s,
+                transform 1s ease-out 1.4s;
+    }
+  }
+
+  &.animated{
+    .naming{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .sliding__animate{
+      opacity: 1;
+
+      &:first-child{
+        transform: translateX(0);
+      }
+
+      &:last-child{
+        transform: translateY(0);
+      }
+    }
   }
 }

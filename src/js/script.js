@@ -1,9 +1,3 @@
-//=require header/header.js
-//=require section.hero.main/section.hero.main.js
-//=require section.about-us/section.about-us.js
-//=require section.servicesSmall/section.servicesS.js
-//=require section.small-form/section.small-form.js
-
 // Логика модального окна
 
 const $modal = $('#modal');
@@ -68,6 +62,8 @@ $(document).ready(function(){
         });
     
     observer.observe($spacer);
+
+    
     // Валидация полей с классом phone-input
     $('.phone-input').each(function() {
         const $input = $(this);
