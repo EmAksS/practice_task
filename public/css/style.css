@@ -195,7 +195,7 @@ ol {
 }
 
 .sliders-animation .sliding__animate:first-child {
-  transform: translateX(clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient)));
+  transform: translateX(clamp(-30px * var(--coefficient), -30 * 100vw / var(--design-width) * var(--mobile-coefficient), -30px * var(--mobile-coefficient)));
   transition: opacity 1s ease-out 1s, transform 1s ease-out 1s;
 }
 
@@ -1299,14 +1299,6 @@ body::-webkit-scrollbar-thumb {
   background-color: #FFFFFF;
   box-shadow: clamp(5px * var(--coefficient), 5 * 100vw / var(--design-width) * var(--mobile-coefficient), 5px * var(--mobile-coefficient)) clamp(4px * var(--coefficient), 4 * 100vw / var(--design-width) * var(--mobile-coefficient), 4px * var(--mobile-coefficient)) clamp(15px * var(--coefficient), 15 * 100vw / var(--design-width) * var(--mobile-coefficient), 15px * var(--mobile-coefficient)) 0px rgba(0, 0, 0, 0.1019607843);
   transition: height 0.5s;
-}
-
-.accordeon__element:hover .accordeon__element__arrow {
-  transform: scale(1.2);
-}
-
-.accordeon__element:hover .accordeon__element__arrow.up {
-  transform: scale(1.2) rotateX(180deg);
 }
 
 .accordeon__element__title {
