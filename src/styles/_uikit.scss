@@ -1054,15 +1054,6 @@
 
         transition: height 0.5s;
 
-        &:hover{
-            .accordeon__element__arrow{
-                transform: scale(1.2);
-                &.up{
-                    transform: scale(1.2) rotateX(180deg);
-                }
-            }
-        }
-
         &__title{
             @include fontSize(30);
             font-weight: 600;

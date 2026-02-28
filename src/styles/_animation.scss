@@ -40,7 +40,7 @@
     opacity: 0;
 
     &:first-child{
-      transform: translateX(adaptive(30));
+      transform: translateX(adaptive(-30));
       transition: opacity 1s ease-out 1s,
                 transform 1s ease-out 1s;
     }

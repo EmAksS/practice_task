@@ -72,6 +72,16 @@
                     }
                 }
             }
+
+            &__button{
+                @extend .button--blue;
+
+                &:hover{
+                    &::after{
+                        filter: none;
+                    }
+                }
+            }
         }
 
         .liquid-glass{
@@ -166,8 +176,10 @@
     }
 
     &__button{
+        @extend .button--white;
         @include height(60);
         @include fontSize(20);
+        background: transparent;
     }
 }
 

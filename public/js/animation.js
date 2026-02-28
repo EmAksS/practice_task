@@ -130,7 +130,7 @@ $(document).ready(function () {
 
         })
     }, {
-        threshold: 0.3
+        threshold: 0.6
     })
 
     const $partners = $('#partners')[0];
