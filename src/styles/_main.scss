@@ -45,10 +45,19 @@
 // Задний фон (если он картинкой) (можно использовать для картинки)
 .background{
     position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    right: 0;
+
+    &--vertical{
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &--horizontal{
+        height: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+
 }
 
 // Белый стиль (изменение цвета шрифтов при темном фоне например)

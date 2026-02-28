@@ -27,7 +27,6 @@ $(document).ready(function() {
     const currentPage = "./" + window.location.pathname.split("/").pop();
 
     $(".header__nav__element a").each(function () {
-        console.log($(this).attr("href"));
         if ($(this).attr("href") === (currentPage)) {
             $(this).parent().addClass("header__nav__element--active");
         }
