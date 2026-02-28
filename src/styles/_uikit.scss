@@ -193,6 +193,10 @@
 // Rлассы-модификаторы для регуляции размеров кнопок. Т.к. нет чёткой корреляции между цветом/иконкой/назначением 
 // кнопки и её размером на макете, были реализованы эти классы для гибкого управления размером кнопок.
 
+.width-200{
+    @include width(200);
+}
+
 .width-240{
     @include width(240);
 }
@@ -1051,15 +1055,6 @@
         box-shadow: adaptive(5) adaptive(4) adaptive(15) 0px #0000001A;
 
         transition: height 0.5s;
-
-        &:hover{
-            .accordeon__element__arrow{
-                transform: scale(1.2);
-                &.up{
-                    transform: scale(1.2) rotateX(180deg);
-                }
-            }
-        }
 
         &__title{
             @include fontSize(30);

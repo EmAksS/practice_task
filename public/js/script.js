@@ -13,6 +13,16 @@ $(document).on('keydown', e => {
   if (e.key === 'Escape') close();
 });
 
+// Логика превью видео
+
+$('.video__preview').on('click', function () {
+    $(this).addClass('is-hidden');
+    
+    const $iframe = $(this).siblings('iframe');
+    const src = $iframe.attr('src');
+    $iframe.attr('src', src + '&autoplay=1');
+});
+
 $(document).ready(function(){
 
     // Анимация "аккордеона"
@@ -52,6 +62,8 @@ $(document).ready(function(){
         });
     
     observer.observe($spacer);
+
+    
     // Валидация полей с классом phone-input
     $('.phone-input').each(function() {
         const $input = $(this);
@@ -142,5 +154,4 @@ $(document).ready(function(){
             .eq(swiperInstance.realIndex)
             .addClass('active');
     }
-
 })

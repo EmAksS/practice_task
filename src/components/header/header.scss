@@ -23,14 +23,8 @@
         @include paddingRight(57);
     }
 
-    opacity: 0;
-    transform: translateY(adaptive(-30));
-    transition: opacity 1.2s ease, transform 1.2s ease;
+    animation: easeDown 1.2s ease;
 
-    &.animated{
-        opacity: 1;
-        transform: translateY(0);
-    }
 
     &--glass{
         @include flexbox();
@@ -55,18 +49,36 @@
     &.scrolled{
         .header--glass{
 
-            border: adaptive(1) solid;
-            border-image-slice: 1;
-            border-image-source: linear-gradient(180deg, rgba(198, 198, 198, 0.2) 0%, rgba(255, 255, 255, 0.16) 100%);
+            border: adaptive(1) solid transparent;
+            background: 
+                    linear-gradient(transparent, transparent) padding-box,
+                    linear-gradient(180deg, rgba(198, 198, 198, 0.2) 0%, rgba(255, 255, 255, 0.16) 100%) border-box;
 
             color: $black;
         }
 
         .header{
+            &__logo{
+                .logo--path{
+                    fill: #0D0E0E;
+                }
+                
+            }
+
             &__nav{
                 &__element{
                     &::after{
                         background: $black;
+                    }
+                }
+            }
+
+            &__button{
+                @extend .button--blue;
+
+                &:hover{
+                    &::after{
+                        filter: none;
                     }
                 }
             }
@@ -96,15 +108,16 @@
         @include height(42);
         @include width(202);
 
-        &:hover{
-            path{
-                fill: $blue;
-            }
-        }
-
         path{
             transition: fill 0.6s ease-out;
         }
+
+        &--white{
+            .logo--path{
+                fill: $white;
+            }
+        }
+
     }
 
     &__nav{
@@ -163,8 +176,10 @@
     }
 
     &__button{
+        @extend .button--white;
         @include height(60);
         @include fontSize(20);
+        background: transparent;
     }
 }
 
