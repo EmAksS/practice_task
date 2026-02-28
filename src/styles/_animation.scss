@@ -71,3 +71,49 @@
     }
   }
 }
+
+// Блок для анимации hero.main
+
+.hero{
+  &--main{
+    &.animated{
+      .hero--main__basis, .line, .hero--main__describe__el__text p, .number {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+// Блок для анимации секции "О нас"
+
+.about-us{
+  &.animated{
+      .about-us__layer, .title, .about-us__image, .about-us__layer > div {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+}
+
+// Блок для анимации секции "Наши услуги"
+
+.servicesS{
+  &.animated{
+      .title, .card-small{
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+}
+
+// Блок для анимации секции "Хотите IT-решение, которое работает на бизнес?" (малая форма)
+
+.small-form {
+  &.animated{
+      .small-form__layer__logo, .small-form__upper-container, .small-form__down-container{
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+}

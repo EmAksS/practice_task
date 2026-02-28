@@ -1,7 +1,3 @@
-//=require section.hero.main/section.hero.main.js
-//=require section.about-us/section.about-us.js
-//=require section.servicesSmall/section.servicesS.js
-//=require section.small-form/section.small-form.js
 
 $(document).ready(function () {
 
@@ -21,9 +17,17 @@ $(document).ready(function () {
         threshold: 0.6
     })
 
+    const $heroMain = $('.hero--main')[0];
+    const $aboutUs = $('#about-us')[0];
+    const $servicesSmall = $('#servicesS')[0];
+    const $smallForm = $('#small-form')[0];
     const $partners = $('#partners')[0];
     const $clients = $('#clients')[0];
 
+    observer.observe($heroMain);
+    observer.observe($aboutUs);
+    observer.observe($servicesSmall);
+    observer.observe($smallForm);
     observer.observe($partners);
     observer.observe($clients);
 
